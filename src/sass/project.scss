@@ -1,0 +1,30 @@
+@use './colors.scss' as colors;
+
+.project {
+    color: colors.$text;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightcoral;
+    margin: 0 auto 2rem auto;
+    border: 1px solid lightcoral;
+    border-radius: 8px;
+
+    .title-and-description-container {
+        width: 55ch;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+    }
+
+    .title {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+
+    .description {
+        font-size: 1.2rem;
+    }
+}

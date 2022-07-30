@@ -2,6 +2,7 @@
 
 .project {
     color: colors.$text;
+    height: 200px;
     width: 90%;
     display: flex;
     justify-content: center;
@@ -9,7 +10,6 @@
     background-color: lightcoral;
     margin: 0 auto 2rem auto;
     border: 1px solid lightcoral;
-    border-radius: 8px;
 
     .title-and-description-container {
         width: 55ch;
@@ -26,5 +26,11 @@
 
     .description {
         font-size: 1.2rem;
+        display: none;
+
+        &:hover {
+            cursor: pointer;
+            display: block;
+        }
     }
 }

@@ -1,37 +1,36 @@
-@use './colors.scss' as colors;
-
+@use "./colors.scss" as colors;
 
 .project {
-    color: colors.$text;
-    height: 200px;
-    width: 90%;
+  color: colors.$text;
+  height: 200px;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 2rem auto;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+
+  .title-and-description-container {
+    width: 55ch;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    margin: 0 auto 2rem auto;
-    background-color: rgba(255, 255, 255, .15);  
-    backdrop-filter: blur(5px);
+    padding: 2rem;
+  }
 
-    .title-and-description-container {
-        width: 55ch;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 2rem;
+  .title {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .description {
+    font-size: 1.2rem;
+    display: none;
+
+    &:hover {
+      cursor: pointer;
+      display: block;
     }
-
-    .title {
-        font-size: 1.6rem;
-        margin-bottom: 1rem;
-    }
-
-    .description {
-        font-size: 1.2rem;
-        display: none;
-
-        &:hover {
-            cursor: pointer;
-            display: block;
-        }
-    }
+  }
 }

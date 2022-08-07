@@ -1,4 +1,6 @@
 @use './fonts.scss' as fonts;
+@use './colors.scss' as colors;
+$bg-img: url(../assets/images/bg-large.jpeg);
 
 * {
     box-sizing: border-box;
@@ -8,4 +10,10 @@
 
 body {
     font-family: fonts.$Poppins;
+    background-image: $bg-img;
+    background-position: center;
+    background-size: conver;
+    background-repeat: no-repeat;
+    background-color: colors.$black;
+    background-attachment: fixed
 }

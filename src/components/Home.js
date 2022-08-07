@@ -1,17 +1,23 @@
 import React, { Component } from 'react'
 import '../sass/home.scss'
 
-export default class Home extends Component {
-    render() { return (
+const Home = (props) => {
+    const showNavList = props.showNavList
+
+    return ( !showNavList && ( 
         <div className="intro">
-            <div className="name-and-title-container">
+            <div className="title-container">
                 <h1 className='name'>
-                    Hi, I'm Ditwan.
+                    DITWAN <br/> PRICE
                 </h1>
-                <h2 className='job-title'>
-                    I'm a Software Developer.
-                </h2>
             </div>
-        </div>
-    )}
+            <div className='subtitle-container'>
+            <h2 className='job-title'>
+                I'm a Software Engineer
+            </h2>
+            </div>
+        </div> 
+    ))
 }
+
+export default Home

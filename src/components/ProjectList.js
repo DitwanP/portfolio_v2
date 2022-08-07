@@ -3,8 +3,9 @@ import { projectsInfo } from '../assets/ProjectsInfo'
 import Project from './Project'
 import '../sass/home.scss'
 
-const ProjectList = () => {
-    return (
+const ProjectList = (props) => {
+    const showNavList = props.showNavList
+    return ( !showNavList && (
         <div className="project-list">
             {projectsInfo.map((project) => 
                 <Project 
@@ -13,7 +14,7 @@ const ProjectList = () => {
                 tools={project.tools}/>
             )}
         </div>
-    )
+    ))
 }
 
 export default ProjectList

@@ -1,0 +1,61 @@
+$bg-img: url(../assets/images/bg-medium.jpeg);
+
+.navbar-container {
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    inset: 0;
+    padding: 0rem 1.2rem;
+
+    .logo-container {
+        font-size: 2.4rem;
+        color: white;
+        z-index: 2;
+    }
+
+    .nav-list-and-toggle-container {
+        width: 50%;
+        height: 100%;
+        color: white;
+        display: flex;
+        justify-content: flex-end;
+
+        .nav-list-container {
+            font-size: 2rem;
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            inset: 0px 0px 0px 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+
+            .nav-list {
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                list-style: none;
+                gap: 1.8rem;
+                font-size: 5.0rem;
+                z-index: 2;
+            }
+        }
+
+        .nav-toggle-container {
+            height: inherit;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+
+            .nav-toggle {
+                background: none;
+                border: none;
+            }
+        }
+    }
+}

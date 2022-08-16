@@ -1,17 +1,20 @@
-import Home from "./components/Home.js"
-import ProjectList from "./components/ProjectList.js"
+import { useState } from "react"
+import OldHome from "./components/OldHome.js"
+// import ProjectList from "./components/ProjectList.js"
 import NavBar from "./components/NavBar.js"
 import "./sass/navbar.scss"
-import { useState } from "react"
+import "./sass/app.scss"
 
 function App() {
   const [showNavList, setShowNavList] = useState(false)
 
   return (
     <div className={showNavList && "nav-open"}>
-      <NavBar showNavList={showNavList} setShowNavList={setShowNavList} />
-      <Home showNavList={showNavList} />
-      <ProjectList showNavList={showNavList} />
+      <div className="sections">
+        <NavBar showNavList={showNavList} setShowNavList={setShowNavList} />
+        <OldHome showNavList={showNavList} />
+        {/* <ProjectList showNavList={showNavList} /> */}
+      </div>
     </div>
   )
 }

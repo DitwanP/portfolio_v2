@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import "../sass/navbar.scss"
 
 const NavBar = (props) => {

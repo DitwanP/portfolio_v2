@@ -1,6 +1,5 @@
 @use "./fonts.scss" as fonts;
 @use "./colors.scss" as colors;
-$bg-img: url(../assets/images/bg-large.jpeg);
 
 * {
   box-sizing: border-box;
@@ -9,11 +8,5 @@ $bg-img: url(../assets/images/bg-large.jpeg);
 }
 
 body {
-  font-family: fonts.$Poppins;
-  background-image: $bg-img;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-color: colors.$black;
-  background-attachment: fixed;
+  background-color: colors.$teal-accent-dim;
 }

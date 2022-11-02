@@ -1,25 +1,27 @@
 @use "./colors.scss" as colors;
+@use "./fonts.scss" as fonts;
 $bg-img: url(../assets/images/bg-medium.jpeg);
 
 .navbar-container {
-  height: 65px;
+  height: 90px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
   inset: 0;
-  padding: 0rem 2rem;
+  padding: 0px 30px;
+  z-index: 2;
 
   .logo-container {
-    font-size: 4rem;
-    color: white;
-    z-index: 2;
+    font-family: fonts.$Josefin;
+    font-size: 3rem;
+    color: colors.$yellow-accent;
   }
 
   .nav-list-and-toggle-container {
     width: 50%;
     height: 100%;
-    color: white;
+    color: colors.$white;
     display: flex;
     justify-content: flex-end;
 
@@ -41,6 +43,7 @@ $bg-img: url(../assets/images/bg-medium.jpeg);
         text-align: center;
         list-style: none;
         gap: 1.8rem;
+        font-family: fonts.$Josefin;
         font-size: 5rem;
         z-index: 2;
       }
@@ -49,8 +52,6 @@ $bg-img: url(../assets/images/bg-medium.jpeg);
     .nav-toggle-container {
       height: inherit;
       display: flex;
-      justify-content: center;
-      align-items: center;
       z-index: 2;
       font-size: 4rem;
 
@@ -70,7 +71,7 @@ $bg-img: url(../assets/images/bg-medium.jpeg);
         .hamburger::after {
           width: 3.5rem;
           height: 2px;
-          background: colors.$text;
+          background: colors.$yellow-accent;
           transition: transform 350ms ease-in-out, opacity 200ms linear;
         }
 

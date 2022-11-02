@@ -100,7 +100,7 @@ export default class OldHome extends Component {
             variants={container}
             transition={{ ease: "easeIn", duration: 0.25, delay: 1 }}
           >
-            <h3>Hi, I'm</h3>
+            <h3>Hey, my name is</h3>
           </motion.div>
           <motion.div
             className="name"
@@ -114,20 +114,12 @@ export default class OldHome extends Component {
               className="firstName"
               aria-label="Ditwan"
             >
-              <p className="name-chars">D</p>
-              <p className="name-chars">I</p>
-              <p className="name-chars">T</p>
-              <p className="name-chars">W</p>
-              <p className="name-chars">A</p>
-              <p className="name-chars">N</p>
+              <h1 className="name-chars">Ditwan</h1>
             </div>
             <div ref={this.nameText} className="lastName" aria-label="Price">
-              <p className="name-chars">P</p>
-              <p className="name-chars">R</p>
-              <p className="name-chars">I</p>
-              <p className="name-chars">C</p>
-              <p className="name-chars">E</p>
-              <p className="name-chars">.</p>
+              <h1 className="name-chars">
+                Price<span>.</span>
+              </h1>
             </div>
           </motion.div>
           <motion.div
@@ -136,34 +128,10 @@ export default class OldHome extends Component {
             animate={{ y: 0, opacity: 1 }}
             transition={{ ease: "easeIn", duration: 0.25, delay: 1.2 }}
           >
-            <h1 ref={this.professionText} aria-label="Ditwan Price">
-              <span className="name-chars">I</span>
-              <span className="name-chars">'</span>
-              <span className="name-chars">m</span>
-              &nbsp;
-              <span className="name-chars">a</span>
-              &nbsp;
-              <span className="name-chars">D</span>
-              <span className="name-chars">e</span>
-              <span className="name-chars">v</span>
-              <span className="name-chars">e</span>
-              <span className="name-chars">l</span>
-              <span className="name-chars">o</span>
-              <span className="name-chars">p</span>
-              <span className="name-chars">e</span>
-              <span className="name-chars">r</span>
-              <span className="name-chars">.</span>
-              {/* &nbsp;
-                            <span className="name-chars">E</span>
-                            <span className="name-chars">n</span>
-                            <span className="name-chars">g</span>
-                            <span className="name-chars">i</span>
-                            <span className="name-chars">n</span>
-                            <span className="name-chars">e</span>
-                            <span className="name-chars">e</span>
-                            <span className="name-chars">r</span>
-                            <span className="name-chars">.</span> */}
-            </h1>
+            <h2 ref={this.professionText} aria-label="Ditwan Price">
+              Software Engineer
+              <span>.</span>
+            </h2>
           </motion.div>
           <motion.div
             className="about-me"
@@ -171,13 +139,13 @@ export default class OldHome extends Component {
             animate={{ y: 0, opacity: 1 }}
             transition={{ ease: "easeIn", duration: 0.25, delay: 1.3 }}
           >
-            <h1 aria-label="brief about me">
-              I'm a CS new grad that has developed a genuine passion for coding.
-              I am eager and open to learning many different technologies, and
-              currently in search of opportunities that will allow me to
-              continue developing and honing my skills while contributing what I
-              already know.
-            </h1>
+            <h3 aria-label="brief about me">
+              I'm an early career Software Engineer with experience working
+              productively in dynamic environments. I'm proficient in React,
+              JavaScript and Python. I'm a detail-oriented, organized, and
+              reliable team player focused on achieving project objectives with
+              speed and effiency.
+            </h3>
           </motion.div>
         </section>
       </motion.div>

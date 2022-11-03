@@ -1,44 +1,138 @@
 @use "./colors.scss" as colors;
+@use "./displaySizes.scss" as sizes;
+@use "./fonts.scss" as fonts;
 
-@font-face {
-  font-family: "Futura";
-  src: url("../assets/fonts/futura/Futura-medium.ttf") format("truetype");
-}
-
-.intro {
-  width: 100%;
+.hero-container {
   height: 100vh;
+  width: 100%;
+  background: colors.$background;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  color: colors.$text;
+  align-items: center;
+  overflow: hidden;
 
-  .title-container {
-    font-family: "Futura", sans-serif;
-    letter-spacing: 0.5rem;
-    line-height: 1;
+  .hero-content {
     display: flex;
     flex-direction: column;
-    text-align: left;
-    margin-left: 4.8rem;
-    text-shadow: 0 3px 10px rgb(2 11 22 / 50%);
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 0px 30px;
 
-    .name {
-      font-size: 5rem;
-      font-weight: 500;
+    @media screen and (min-width: sizes.$tablet) {
+      width: 85%;
+    }
+  }
+}
+
+.greeting {
+  width: 100%;
+  text-align: left;
+  cursor: default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  h3 {
+    height: inherit;
+    color: colors.$yellow-accent;
+    font-size: clamp(12px, 1.6rem, 20px);
+    font-family: fonts.$NotoSansMono;
+    font-weight: 200;
+
+    @media (max-width: sizes.$phone) {
+      font-size: clamp(8px, 1.2rem, 18px);
+    }
+  }
+}
+
+.name {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-left: -8px;
+  cursor: default;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  @media (max-width: sizes.$phone) {
+    margin-left: -2px;
+  }
+
+  .firstName,
+  .lastName {
+    h1 {
+      color: colors.$white;
+      font-size: clamp(40px, 6rem, 80px);
+      font-family: fonts.$MajorMono;
+      font-weight: 400;
+
+      span {
+        color: colors.$yellow-accent;
+        font-size: clamp(20px, 3rem, 80px);
+      }
+
+      @media (max-width: sizes.$phone) {
+        font-size: clamp(20px, 3rem, 40px);
+
+        span {
+          font-size: clamp(20px, 2rem, 40px);
+        }
+      }
+    }
+
+    .name-chars {
+      &:hover {
+        color: colors.$teal-accent;
+      }
+    }
+
+    .name-chars-hidden {
+      display: none;
+    }
+  }
+}
+
+.about-me {
+  width: 60%;
+  align-self: flex-start;
+  margin-top: 5px;
+  cursor: default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  h3 {
+    color: colors.$white-dimmest;
+    font-size: clamp(16px, 2rem, 30px);
+    font-family: fonts.$NotoSansMono;
+    font-weight: 300;
+
+    @media (max-width: sizes.$phone) {
+      font-size: clamp(12px, 1.4rem, 30px);
     }
   }
 
-  .subtitle-container {
-    font-family: "Futura", sans-serif;
-    display: flex;
-    text-align: left;
-    margin-left: 4.8rem;
-    text-shadow: 0 3px 10px rgb(2 11 22 / 50%);
+  @media (max-width: sizes.$desktop) {
+    margin-right: auto;
+  }
 
-    .subtitle {
-      font-size: 2rem;
-    }
+  @media (max-width: sizes.$tablet) {
+    width: 80%;
+  }
+
+  @media (max-width: sizes.$phone) {
+    width: 100%;
   }
 }

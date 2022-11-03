@@ -2,13 +2,13 @@ import React from "react"
 import "../sass/navbar.scss"
 import { motion } from "framer-motion"
 
-const pageVariants = {
+const navAnimateIn = {
   in: {
-    scale: [0.95, 0.95, 0.95, 0.98, 1],
-    y: ["-100vh", "-50vh", "-25vh", "0vh", "0vh"],
+    opacity: [0, 0.5, 1],
+    y: [-100, -50, 0],
   },
   notIn: {
-    y: "-100vh",
+    y: -100,
   },
   outUp: {
     scale: [1, 0.95, 0.95, 0.95, 0.95],
@@ -17,11 +17,9 @@ const pageVariants = {
 }
 
 const pageTransitions = {
-  type: "spring",
-  ease: "linear",
-  stiffness: 20,
-  duration: 1.75,
-  delay: 0.75,
+  ease: "easeIn",
+  duration: 0.5,
+  delay: 1,
 }
 
 const NavBar = (props) => {
@@ -36,7 +34,7 @@ const NavBar = (props) => {
   return (
     <motion.div
       className="navbar-container"
-      variants={pageVariants}
+      variants={navAnimateIn}
       initial="notIn"
       animate="in"
       exit="outUp"

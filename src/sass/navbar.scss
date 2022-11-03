@@ -13,7 +13,7 @@ $bg-img: url(../assets/images/bg-medium.jpeg);
   z-index: 2;
 
   .logo-container {
-    font-family: fonts.$Josefin;
+    font-family: fonts.$MajorMono;
     font-size: 3rem;
     color: colors.$yellow-accent;
   }
@@ -43,7 +43,7 @@ $bg-img: url(../assets/images/bg-medium.jpeg);
         text-align: center;
         list-style: none;
         gap: 1.8rem;
-        font-family: fonts.$Josefin;
+        font-family: fonts.$MajorMono;
         font-size: 5rem;
         z-index: 2;
       }
@@ -72,7 +72,7 @@ $bg-img: url(../assets/images/bg-medium.jpeg);
           width: 3.5rem;
           height: 2px;
           background: colors.$yellow-accent;
-          transition: transform 350ms ease-in-out, opacity 200ms linear;
+          transition: transform 200ms ease-in-out, opacity 200ms linear;
         }
 
         .hamburger::before,

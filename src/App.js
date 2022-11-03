@@ -1,5 +1,5 @@
 import { useState } from "react"
-import OldHome from "./components/OldHome.js"
+import Home from "./components/Home.js"
 // import ProjectList from "./components/ProjectList.js"
 import NavBar from "./components/NavBar.js"
 import "./sass/navbar.scss"
@@ -14,7 +14,7 @@ function App() {
         <NavBar showNavList={showNavList} setShowNavList={setShowNavList} />
       </div>
       <div className="components">
-        <OldHome showNavList={showNavList} />
+        <Home />
         {/* <ProjectList showNavList={showNavList} /> */}
       </div>
     </div>

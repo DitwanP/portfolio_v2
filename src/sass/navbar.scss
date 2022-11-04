@@ -16,6 +16,7 @@ $bg-img: url(../assets/images/bg-medium.jpeg);
     font-family: fonts.$MajorMono;
     font-size: 3rem;
     color: colors.$yellow-accent;
+    z-index: 2;
   }
 
   .nav-list-and-toggle-container {
@@ -26,7 +27,7 @@ $bg-img: url(../assets/images/bg-medium.jpeg);
     justify-content: flex-end;
 
     .nav-list-container {
-      font-size: 2rem;
+      background-color: colors.$teal-accent-dim;
       width: 100vw;
       height: 100vh;
       position: absolute;
@@ -37,6 +38,7 @@ $bg-img: url(../assets/images/bg-medium.jpeg);
       z-index: 1;
 
       .nav-list {
+        color: colors.$yellow-accent;
         padding: 0;
         display: flex;
         flex-direction: column;
@@ -44,8 +46,14 @@ $bg-img: url(../assets/images/bg-medium.jpeg);
         list-style: none;
         gap: 1.8rem;
         font-family: fonts.$MajorMono;
-        font-size: 5rem;
+        font-size: 8rem;
         z-index: 2;
+
+        li {
+          &:hover {
+            cursor: pointer;
+          }
+        }
       }
     }
 

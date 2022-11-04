@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { motion } from "framer-motion"
 import "../sass/home.scss"
 
@@ -41,14 +41,24 @@ const textAnimateIn = {
 class Home extends React.Component {
   constructor() {
     super()
-    this.state = { plainName: false }
-    this.togglePlainName = this.togglePlainName.bind(this)
+    this.state = { plainFirstName: false, plainLastName: false }
+    this.togglePlainFirstName = this.togglePlainFirstName.bind(this)
+    this.togglePlainLastName = this.togglePlainLastName.bind(this)
   }
 
-  togglePlainName() {
-    console.log("Plain name? ", this.state.plainName)
+  togglePlainFirstName() {
+    console.log("Plain first name? ", this.state.plainFirstName)
     this.setState((prevState) => ({
-      plainName: !prevState.plainName,
+      ...prevState,
+      plainFirstName: !prevState.plainFirstName,
+    }))
+  }
+
+  togglePlainLastName() {
+    console.log("Plain last name? ", this.state.plainLastName)
+    this.setState((prevState) => ({
+      ...prevState,
+      plainLastName: !prevState.plainLastName,
     }))
   }
 
@@ -84,21 +94,36 @@ class Home extends React.Component {
               className="firstName"
               aria-label="Ditwan"
             >
-              <h1 className="name-chars">DitWAn</h1>
+              <h1
+                onMouseEnter={this.togglePlainFirstName}
+                className={
+                  this.state.plainFirstName ? "name-chars-hidden" : "name-chars"
+                }
+              >
+                DitWAn
+              </h1>
+              <h1
+                onMouseLeave={this.togglePlainFirstName}
+                className={
+                  this.state.plainFirstName ? "name-chars" : "name-chars-hidden"
+                }
+              >
+                ditwan
+              </h1>
             </div>
             <div ref={this.nameText} className="lastName" aria-label="Price">
               <h1
-                onMouseEnter={this.togglePlainName}
+                onMouseEnter={this.togglePlainLastName}
                 className={
-                  this.state.plainName ? "name-chars-hidden" : "name-chars"
+                  this.state.plainLastName ? "name-chars-hidden" : "name-chars"
                 }
               >
                 PRice<span>.</span>
               </h1>
               <h1
-                onMouseLeave={this.togglePlainName}
+                onMouseLeave={this.togglePlainLastName}
                 className={
-                  this.state.plainName ? "name-chars" : "name-chars-hidden"
+                  this.state.plainLastName ? "name-chars" : "name-chars-hidden"
                 }
               >
                 price<span>.</span>

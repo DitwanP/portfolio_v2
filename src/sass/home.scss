@@ -70,14 +70,23 @@
   .firstName,
   .lastName {
     h1 {
-      color: colors.$white;
+      color: colors.$teal-accent;
       font-size: clamp(40px, 6rem, 80px);
       font-family: fonts.$MajorMono;
       font-weight: 400;
+      transition: 0.5;
 
       span {
         color: colors.$yellow-accent;
         font-size: clamp(20px, 3rem, 80px);
+      }
+
+      @media (max-width: sizes.$tablet) {
+        font-size: clamp(20px, 4rem, 40px);
+
+        span {
+          font-size: clamp(20px, 3rem, 40px);
+        }
       }
 
       @media (max-width: sizes.$phone) {
@@ -91,7 +100,7 @@
 
     .name-chars {
       &:hover {
-        color: colors.$teal-accent;
+        color: colors.$orange-accent;
       }
     }
 

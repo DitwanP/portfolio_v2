@@ -2,7 +2,7 @@
 @use "./displaySizes.scss" as sizes;
 @use "./fonts.scss" as fonts;
 
-.exp-page-container {
+.projects-page-container {
   height: 100vh;
   width: 100%;
   background: colors.$background;
@@ -12,7 +12,7 @@
   align-items: center;
   overflow: hidden;
 
-  .exp-content {
+  .projects-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,16 +24,24 @@
       width: 85%;
     }
 
-    .title {
-      width: 100%;
-    }
+    .projects-container {
+      .title {
+        h1 {
+          font-family: fonts.$MajorMono;
+          font-size: 6rem;
+          color: colors.$teal-accent;
+        }
+      }
 
-    .work-exp {
-      width: 100%;
-    }
+      .plain-title {
+        &:hover {
+          color: colors.$orange-accent;
+        }
+      }
 
-    .skills {
-      width: 100%;
+      .plain-title-hidden {
+        display: none;
+      }
     }
   }
 }

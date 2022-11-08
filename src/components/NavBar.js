@@ -2,6 +2,7 @@ import React, { useRef } from "react"
 import { useDimensions } from "./hooks/use-dimensions"
 import "../sass/navbar.scss"
 import { motion } from "framer-motion"
+import { Link } from "react-router-dom"
 
 const navAnimateIn = {
   in: {
@@ -64,9 +65,9 @@ const listItemVariants = {
 }
 
 const pageTransitions = {
-  ease: "easeIn",
+  ease: "easeInOut",
   duration: 0.5,
-  delay: 2.6,
+  delay: 2.2,
 }
 
 const NavBar = (props) => {
@@ -88,7 +89,9 @@ const NavBar = (props) => {
       exit="outUp"
       transition={pageTransitions}
     >
-      <div className="logo-container">DP</div>
+      <div className="logo-container">
+        <Link to="/">DP</Link>
+      </div>
       <motion.div
         className="nav-list-container"
         variants={navContainerVariants}
@@ -99,21 +102,27 @@ const NavBar = (props) => {
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span>01.</span>experience
+            <Link to="/work-and-skills">
+              <span>01.</span>work/skills
+            </Link>
           </motion.li>
           <motion.li
             variants={listItemVariants}
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span>02.</span>skills
+            <Link to="/projects">
+              <span>02.</span>projects
+            </Link>
           </motion.li>
           <motion.li
             variants={listItemVariants}
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span>03.</span>projects
+            <Link to="/contact">
+              <span>03.</span>contact
+            </Link>
           </motion.li>
         </motion.ul>
       </motion.div>
@@ -134,21 +143,27 @@ const NavBar = (props) => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span>01.</span>EXPERIENCE
+              <Link to="/work-and-skills">
+                <span>01.</span>WORK/SKILLS
+              </Link>
             </motion.li>
             <motion.li
               variants={listItemVariants}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span>02.</span>SKILLS
+              <Link to="/projects">
+                <span>02.</span>PROJECTS
+              </Link>
             </motion.li>
             <motion.li
               variants={listItemVariants}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span>03.</span>PROJECTS
+              <Link to="/contact">
+                <span>03.</span>CONTACT
+              </Link>
             </motion.li>
           </motion.ul>
         </motion.div>

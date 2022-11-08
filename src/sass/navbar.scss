@@ -1,7 +1,6 @@
 @use "./colors.scss" as colors;
 @use "./fonts.scss" as fonts;
 @use "./displaySizes.scss" as sizes;
-$bg-img: url(../assets/images/bg-medium.jpeg);
 
 .navbar-container {
   height: 90px;
@@ -14,10 +13,13 @@ $bg-img: url(../assets/images/bg-medium.jpeg);
   z-index: 2;
 
   .logo-container {
-    font-family: fonts.$MajorMono;
-    font-size: 3rem;
-    color: colors.$orange-accent;
-    z-index: 2;
+    a {
+      font-family: fonts.$MajorMono;
+      font-size: 3rem;
+      color: colors.$orange-accent;
+      z-index: 2;
+      text-decoration: none;
+    }
   }
 
   .nav-list-container {
@@ -29,18 +31,22 @@ $bg-img: url(../assets/images/bg-medium.jpeg);
 
     .nav-list {
       height: inherit;
-      color: colors.$teal-accent;
       padding: 0;
       display: flex;
       align-items: center;
       text-align: center;
       list-style: none;
       gap: 3rem;
-      font-family: fonts.$MajorMono;
-      font-size: 2.4rem;
       z-index: 2;
 
       li {
+        a {
+          color: colors.$teal-accent;
+          font-family: fonts.$MajorMono;
+          font-size: 1.8rem;
+          text-decoration: none;
+        }
+
         span {
           font-family: fonts.$NotoSansMono;
           font-size: 1.4rem;
@@ -78,20 +84,24 @@ $bg-img: url(../assets/images/bg-medium.jpeg);
       z-index: 1;
 
       .nav-list-mobile {
-        color: colors.$yellow-accent;
         padding: 0;
         display: flex;
         flex-direction: column;
         text-align: center;
         list-style: none;
         gap: 3.5rem;
-        font-family: fonts.$MajorMono;
-        font-size: 6rem;
         z-index: 2;
 
         li {
           display: flex;
           flex-direction: column;
+
+          a {
+            color: colors.$yellow-accent;
+            font-family: fonts.$MajorMono;
+            font-size: 2.4rem;
+            text-decoration: none;
+          }
 
           span {
             font-family: fonts.$NotoSansMono;
@@ -151,7 +161,6 @@ $bg-img: url(../assets/images/bg-medium.jpeg);
 }
 
 // Nav menu opened styles
-
 .nav-open .hamburger {
   transform: rotate(45deg);
 }

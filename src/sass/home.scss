@@ -40,12 +40,12 @@
   h3 {
     height: inherit;
     color: colors.$yellow-accent;
-    font-size: clamp(12px, 1.6rem, 20px);
+    font-size: clamp(12px, 2.2rem, 30px);
     font-family: fonts.$NotoSansMono;
     font-weight: 200;
 
     @media (max-width: sizes.$phone) {
-      font-size: clamp(8px, 1.2rem, 18px);
+      font-size: clamp(8px, 1.4rem, 18px);
     }
   }
 }
@@ -71,7 +71,7 @@
   .lastName {
     h1 {
       color: colors.$teal-accent;
-      font-size: clamp(40px, 6rem, 80px);
+      font-size: clamp(40px, 8rem, 90px);
       font-family: fonts.$MajorMono;
       font-weight: 400;
       transition: 0.5;
@@ -82,7 +82,7 @@
       }
 
       @media (max-width: sizes.$tablet) {
-        font-size: clamp(20px, 4rem, 40px);
+        font-size: clamp(20px, 5rem, 60px);
 
         span {
           font-size: clamp(20px, 3rem, 40px);
@@ -90,7 +90,7 @@
       }
 
       @media (max-width: sizes.$phone) {
-        font-size: clamp(20px, 3rem, 40px);
+        font-size: clamp(20px, 4rem, 50px);
 
         span {
           font-size: clamp(20px, 2rem, 40px);
@@ -111,7 +111,7 @@
 }
 
 .about-me {
-  width: 60%;
+  width: 80%;
   align-self: flex-start;
   margin-top: 5px;
   cursor: default;
@@ -124,7 +124,7 @@
 
   h3 {
     color: colors.$white-dimmest;
-    font-size: clamp(16px, 2rem, 30px);
+    font-size: clamp(16px, 2.2rem, 30px);
     font-family: fonts.$NotoSansMono;
     font-weight: 300;
 
@@ -139,6 +139,10 @@
 
   @media (max-width: sizes.$tablet) {
     width: 80%;
+  }
+
+  @media (max-width: sizes.$small-tablet) {
+    width: 90%;
   }
 
   @media (max-width: sizes.$phone) {

@@ -19,7 +19,7 @@ const navAnimateIn = {
 
 const navContainerVariants = {
   open: (height = 1000) => ({
-    clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
+    clipPath: `circle(${height * 2 + 200}px at ${window.innerWidth}px -10px)`,
     transition: {
       type: "spring",
       stiffness: 20,
@@ -27,7 +27,7 @@ const navContainerVariants = {
     },
   }),
   closed: {
-    clipPath: "circle(1px at 327px 45px)",
+    clipPath: `circle(1px at ${window.innerWidth}px -10px)`,
     transition: {
       delay: 0.3,
       type: "spring",
@@ -39,7 +39,7 @@ const navContainerVariants = {
 
 const listVariants = {
   open: {
-    transition: { staggerChildren: 0.07, delayChildren: 0.2 },
+    transition: { staggerChildren: 0.07, delayChildren: 0.5 },
   },
   closed: {
     transition: { staggerChildren: 0.05, staggerDirection: -1 },
@@ -66,7 +66,7 @@ const listItemVariants = {
 const pageTransitions = {
   ease: "easeIn",
   duration: 0.5,
-  delay: 1,
+  delay: 2.6,
 }
 
 const NavBar = (props) => {
@@ -76,7 +76,6 @@ const NavBar = (props) => {
   const { height } = useDimensions(containerRef)
 
   const toggleNav = () => {
-    console.log("Show nav list? ", showNavList)
     setShowNavList(!showNavList)
   }
 
@@ -90,43 +89,71 @@ const NavBar = (props) => {
       transition={pageTransitions}
     >
       <div className="logo-container">DP</div>
+      <motion.div
+        className="nav-list-container"
+        variants={navContainerVariants}
+      >
+        <motion.ul variants={listVariants} className="nav-list">
+          <motion.li
+            variants={listItemVariants}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <span>01.</span>experience
+          </motion.li>
+          <motion.li
+            variants={listItemVariants}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <span>02.</span>skills
+          </motion.li>
+          <motion.li
+            variants={listItemVariants}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <span>03.</span>projects
+          </motion.li>
+        </motion.ul>
+      </motion.div>
       <motion.nav
-        className="nav-list-and-toggle-container"
+        className="nav-toggle-container"
         animate={showNavList ? "open" : "closed"}
         custom={height}
         initial={false}
         ref={containerRef}
       >
         <motion.div
-          className="nav-list-container"
+          className="nav-list-container-mobile"
           variants={navContainerVariants}
         >
-          <motion.ul variants={listVariants} className="nav-list">
+          <motion.ul variants={listVariants} className="nav-list-mobile">
             <motion.li
               variants={listItemVariants}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
-              ABOUT
+              <span>01.</span>EXPERIENCE
             </motion.li>
             <motion.li
               variants={listItemVariants}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
-              WORK
+              <span>02.</span>SKILLS
             </motion.li>
             <motion.li
               variants={listItemVariants}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
-              SKILLS
+              <span>03.</span>PROJECTS
             </motion.li>
           </motion.ul>
         </motion.div>
-        <div className="nav-toggle-container" onClick={toggleNav}>
-          <button className="nav-toggle">
+        <div className="toggle-button-container" onClick={toggleNav}>
+          <button className="toggle-button">
             <span className="hamburger"></span>
           </button>
         </div>

@@ -1,5 +1,6 @@
 @use "./colors.scss" as colors;
 @use "./fonts.scss" as fonts;
+@use "./displaySizes.scss" as sizes;
 $bg-img: url(../assets/images/bg-medium.jpeg);
 
 .navbar-container {
@@ -15,18 +16,57 @@ $bg-img: url(../assets/images/bg-medium.jpeg);
   .logo-container {
     font-family: fonts.$MajorMono;
     font-size: 3rem;
-    color: colors.$yellow-accent;
+    color: colors.$orange-accent;
     z-index: 2;
   }
 
-  .nav-list-and-toggle-container {
+  .nav-list-container {
+    height: 100%;
+
+    @media (max-width: sizes.$small-tablet) {
+      display: none;
+    }
+
+    .nav-list {
+      height: inherit;
+      color: colors.$teal-accent;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      list-style: none;
+      gap: 3rem;
+      font-family: fonts.$MajorMono;
+      font-size: 2.4rem;
+      z-index: 2;
+
+      li {
+        span {
+          font-family: fonts.$NotoSansMono;
+          font-size: 1.4rem;
+          color: colors.$orange-accent;
+        }
+
+        &:hover {
+          cursor: pointer;
+          color: colors.$yellow-accent;
+        }
+      }
+    }
+  }
+
+  .nav-toggle-container {
     width: 50%;
     height: 100%;
     color: colors.$white;
-    display: flex;
-    justify-content: flex-end;
+    display: none;
 
-    .nav-list-container {
+    @media (max-width: sizes.$small-tablet) {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .nav-list-container-mobile {
       background-color: colors.$teal-accent-dim;
       width: 100vw;
       height: 100vh;
@@ -37,19 +77,28 @@ $bg-img: url(../assets/images/bg-medium.jpeg);
       align-items: center;
       z-index: 1;
 
-      .nav-list {
+      .nav-list-mobile {
         color: colors.$yellow-accent;
         padding: 0;
         display: flex;
         flex-direction: column;
         text-align: center;
         list-style: none;
-        gap: 1.8rem;
+        gap: 3.5rem;
         font-family: fonts.$MajorMono;
-        font-size: 8rem;
+        font-size: 6rem;
         z-index: 2;
 
         li {
+          display: flex;
+          flex-direction: column;
+
+          span {
+            font-family: fonts.$NotoSansMono;
+            font-size: 2.4rem;
+            color: colors.$orange-accent;
+          }
+
           &:hover {
             cursor: pointer;
           }
@@ -57,13 +106,13 @@ $bg-img: url(../assets/images/bg-medium.jpeg);
       }
     }
 
-    .nav-toggle-container {
+    .toggle-button-container {
       height: inherit;
       display: flex;
       z-index: 2;
       font-size: 4rem;
 
-      .nav-toggle {
+      .toggle-button {
         border: none;
         padding: 0;
         background: none;

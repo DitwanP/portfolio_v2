@@ -1,42 +1,7 @@
 import React from "react"
 import { motion } from "framer-motion"
 import "../sass/home.scss"
-
-const pageVariants = {
-  in: {
-    scale: [0.95, 0.95, 0.95, 0.95, 1],
-    x: ["100vw", "100vw", "100vw", "0vw", "0vw"],
-  },
-  notIn: {
-    scale: 0.95,
-    x: "100vw",
-  },
-  outDown: {
-    scale: [1, 0.95, 0.95, 0.95, 0.95],
-    y: [0, 0, 0, 0, 2000],
-  },
-}
-
-const pageTransitions = {
-  type: "tween",
-  ease: "easeInOut",
-  duration: 0.75,
-}
-
-const textAnimateIn = {
-  start: {
-    y: -100,
-    opacity: 0,
-  },
-  end: {
-    y: 0,
-    opacity: 1,
-  },
-  rotate: {
-    scale: 1.1,
-    rotateX: 180,
-  },
-}
+import { pageVariants, pageTransitions, textAnimateIn } from "./FramerVariants"
 
 class Home extends React.Component {
   constructor() {
@@ -78,7 +43,7 @@ class Home extends React.Component {
             initial="start"
             animate="end"
             variants={textAnimateIn}
-            transition={{ ease: "easeIn", duration: 0.5, delay: 1.4 }}
+            transition={{ ease: "easeIn", duration: 0.5, delay: 2.2 }}
           >
             <h3>Hello, my name is</h3>
           </motion.div>
@@ -89,10 +54,11 @@ class Home extends React.Component {
             animate="end"
             transition={{ ease: "easeIn", duration: 0.5, delay: 1.8 }}
           >
-            <div
+            <motion.div
               ref={this.firsNameText}
               className="firstName"
               aria-label="Ditwan"
+              whileHover={{ scale: 1.1 }}
             >
               <h1
                 onMouseEnter={this.togglePlainFirstName}
@@ -110,8 +76,13 @@ class Home extends React.Component {
               >
                 ditwan
               </h1>
-            </div>
-            <div ref={this.nameText} className="lastName" aria-label="Price">
+            </motion.div>
+            <motion.div
+              ref={this.nameText}
+              className="lastName"
+              aria-label="Price"
+              whileHover={{ scale: 1.1 }}
+            >
               <h1
                 onMouseEnter={this.togglePlainLastName}
                 className={
@@ -128,21 +99,21 @@ class Home extends React.Component {
               >
                 price<span>.</span>
               </h1>
-            </div>
+            </motion.div>
           </motion.div>
           <motion.div
             className="about-me"
             variants={textAnimateIn}
             initial="start"
             animate="end"
-            transition={{ ease: "easeIn", duration: 0.5, delay: 2.2 }}
+            transition={{ ease: "easeIn", duration: 0.5, delay: 1.4 }}
           >
             <h3 aria-label="brief about me">
               I'm an early career Software Engineer with experience working
-              productively in dynamic environments. I'm proficient in React,
-              JavaScript and Python. I'm a detail-oriented, organized, and
-              reliable team player focused on achieving project objectives with
-              speed and effiency.
+              productively in dynamic environments. I'm a detail-oriented,
+              organized, and reliable team player focused on achieving project
+              objectives with speed and effiency. I'm currently open to
+              exploring new oportunities so feel free to reach out!
             </h3>
           </motion.div>
         </section>

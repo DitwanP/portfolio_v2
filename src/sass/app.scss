@@ -1,5 +1,149 @@
-.components {
+@use "./colors.scss" as colors;
+
+.app {
   width: 100%;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+
+  // REMOVE THIS BUTTON AFTER THEMES IN PLACE
+  button {
+    font-size: 3rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+/*THEMES*/
+
+// Future Funk
+.app[theme="future-funk"] {
+  .hero-container,
+  .exp-page-container,
+  .projects-page-container,
+  .contact-page-container {
+    background-color: colors.$ff-bg-color;
+  }
+
+  h1 {
+    color: colors.$ff-primaryAccent;
+
+    span {
+      color: colors.$ff-tertiaryAccent;
+    }
+  }
+
+  h2 {
+    color: colors.$ff-secondaryAccent;
+  }
+
+  h3 {
+    color: colors.$ff-textMain;
+  }
+
+  .name-chars,
+  .plain-title {
+    &:hover {
+      color: colors.$ff-tertiaryAccent;
+    }
+  }
+
+  .navbar-container {
+    .logo-container {
+      a {
+        color: colors.$ff-tertiaryAccent;
+      }
+    }
+
+    .nav-list {
+      a {
+        color: colors.$ff-textMain;
+      }
+
+      li:nth-child(1) {
+        span {
+          color: colors.$ff-secondaryAccent;
+        }
+      }
+
+      li:nth-child(2) {
+        span {
+          color: colors.$ff-tertiaryAccent;
+        }
+      }
+
+      li:nth-child(3) {
+        span {
+          color: colors.$ff-primaryAccent;
+        }
+      }
+    }
+  }
+}
+
+// Dracula
+.app[theme="dracula"] {
+  .hero-container,
+  .exp-page-container,
+  .projects-page-container,
+  .contact-page-container {
+    background-color: colors.$dracula-bg-color;
+  }
+
+  h1 {
+    color: colors.$dracula-primaryAccent;
+
+    span {
+      color: colors.$dracula-tertiaryAccent;
+    }
+  }
+
+  h2 {
+    color: colors.$dracula-secondaryAccent;
+  }
+
+  h3 {
+    color: colors.$dracula-textMain;
+  }
+
+  .name-chars,
+  .plain-title {
+    &:hover {
+      color: colors.$dracula-tertiaryAccent;
+    }
+  }
+
+  .navbar-container {
+    .logo-container {
+      a {
+        color: colors.$dracula-tertiaryAccent;
+      }
+    }
+
+    .nav-list {
+      a {
+        color: colors.$dracula-textMain;
+      }
+
+      li:nth-child(1) {
+        span {
+          color: colors.$dracula-secondaryAccent;
+        }
+      }
+
+      li:nth-child(2) {
+        span {
+          color: colors.$dracula-tertiaryAccent;
+        }
+      }
+
+      li:nth-child(3) {
+        span {
+          color: colors.$dracula-primaryAccent;
+        }
+      }
+    }
+  }
 }

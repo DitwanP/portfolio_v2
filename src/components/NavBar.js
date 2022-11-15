@@ -1,74 +1,18 @@
 import React, { useRef } from "react"
 import { useDimensions } from "./hooks/use-dimensions"
-import "../sass/navbar.scss"
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 
-const navAnimateIn = {
-  in: {
-    opacity: [0, 0.5, 1],
-    y: [-100, -50, 0],
-  },
-  notIn: {
-    y: -100,
-  },
-  outUp: {
-    scale: [1, 0.95, 0.95, 0.95, 0.95],
-    y: [100, 100, 100, 100, -2000],
-  },
-}
+import "../sass/navbar.scss"
+import "../sass/app.scss"
 
-const navContainerVariants = {
-  open: (height = 1000) => ({
-    clipPath: `circle(${height * 2 + 200}px at ${window.innerWidth}px -10px)`,
-    transition: {
-      type: "spring",
-      stiffness: 20,
-      restDelta: 2,
-    },
-  }),
-  closed: {
-    clipPath: `circle(1px at ${window.innerWidth}px -10px)`,
-    transition: {
-      delay: 0.3,
-      type: "spring",
-      stiffness: 400,
-      damping: 40,
-    },
-  },
-}
-
-const listVariants = {
-  open: {
-    transition: { staggerChildren: 0.07, delayChildren: 0.5 },
-  },
-  closed: {
-    transition: { staggerChildren: 0.05, staggerDirection: -1 },
-  },
-}
-
-const listItemVariants = {
-  open: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      y: { stiffness: 1000, velocity: -100 },
-    },
-  },
-  closed: {
-    y: 50,
-    opacity: 0,
-    transition: {
-      y: { stiffness: 1000 },
-    },
-  },
-}
-
-const pageTransitions = {
-  ease: "easeInOut",
-  duration: 0.5,
-  delay: 2.2,
-}
+import {
+  navAnimateIn,
+  navContainerVariants,
+  listVariants,
+  listItemVariants,
+  navTransitions,
+} from "./FramerVariants"
 
 const NavBar = (props) => {
   const showNavList = props.showNavList
@@ -87,7 +31,7 @@ const NavBar = (props) => {
       initial="notIn"
       animate="in"
       exit="outUp"
-      transition={pageTransitions}
+      transition={navTransitions}
     >
       <div className="logo-container">
         <Link to="/">DP</Link>
@@ -99,7 +43,7 @@ const NavBar = (props) => {
         <motion.ul variants={listVariants} className="nav-list">
           <motion.li
             variants={listItemVariants}
-            whileHover={{ scale: 1.2 }}
+            whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
             <Link to="/work-and-skills">
@@ -108,7 +52,7 @@ const NavBar = (props) => {
           </motion.li>
           <motion.li
             variants={listItemVariants}
-            whileHover={{ scale: 1.2 }}
+            whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
             <Link to="/projects">
@@ -117,7 +61,7 @@ const NavBar = (props) => {
           </motion.li>
           <motion.li
             variants={listItemVariants}
-            whileHover={{ scale: 1.2 }}
+            whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
             <Link to="/contact">
@@ -143,7 +87,7 @@ const NavBar = (props) => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Link to="/work-and-skills">
+              <Link to="/work-and-skills" onClick={toggleNav}>
                 <span>01.</span>WORK/SKILLS
               </Link>
             </motion.li>
@@ -152,7 +96,7 @@ const NavBar = (props) => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Link to="/projects">
+              <Link to="/projects" onClick={toggleNav}>
                 <span>02.</span>PROJECTS
               </Link>
             </motion.li>
@@ -161,7 +105,7 @@ const NavBar = (props) => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Link to="/contact">
+              <Link to="/contact" onClick={toggleNav}>
                 <span>03.</span>CONTACT
               </Link>
             </motion.li>

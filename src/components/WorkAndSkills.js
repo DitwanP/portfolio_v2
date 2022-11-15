@@ -1,11 +1,11 @@
 import React, { useState } from "react"
 import { motion } from "framer-motion"
-import { useLocation } from "react-router-dom"
 import { pageVariants, pageTransitions, textAnimateIn } from "./FramerVariants"
+
 import "../sass/work-and-skills.scss"
+import "../sass/app.scss"
 
 const WorkAndSkills = () => {
-  const location = useLocation()
   const [plainTitleWork, togglePlainTitleWork] = useState(false)
   const [plainTitleSkills, togglePlainTitleSkills] = useState(false)
 
@@ -21,7 +21,6 @@ const WorkAndSkills = () => {
 
   return (
     <motion.div
-      key={location.pathname}
       className="exp-page-container"
       variants={pageVariants}
       initial="notIn"

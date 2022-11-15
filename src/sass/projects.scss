@@ -5,7 +5,6 @@
 .projects-page-container {
   height: 100vh;
   width: 100%;
-  background: colors.$background;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,13 +28,6 @@
         h1 {
           font-family: fonts.$MajorMono;
           font-size: 6rem;
-          color: colors.$teal-accent;
-        }
-      }
-
-      .plain-title {
-        &:hover {
-          color: colors.$orange-accent;
         }
       }
 

@@ -1,33 +1,25 @@
 import React, { useState } from "react"
 import { motion } from "framer-motion"
-import { useLocation } from "react-router-dom"
 import { pageVariants, pageTransitions, textAnimateIn } from "./FramerVariants"
+
 import "../sass/home.scss"
+import "../sass/app.scss"
 
 const Home = () => {
-  const location = useLocation()
   const [plainFirstName, togglePlainFirstName] = useState(false)
   const [plainLastName, togglePlainLastName] = useState(false)
 
   const toggleFirstName = () => {
-    console.log("Plain first name? ", this.state.plainFirstName)
-    togglePlainFirstName((prevState) => ({
-      ...prevState,
-      plainFirstName: !prevState.plainFirstName,
-    }))
+    togglePlainFirstName(!plainFirstName)
   }
 
   const toggleLastName = () => {
-    console.log("Plain last name? ", this.state.plainLastName)
-    togglePlainLastName((prevState) => ({
-      ...prevState,
-      plainLastName: !prevState.plainLastName,
-    }))
+    togglePlainLastName(!plainLastName)
   }
 
   return (
     <motion.div
-      key={location.pathname}
+      id="hero-container"
       className="hero-container"
       variants={pageVariants}
       initial="notIn"
@@ -41,16 +33,16 @@ const Home = () => {
           initial="start"
           animate="end"
           variants={textAnimateIn}
-          transition={{ ease: "easeIn", duration: 0.5, delay: 1.8 }}
+          transition={{ ease: "easeIn", duration: 0.5, delay: 1.4 }}
         >
-          <h3>Hello, my name is</h3>
+          <h2>Hello, my name is</h2>
         </motion.div>
         <motion.div
           className="name"
           variants={textAnimateIn}
           initial="start"
           animate="end"
-          transition={{ ease: "easeIn", duration: 0.5, delay: 1.4 }}
+          transition={{ ease: "easeIn", duration: 0.5, delay: 1 }}
         >
           <motion.div
             className="firstName"
@@ -94,10 +86,10 @@ const Home = () => {
           variants={textAnimateIn}
           initial="start"
           animate="end"
-          transition={{ ease: "easeIn", duration: 0.5, delay: 1 }}
+          transition={{ ease: "easeIn", duration: 0.5, delay: 0.6 }}
         >
           <h3 aria-label="brief about me">
-            I'm an early career Software Engineer with experience working
+            I'm an early career software engineer with experience working
             productively in dynamic environments. I'm a detail-oriented,
             organized, and reliable team player focused on achieving project
             objectives with speed and effiency. I'm currently open to exploring

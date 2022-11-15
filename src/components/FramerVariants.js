@@ -1,22 +1,20 @@
 export const pageVariants = {
   in: {
-    scale: [0.95, 0.95, 0.95, 0.95, 1],
-    x: ["100vw", "100vw", "100vw", "0vw", "0vw"],
+    y: 0,
   },
   notIn: {
-    scale: 0.95,
-    x: "100vw",
+    y: 1200,
   },
   outDown: {
-    scale: [1, 0.95, 0.95, 0.95, 0.95],
-    y: [0, 0, 0, 0, 2000],
+    scale: 1,
+    y: 1200,
   },
 }
 
 export const pageTransitions = {
-  type: "tween",
+  type: "linear",
   ease: "easeInOut",
-  duration: 0.75,
+  duration: 0.5,
 }
 
 export const textAnimateIn = {
@@ -28,8 +26,71 @@ export const textAnimateIn = {
     y: 0,
     opacity: 1,
   },
-  rotate: {
-    scale: 1.1,
-    rotateX: 180,
+}
+
+// Nav
+export const navAnimateIn = {
+  in: {
+    opacity: 1,
+    y: 0,
   },
+  notIn: {
+    y: -200,
+  },
+  outUp: {
+    scale: 1,
+    y: -200,
+  },
+}
+
+export const navContainerVariants = {
+  open: (height = 1000) => ({
+    clipPath: `circle(${height * 2 + 200}px at ${window.innerWidth}px -10px)`,
+    transition: {
+      type: "spring",
+      stiffness: 20,
+      restDelta: 2,
+    },
+  }),
+  closed: {
+    clipPath: `circle(1px at ${window.innerWidth}px -10px)`,
+    transition: {
+      delay: 0.3,
+      type: "spring",
+      stiffness: 400,
+      damping: 40,
+    },
+  },
+}
+
+export const listVariants = {
+  open: {
+    transition: { staggerChildren: 0.07, delayChildren: 0.5 },
+  },
+  closed: {
+    transition: { staggerChildren: 0.05, staggerDirection: -1 },
+  },
+}
+
+export const listItemVariants = {
+  open: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      y: { stiffness: 1000, velocity: -100 },
+    },
+  },
+  closed: {
+    y: 50,
+    opacity: 0,
+    transition: {
+      y: { stiffness: 1000 },
+    },
+  },
+}
+
+export const navTransitions = {
+  ease: "easeInOut",
+  duration: 0.5,
+  delay: 1.8,
 }

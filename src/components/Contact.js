@@ -2,28 +2,28 @@ import React, { useState } from "react"
 import { motion } from "framer-motion"
 import { pageVariants, pageTransitions, textAnimateIn } from "./FramerVariants"
 
-import "../sass/projects.scss"
+import "../sass/contact.scss"
 import "../sass/app.scss"
 
-const Projects = () => {
-  const [plainTitleProjects, togglePlainTitleProjects] = useState(false)
+const Contact = () => {
+  const [plainTitleContact, toggleplainTitleContact] = useState(false)
 
-  const togglePlainProjectsTitle = () => {
-    togglePlainTitleProjects(!plainTitleProjects)
+  const togglePlainContactTitle = () => {
+    toggleplainTitleContact(!plainTitleContact)
   }
 
   return (
     <motion.div
-      className="projects-page-container"
+      className="contact-page-container"
       variants={pageVariants}
       initial="notIn"
       animate="in"
       exit="outDown"
       transition={pageTransitions}
     >
-      <section className="projects-content">
+      <section className="contact-content">
         <motion.div
-          className="projects-container"
+          className="contact-container"
           variants={textAnimateIn}
           initial="start"
           animate="end"
@@ -31,24 +31,24 @@ const Projects = () => {
         >
           <motion.div
             className="title"
-            aria-label="Projects"
+            aria-label="Contact"
             whileHover={{ scale: 1.1 }}
           >
             <h1
-              onMouseEnter={togglePlainProjectsTitle}
+              onMouseEnter={togglePlainContactTitle}
               className={
-                plainTitleProjects ? "plain-title-hidden" : "plain-title"
+                plainTitleContact ? "plain-title-hidden" : "plain-title"
               }
             >
-              pRojects
+              ContAct
             </h1>
             <h1
-              onMouseLeave={togglePlainProjectsTitle}
+              onMouseLeave={togglePlainContactTitle}
               className={
-                plainTitleProjects ? "plain-title" : "plain-title-hidden"
+                plainTitleContact ? "plain-title" : "plain-title-hidden"
               }
             >
-              projects
+              contact
             </h1>
           </motion.div>
         </motion.div>
@@ -57,4 +57,4 @@ const Projects = () => {
   )
 }
 
-export default Projects
+export default Contact

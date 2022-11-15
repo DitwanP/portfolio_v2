@@ -30,8 +30,6 @@ function App() {
       <Router>
         <AnimatedRoutes switchTheme={switchTheme} />
       </Router>
-      <button onClick={() => switchTheme("future-funk")}>Future-Funk</button>
-      <button onClick={() => switchTheme("dracula")}>Dracula</button>
     </div>
   )
 }

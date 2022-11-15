@@ -23,7 +23,7 @@ const ThemesModal = (props) => {
 
   return (
     <motion.div
-      className="theme-container"
+      className={showThemesModal ? "theme-container" : "theme-container-hidden"}
       variants={navAnimateIn}
       initial="notIn"
       animate="in"
@@ -47,7 +47,7 @@ const ThemesModal = (props) => {
               whileTap={{ scale: 0.95 }}
             >
               <button onClick={() => props.switchTheme("dracula")}>
-                <span>01.</span>Dracula
+                <span>01.</span>dracula
               </button>
             </motion.li>
             <motion.li
@@ -56,7 +56,7 @@ const ThemesModal = (props) => {
               whileTap={{ scale: 0.95 }}
             >
               <button onClick={() => props.switchTheme("future-funk")}>
-                <span>02.</span>Future Funk
+                <span>02.</span>future funk
               </button>
             </motion.li>
             <motion.li
@@ -65,14 +65,14 @@ const ThemesModal = (props) => {
               whileTap={{ scale: 0.95 }}
             >
               <button onClick={() => props.switchTheme("tbd")}>
-                <span>03.</span>TBD
+                <span>03.</span>tbd
               </button>
             </motion.li>
           </motion.ul>
         </motion.div>
         <div className="toggle-button-container" onClick={toggleNav}>
           <button className="toggle-button">
-            <span className="hamburger"></span>
+            <span className="hamburger">Themes</span>
           </button>
         </div>
       </motion.nav>

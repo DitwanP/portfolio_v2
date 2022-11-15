@@ -1,4 +1,66 @@
+@use "./fonts.scss" as fonts;
+@use "./colors.scss" as colors;
+
 .theme-container {
-  width: 100%;
-  background-color: transparent;
+  background-color: darkslategray;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 3rem;
+  margin-right: 3rem;
+  padding: 4rem 2rem;
+  border: 1px solid darkslategray;
+  border-radius: 0.5rem;
+  display: flex;
+  text-align: left;
+  align-items: center;
+
+  li {
+    button {
+      background: none;
+      border: none;
+      font-family: fonts.$MajorMono;
+    }
+  }
+
+  .theme-list {
+    padding: 0;
+  }
+
+  .toggle-button-container {
+    width: 3rem;
+    height: 3rem;
+
+    button {
+      background: none;
+      border: none;
+      font-family: fonts.$NotoSansMono;
+    }
+  }
+}
+
+.theme-container-hidden {
+  background-color: none;
+  border: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 3rem;
+  margin-right: 3rem;
+  padding: 4rem 2rem;
+  border-radius: 0.5rem;
+  display: flex;
+  text-align: left;
+  align-items: center;
+
+  .toggle-button-container {
+    width: 3rem;
+    height: 3rem;
+
+    button {
+      background: none;
+      border: none;
+      font-family: fonts.$NotoSansMono;
+    }
+  }
 }

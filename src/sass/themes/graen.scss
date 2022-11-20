@@ -1,0 +1,133 @@
+@use "../colors.scss" as colors;
+@use "../fonts.scss" as fonts;
+
+@mixin graen {
+  .hero-container,
+  .exp-page-container,
+  .projects-page-container,
+  .contact-page-container {
+    background-color: colors.$graen-bg-color;
+    transition: background-color 200ms linear;
+  }
+
+  h1 {
+    color: colors.$graen-primaryAccent;
+    transition: color 200ms linear;
+
+    span {
+      color: colors.$graen-tertiaryAccent;
+      transition: color 200ms linear;
+    }
+  }
+
+  h2 {
+    color: colors.$graen-textMain;
+    transition: color 200ms linear;
+  }
+
+  h3 {
+    color: colors.$graen-textMain;
+    transition: color 200ms linear;
+  }
+
+  .name-chars,
+  .plain-title {
+    &:hover {
+      color: colors.$graen-tertiaryAccent;
+      transition: color 200ms linear;
+    }
+  }
+
+  .navbar-container {
+    background-color: colors.$graen-header-bg-color;
+    transition: background-color 200ms linear;
+
+    .logo-container {
+      a {
+        color: colors.$graen-tertiaryAccent;
+        transition: color 200ms linear;
+      }
+    }
+
+    .nav-list {
+      a {
+        color: colors.$graen-textMain;
+        transition: color 200ms linear;
+      }
+
+      li:nth-child(1) {
+        span {
+          color: colors.$graen-secondaryAccent;
+          transition: color 200ms linear;
+        }
+      }
+
+      li:nth-child(2) {
+        span {
+          color: colors.$graen-tertiaryAccent;
+          transition: color 200ms linear;
+        }
+      }
+
+      li:nth-child(3) {
+        span {
+          color: colors.$graen-primaryAccent;
+          transition: color 200ms linear;
+        }
+      }
+    }
+
+    .nav-toggle-container {
+      .toggle-button-container {
+        .toggle-button {
+          .hamburger {
+            background: colors.$graen-primaryAccent;
+
+            &::before {
+              background: colors.$graen-primaryAccent;
+            }
+
+            &::after {
+              background: colors.$graen-primaryAccent;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .theme-container {
+    .theme-list-container {
+      button {
+        color: colors.$graen-textMain;
+        transition: color 200ms linear;
+      }
+
+      li {
+        span {
+          color: colors.$graen-textMain;
+          transition: color 200ms linear;
+        }
+      }
+
+      .theme-list {
+        background-color: colors.$graen-theme-list-bg;
+        transition: background-color 200ms linear;
+        backdrop-filter: blur(15px);
+      }
+    }
+  }
+
+  .toggle-button-container {
+    button {
+      font-family: fonts.$MajorMono;
+      color: colors.$graen-textMain;
+      transition: color 200ms linear;
+
+      &::after {
+        background-color: colors.$graen-tertiaryAccent;
+        transition: background-color 200ms linear;
+      }
+    }
+  }
+}

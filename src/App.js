@@ -3,14 +3,15 @@ import AnimatedRoutes from "./components/AnimatedRoutes.js"
 import { useRef, useEffect, useState } from "react"
 
 import "./sass/app.scss"
+import "./sass/themes/future-funk.scss"
 
 function App() {
   const ref = useRef(null)
   const [appElement, setAppElement] = useState(null)
-  const defaultTheme = "future-funk"
+  const defaultTheme = "ryujin"
 
   const switchTheme = (theme) => {
-    console.log("in switch theme function")
+    console.log("Switch theme function:", theme)
     if (
       (appElement.hasAttribute("theme") &&
         appElement.getAttribute("theme") !== theme) ||

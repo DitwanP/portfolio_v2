@@ -1,6 +1,7 @@
 $background: #999;
 $text: rgb(237, 237, 237);
 $black: rgb(14, 14, 14);
+$grey: rgb(14, 14, 14);
 $white: #d4d5d5;
 $white-dim: #c3cccf;
 $white-dimmest: #bbc3c7;
@@ -14,20 +15,50 @@ $shadow: rgba(0, 0, 0, 0.348);
 
 // Future Funk
 $ff-bg-color: #2e1a47;
-$ff-header-bg-color: rgba(46, 26, 71, 0.85);
+$ff-header-bg-color: rgb(46, 26, 71);
 $ff-textMain: #f7f2ea; // paragraphs etc.
 $ff-textSecondary: #f7f2ea;
 $ff-primaryAccent: #f04e98; // main accent color.
 $ff-secondaryAccent: #a4dbe8; // secondary accent color.
 $ff-tertiaryAccent: #f6eb61;
-$ff-theme-list-bg: rgba(240, 78, 151, 0.4);
+$ff-theme-list-bg: rgba(240, 78, 151, 0.1);
 
 // Dracula
 $dracula-bg-color: #282a36;
-$dracula-header-bg-color: rgba(40, 42, 54, 0.85);
+$dracula-header-bg-color: rgb(40, 42, 54);
 $dracula-textMain: #f2f2f2; // paragraphs etc.
 $dracula-textSecondary: #f7f2ea;
 $dracula-primaryAccent: #bd93f9; // main accent color.
 $dracula-secondaryAccent: #50fa7b; // secondary accent color.
 $dracula-tertiaryAccent: #ec75c4;
-$dracula-theme-list-bg: rgba(189, 147, 249, 0.4);
+$dracula-theme-list-bg: rgba(189, 147, 249, 0.1);
+
+// RyujinScales
+$rs-bg-color: #081426;
+$rs-header-bg-color: rgb(8, 20, 38);
+$rs-textMain: #ffe4bc; // paragraphs etc.
+$rs-textSecondary: #f7f2ea;
+$rs-primaryAccent: #f17754; // main accent color.
+$rs-secondaryAccent: #f17754; // secondary accent color.
+$rs-tertiaryAccent: #f17754;
+$rs-theme-list-bg: rgba(241, 118, 84, 0.1);
+
+// graen
+$graen-bg-color: #303c36;
+$graen-header-bg-color: rgb(48, 60, 54);
+$graen-textMain: #a59682; // paragraphs etc.
+$graen-textSecondary: #f7f2ea;
+$graen-primaryAccent: #0d0f0f; // main accent color.
+$graen-secondaryAccent: #0d0f0f; // secondary accent color.
+$graen-tertiaryAccent: #0d0f0f;
+$graen-theme-list-bg: rgba(13, 15, 15, 0.1);
+
+// dmg
+$dmg-bg-color: #a6a8a9;
+$dmg-header-bg-color: rgb(169, 170, 171);
+$dmg-textMain: #3846b1; // paragraphs etc.
+$dmg-textSecondary: #f7f2ea;
+$dmg-primaryAccent: #ae185e; // main accent color.
+$dmg-secondaryAccent: #ae185e; // secondary accent color.
+$dmg-tertiaryAccent: #ae185e;
+$dmg-theme-list-bg: rgba(56, 70, 177, 0.1);

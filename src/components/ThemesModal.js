@@ -16,6 +16,9 @@ const ThemesModal = (props) => {
   const showThemesModal = props.showThemesModal
   const setShowThemesModal = props.setShowThemesModal
 
+  const themes = ["dmg", "future-funk", "ryujin", "graen", "dracula"]
+  const orderedThemes = themes.sort()
+
   const toggleNav = () => {
     console.log(!showThemesModal)
     setShowThemesModal(!showThemesModal)
@@ -40,33 +43,18 @@ const ThemesModal = (props) => {
             exit="outDown"
           >
             <motion.ul variants={listVariants} className="theme-list">
-              <motion.li
-                variants={listItemVariants}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <button onClick={() => props.switchTheme("dracula")}>
-                  <span>01.</span>dracula
-                </button>
-              </motion.li>
-              <motion.li
-                variants={listItemVariants}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <button onClick={() => props.switchTheme("future-funk")}>
-                  <span>02.</span>future funk
-                </button>
-              </motion.li>
-              <motion.li
-                variants={listItemVariants}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <button onClick={() => props.switchTheme("tbd")}>
-                  <span>03.</span>tbd
-                </button>
-              </motion.li>
+              {orderedThemes.map((theme, index) => (
+                <motion.li
+                  variants={listItemVariants}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <button onClick={() => props.switchTheme(theme)}>
+                    <span>0{index + 1}.</span>
+                    {theme}
+                  </button>
+                </motion.li>
+              ))}
             </motion.ul>
           </motion.div>
           <div className="toggle-button-container" onClick={toggleNav}>

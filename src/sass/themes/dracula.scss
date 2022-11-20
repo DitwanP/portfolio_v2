@@ -1,0 +1,134 @@
+@use "../colors.scss" as colors;
+@use "../fonts.scss" as fonts;
+
+// Dracula
+@mixin dracula {
+  .hero-container,
+  .exp-page-container,
+  .projects-page-container,
+  .contact-page-container {
+    background-color: colors.$dracula-bg-color;
+    transition: background-color 200ms linear;
+  }
+
+  h1 {
+    color: colors.$dracula-primaryAccent;
+    transition: color 200ms linear;
+
+    span {
+      color: colors.$dracula-tertiaryAccent;
+      transition: color 200ms linear;
+    }
+  }
+
+  h2 {
+    color: colors.$dracula-secondaryAccent;
+    transition: color 200ms linear;
+  }
+
+  h3 {
+    color: colors.$dracula-textMain;
+    transition: color 200ms linear;
+  }
+
+  .name-chars,
+  .plain-title {
+    &:hover {
+      color: colors.$dracula-tertiaryAccent;
+      transition: color 200ms linear;
+    }
+  }
+
+  .navbar-container {
+    background-color: colors.$dracula-header-bg-color;
+    transition: background-color 200ms linear;
+
+    .logo-container {
+      a {
+        color: colors.$dracula-tertiaryAccent;
+        transition: color 200ms linear;
+      }
+    }
+
+    .nav-list {
+      a {
+        color: colors.$dracula-textMain;
+        transition: color 200ms linear;
+      }
+
+      li:nth-child(1) {
+        span {
+          color: colors.$dracula-secondaryAccent;
+          transition: color 200ms linear;
+        }
+      }
+
+      li:nth-child(2) {
+        span {
+          color: colors.$dracula-tertiaryAccent;
+          transition: color 200ms linear;
+        }
+      }
+
+      li:nth-child(3) {
+        span {
+          color: colors.$dracula-primaryAccent;
+          transition: color 200ms linear;
+        }
+      }
+    }
+
+    .nav-toggle-container {
+      .toggle-button-container {
+        .toggle-button {
+          .hamburger {
+            background: colors.$dracula-primaryAccent;
+
+            &::before {
+              background: colors.$dracula-primaryAccent;
+            }
+
+            &::after {
+              background: colors.$dracula-primaryAccent;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .theme-container {
+    .theme-list-container {
+      button {
+        color: colors.$dracula-textMain;
+        transition: color 200ms linear;
+      }
+
+      li {
+        span {
+          color: colors.$dracula-secondaryAccent;
+          transition: color 200ms linear;
+        }
+      }
+
+      .theme-list {
+        background-color: colors.$dracula-theme-list-bg;
+        transition: background-color 200ms linear;
+        backdrop-filter: blur(15px);
+      }
+    }
+  }
+
+  .toggle-button-container {
+    button {
+      font-family: fonts.$MajorMono;
+      color: colors.$dracula-secondaryAccent;
+      transition: color 200ms linear;
+
+      &::after {
+        background-color: colors.$dracula-tertiaryAccent;
+        transition: background-color 200ms linear;
+      }
+    }
+  }
+}

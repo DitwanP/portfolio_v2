@@ -14,7 +14,7 @@ export const pageVariants = {
 export const pageTransitions = {
   type: "linear",
   ease: "easeOut",
-  duration: 0.25,
+  duration: 0.5,
 }
 
 export const textAnimateIn = {
@@ -87,19 +87,18 @@ export const themesContainerVariants = {
     },
   },
   closed: {
-    y: 300,
+    y: 600,
     transition: {
-      delay: 0.3,
+      delay: 0.5,
       type: "linear",
       damping: 10,
     },
   },
   outDown: {
-    y: 300,
+    y: 600,
     transition: {
-      type: "spring",
-      stiffness: 400,
-      damping: 40,
+      type: "linear",
+      damping: 10,
     },
   },
 }

@@ -1,214 +1,41 @@
 @use "./colors.scss" as colors;
 @use "./fonts.scss" as fonts;
+@import "./themes/future-funk.scss";
+@import "./themes/dracula.scss";
+@import "./themes/graen.scss";
+@import "./themes/dmg.scss";
+@import "./themes/ryujin.scss";
 
 .app {
   width: 100%;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-
-  // REMOVE THIS BUTTON AFTER THEMES IN PLACE
-  button {
-    font-size: 3rem;
-
-    &:hover {
-      cursor: pointer;
-    }
-  }
 }
 
 /*THEMES*/
 
-// Future Funk
+// Future funk
 .app[theme="future-funk"] {
-  .hero-container,
-  .exp-page-container,
-  .projects-page-container,
-  .contact-page-container {
-    background-color: colors.$ff-bg-color;
-  }
-
-  h1 {
-    color: colors.$ff-primaryAccent;
-
-    span {
-      color: colors.$ff-tertiaryAccent;
-    }
-  }
-
-  h2 {
-    color: colors.$ff-secondaryAccent;
-  }
-
-  h3 {
-    color: colors.$ff-textMain;
-  }
-
-  .name-chars,
-  .plain-title {
-    &:hover {
-      color: colors.$ff-tertiaryAccent;
-    }
-  }
-
-  .navbar-container {
-    background-color: colors.$ff-header-bg-color;
-
-    .logo-container {
-      a {
-        color: colors.$ff-tertiaryAccent;
-      }
-    }
-
-    .nav-list {
-      a {
-        color: colors.$ff-textMain;
-      }
-
-      li:nth-child(1) {
-        span {
-          color: colors.$ff-secondaryAccent;
-        }
-      }
-
-      li:nth-child(2) {
-        span {
-          color: colors.$ff-tertiaryAccent;
-        }
-      }
-
-      li:nth-child(3) {
-        span {
-          color: colors.$ff-primaryAccent;
-        }
-      }
-    }
-  }
-
-  .theme-container {
-    .theme-list-container {
-      button {
-        color: colors.$ff-textMain;
-      }
-
-      li {
-        span {
-          color: colors.$ff-tertiaryAccent;
-        }
-      }
-
-      .theme-list {
-        background-color: colors.$ff-theme-list-bg;
-        backdrop-filter: blur(10px);
-      }
-    }
-  }
-
-  .toggle-button-container {
-    button {
-      font-family: fonts.$MajorMono;
-      color: colors.$ff-secondaryAccent;
-
-      &::after {
-        background-color: colors.$ff-tertiaryAccent;
-      }
-    }
-  }
+  @include future-funk;
 }
 
 // Dracula
 .app[theme="dracula"] {
-  .hero-container,
-  .exp-page-container,
-  .projects-page-container,
-  .contact-page-container {
-    background-color: colors.$dracula-bg-color;
-  }
+  @include dracula;
+}
 
-  h1 {
-    color: colors.$dracula-primaryAccent;
+// RyujinScales
+.app[theme="ryujin"] {
+  @include ryujin;
+}
 
-    span {
-      color: colors.$dracula-tertiaryAccent;
-    }
-  }
+// Graen
+.app[theme="graen"] {
+  @include graen;
+}
 
-  h2 {
-    color: colors.$dracula-secondaryAccent;
-  }
-
-  h3 {
-    color: colors.$dracula-textMain;
-  }
-
-  .name-chars,
-  .plain-title {
-    &:hover {
-      color: colors.$dracula-tertiaryAccent;
-    }
-  }
-
-  .navbar-container {
-    background-color: colors.$dracula-header-bg-color;
-
-    .logo-container {
-      a {
-        color: colors.$dracula-tertiaryAccent;
-      }
-    }
-
-    .nav-list {
-      a {
-        color: colors.$dracula-textMain;
-      }
-
-      li:nth-child(1) {
-        span {
-          color: colors.$dracula-secondaryAccent;
-        }
-      }
-
-      li:nth-child(2) {
-        span {
-          color: colors.$dracula-tertiaryAccent;
-        }
-      }
-
-      li:nth-child(3) {
-        span {
-          color: colors.$dracula-primaryAccent;
-        }
-      }
-    }
-  }
-
-  .theme-container {
-    .theme-list-container {
-      button {
-        color: colors.$dracula-textMain;
-      }
-
-      li {
-        span {
-          color: colors.$dracula-secondaryAccent;
-        }
-      }
-
-      .theme-list {
-        background-color: colors.$dracula-theme-list-bg;
-        backdrop-filter: blur(10px);
-      }
-    }
-  }
-
-  .toggle-button-container {
-    button {
-      font-family: fonts.$MajorMono;
-      color: colors.$dracula-secondaryAccent;
-
-      &::after {
-        background-color: colors.$dracula-tertiaryAccent;
-      }
-    }
-  }
+// DMG
+.app[theme="dmg"] {
+  @include dmg;
 }

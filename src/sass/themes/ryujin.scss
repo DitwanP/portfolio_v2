@@ -1,0 +1,134 @@
+@use "../colors.scss" as colors;
+@use "../fonts.scss" as fonts;
+
+// Ryujin
+@mixin ryujin {
+  .hero-container,
+  .exp-page-container,
+  .projects-page-container,
+  .contact-page-container {
+    background-color: colors.$rs-bg-color;
+    transition: background-color 200ms linear;
+  }
+
+  h1 {
+    color: colors.$rs-primaryAccent;
+    transition: color 200ms linear;
+
+    span {
+      color: colors.$rs-tertiaryAccent;
+      transition: color 200ms linear;
+    }
+  }
+
+  h2 {
+    color: colors.$rs-textMain;
+    transition: color 200ms linear;
+  }
+
+  h3 {
+    color: colors.$rs-textMain;
+    transition: color 200ms linear;
+  }
+
+  .name-chars,
+  .plain-title {
+    &:hover {
+      color: colors.$rs-tertiaryAccent;
+      transition: color 200ms linear;
+    }
+  }
+
+  .navbar-container {
+    background-color: colors.$rs-header-bg-color;
+    transition: background-color 200ms linear;
+
+    .logo-container {
+      a {
+        color: colors.$rs-tertiaryAccent;
+        transition: color 200ms linear;
+      }
+    }
+
+    .nav-list {
+      a {
+        color: colors.$rs-textMain;
+        transition: color 200ms linear;
+      }
+
+      li:nth-child(1) {
+        span {
+          color: colors.$rs-secondaryAccent;
+          transition: color 200ms linear;
+        }
+      }
+
+      li:nth-child(2) {
+        span {
+          color: colors.$rs-tertiaryAccent;
+          transition: color 200ms linear;
+        }
+      }
+
+      li:nth-child(3) {
+        span {
+          color: colors.$rs-primaryAccent;
+          transition: color 200ms linear;
+        }
+      }
+    }
+
+    .nav-toggle-container {
+      .toggle-button-container {
+        .toggle-button {
+          .hamburger {
+            background: colors.$rs-primaryAccent;
+
+            &::before {
+              background: colors.$rs-primaryAccent;
+            }
+
+            &::after {
+              background: colors.$rs-primaryAccent;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .theme-container {
+    .theme-list-container {
+      button {
+        color: colors.$rs-textMain;
+        transition: color 200ms linear;
+      }
+
+      li {
+        span {
+          color: colors.$rs-primaryAccent;
+          transition: color 200ms linear;
+        }
+      }
+
+      .theme-list {
+        background-color: colors.$rs-theme-list-bg;
+        transition: background-color 200ms linear;
+        backdrop-filter: blur(15px);
+      }
+    }
+  }
+
+  .toggle-button-container {
+    button {
+      font-family: fonts.$MajorMono;
+      color: colors.$rs-textMain;
+      transition: color 200ms linear;
+
+      &::after {
+        background-color: colors.$rs-tertiaryAccent;
+        transition: background-color 200ms linear;
+      }
+    }
+  }
+}

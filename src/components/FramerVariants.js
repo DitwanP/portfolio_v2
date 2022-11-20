@@ -13,8 +13,8 @@ export const pageVariants = {
 
 export const pageTransitions = {
   type: "linear",
-  ease: "easeInOut",
-  duration: 0.5,
+  ease: "easeOut",
+  duration: 0.25,
 }
 
 export const textAnimateIn = {
@@ -43,6 +43,22 @@ export const navAnimateIn = {
   },
 }
 
+// themes
+export const themesAnimateIn = {
+  in: {
+    opacity: 1,
+    y: 0,
+  },
+  notIn: {
+    opacity: 0,
+    y: 500,
+  },
+  outDown: {
+    opacity: 0,
+    y: 500,
+  },
+}
+
 export const navContainerVariants = {
   open: (height = 1000) => ({
     clipPath: `circle(${height * 2 + 200}px at ${window.innerWidth}px -10px)`,
@@ -56,6 +72,31 @@ export const navContainerVariants = {
     clipPath: `circle(1px at ${window.innerWidth}px -10px)`,
     transition: {
       delay: 0.3,
+      type: "spring",
+      stiffness: 400,
+      damping: 40,
+    },
+  },
+}
+
+export const themesContainerVariants = {
+  open: {
+    y: 0,
+    transition: {
+      type: "linear",
+    },
+  },
+  closed: {
+    y: 300,
+    transition: {
+      delay: 0.3,
+      type: "linear",
+      damping: 10,
+    },
+  },
+  outDown: {
+    y: 300,
+    transition: {
       type: "spring",
       stiffness: 400,
       damping: 40,
@@ -90,6 +131,12 @@ export const listItemVariants = {
 }
 
 export const navTransitions = {
+  ease: "easeInOut",
+  duration: 0.5,
+  delay: 1.8,
+}
+
+export const themesTransitions = {
   ease: "easeInOut",
   duration: 0.5,
   delay: 1.8,

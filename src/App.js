@@ -7,6 +7,7 @@ import "./sass/app.scss"
 function App() {
   const ref = useRef(null)
   const [appElement, setAppElement] = useState(null)
+  const defaultTheme = "future-funk"
 
   const switchTheme = (theme) => {
     console.log("in switch theme function")
@@ -26,7 +27,7 @@ function App() {
   }, [])
 
   return (
-    <div className="app" ref={ref}>
+    <div className="app" ref={ref} theme={defaultTheme}>
       <Router>
         <AnimatedRoutes switchTheme={switchTheme} />
       </Router>

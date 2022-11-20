@@ -6,24 +6,28 @@ $white-dim: #c3cccf;
 $white-dimmest: #bbc3c7;
 $background: #0f1f2c;
 $background-dark: #081016;
-$shadow: #0c0c0c;
 $teal-accent: #58e6d7;
 $teal-accent-dim: #0d3744;
 $orange-accent: #d44729;
 $yellow-accent: #f4bc46;
+$shadow: rgba(0, 0, 0, 0.348);
 
 // Future Funk
 $ff-bg-color: #2e1a47;
+$ff-header-bg-color: rgba(46, 26, 71, 0.85);
 $ff-textMain: #f7f2ea; // paragraphs etc.
 $ff-textSecondary: #f7f2ea;
 $ff-primaryAccent: #f04e98; // main accent color.
 $ff-secondaryAccent: #a4dbe8; // secondary accent color.
 $ff-tertiaryAccent: #f6eb61;
+$ff-theme-list-bg: rgba(240, 78, 151, 0.4);
 
 // Dracula
 $dracula-bg-color: #282a36;
+$dracula-header-bg-color: rgba(40, 42, 54, 0.85);
 $dracula-textMain: #f2f2f2; // paragraphs etc.
 $dracula-textSecondary: #f7f2ea;
 $dracula-primaryAccent: #bd93f9; // main accent color.
 $dracula-secondaryAccent: #50fa7b; // secondary accent color.
-$dracula-tertiaryAccent: #f1fa8c;
+$dracula-tertiaryAccent: #ec75c4;
+$dracula-theme-list-bg: rgba(189, 147, 249, 0.4);

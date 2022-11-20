@@ -15,24 +15,24 @@ import "../sass/themes.scss"
 function AnimatedRoutes(props) {
   const location = useLocation()
   const [showNavList, setShowNavList] = useState(false)
-  const [showThemesModal, setShowThemesModal] = useState(true)
+  const [showThemesModal, setShowThemesModal] = useState(false)
 
   return (
     <div className={showNavList ? "nav-open" : "nav-close"}>
+      <NavBar showNavList={showNavList} setShowNavList={setShowNavList} />
       <AnimatePresence mode="wait">
-        <NavBar showNavList={showNavList} setShowNavList={setShowNavList} />
         <Routes location={location} key={location.pathname}>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/work-and-skills" element={<WorkAndSkills />} />
           <Route exact path="/projects" element={<Projects />} />
           <Route exact path="/contact" element={<Contact />} />
         </Routes>
+        <ThemesModal
+          switchTheme={props.switchTheme}
+          showThemesModal={showThemesModal}
+          setShowThemesModal={setShowThemesModal}
+        />
       </AnimatePresence>
-      <ThemesModal
-        switchTheme={props.switchTheme}
-        showThemesModal={showThemesModal}
-        setShowThemesModal={setShowThemesModal}
-      />
     </div>
   )
 }

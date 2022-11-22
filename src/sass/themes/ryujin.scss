@@ -31,6 +31,12 @@
     transition: color 200ms linear;
   }
 
+  .details {
+    li::before {
+      color: colors.$rs-primaryAccent;
+    }
+  }
+
   .name-chars,
   .plain-title {
     &:hover {

@@ -45,6 +45,7 @@ const ThemesModal = (props) => {
             <motion.ul variants={listVariants} className="theme-list">
               {orderedThemes.map((theme, index) => (
                 <motion.li
+                  key={index}
                   variants={listItemVariants}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}

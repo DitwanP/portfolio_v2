@@ -32,8 +32,14 @@
   }
 
   .details {
-    li::before {
+    span {
       color: colors.$rs-primaryAccent;
+    }
+  }
+
+  .skill-list {
+    .skill {
+      background-color: colors.$rs-theme-list-bg;
     }
   }
 

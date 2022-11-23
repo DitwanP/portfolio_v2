@@ -9,8 +9,8 @@ import "../sass/app.scss"
 import {
   navAnimateIn,
   navContainerVariants,
-  listVariants,
-  listItemVariants,
+  navListVariants,
+  navListItemVariants,
   navTransitions,
 } from "./FramerVariants"
 
@@ -40,9 +40,9 @@ const NavBar = (props) => {
         className="nav-list-container"
         variants={navContainerVariants}
       >
-        <motion.ul variants={listVariants} className="nav-list">
+        <motion.ul variants={navListVariants} className="nav-list">
           <motion.li
-            variants={listItemVariants}
+            variants={navListItemVariants}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -51,7 +51,7 @@ const NavBar = (props) => {
             </Link>
           </motion.li>
           <motion.li
-            variants={listItemVariants}
+            variants={navListItemVariants}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -60,7 +60,7 @@ const NavBar = (props) => {
             </Link>
           </motion.li>
           <motion.li
-            variants={listItemVariants}
+            variants={navListItemVariants}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -81,9 +81,9 @@ const NavBar = (props) => {
           className="nav-list-container-mobile"
           variants={navContainerVariants}
         >
-          <motion.ul variants={listVariants} className="nav-list-mobile">
+          <motion.ul variants={navListVariants} className="nav-list-mobile">
             <motion.li
-              variants={listItemVariants}
+              variants={navListItemVariants}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -92,7 +92,7 @@ const NavBar = (props) => {
               </Link>
             </motion.li>
             <motion.li
-              variants={listItemVariants}
+              variants={navListItemVariants}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -101,7 +101,7 @@ const NavBar = (props) => {
               </Link>
             </motion.li>
             <motion.li
-              variants={listItemVariants}
+              variants={navListItemVariants}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >

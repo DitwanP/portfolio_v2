@@ -6,23 +6,24 @@
   margin-top: 9rem;
   height: calc(100vh - 9rem);
   width: 100%;
+  padding: 0px 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow: hidden;
 
+  @media (max-width: sizes.$small-tablet) {
+    padding: 0px 2.5rem;
+  }
+
   .hero-content {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 5px;
-    padding: 0px 30px;
-
-    @media screen and (min-width: sizes.$tablet) {
-      width: 85%;
-    }
   }
 }
 

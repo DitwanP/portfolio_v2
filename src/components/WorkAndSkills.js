@@ -1,26 +1,20 @@
-import React, { useState } from "react"
+import React from "react"
 import { motion } from "framer-motion"
 
 import { jobsInfo } from "../assets/WorkInfo"
-import { pageVariants, pageTransitions, textAnimateIn } from "./FramerVariants"
+import { skillsInfo } from "../assets/SkillsInfo"
+import {
+  pageVariants,
+  pageTransitions,
+  textAnimateIn,
+  listVariants,
+  listItemVariants,
+} from "./FramerVariants"
 
 import "../sass/work-and-skills.scss"
 import "../sass/app.scss"
 
 const WorkAndSkills = () => {
-  const [plainTitleWork, togglePlainTitleWork] = useState(false)
-  const [plainTitleSkills, togglePlainTitleSkills] = useState(false)
-
-  const togglePlainWorkTitle = () => {
-    console.log("Plain title? ", plainTitleWork)
-    togglePlainTitleWork(!plainTitleWork)
-  }
-
-  const togglePlainSkillsTitle = () => {
-    console.log("Plain title? ", plainTitleSkills)
-    togglePlainTitleSkills(!plainTitleSkills)
-  }
-
   return (
     <motion.div
       className="exp-page-container"
@@ -36,25 +30,14 @@ const WorkAndSkills = () => {
           initial="start"
           animate="end"
           variants={textAnimateIn}
-          transition={{ ease: "easeIn", duration: 0.5, delay: 1.8 }}
+          transition={{ ease: "easeIn", duration: 0.5, delay: 0.4 }}
         >
-          <motion.div className="title" aria-label="experience">
-            <h1
-              onMouseEnter={togglePlainWorkTitle}
-              className={plainTitleWork ? "plain-title-hidden" : "plain-title"}
-            >
-              WheRe i've WoRked
-            </h1>
-            <h1
-              onMouseLeave={togglePlainWorkTitle}
-              className={plainTitleWork ? "plain-title" : "plain-title-hidden"}
-            >
-              where i've worked
-            </h1>
+          <motion.div className="title">
+            <h1 className="plain-title">where i've worked</h1>
           </motion.div>
           <motion.div className="work">
-            {jobsInfo.map((job) => (
-              <div className="job">
+            {jobsInfo.map((job, index) => (
+              <div className="job" key={index}>
                 <div className="position-and-company">
                   <div className="company">
                     <h1 className="label">Company:</h1>
@@ -76,13 +59,17 @@ const WorkAndSkills = () => {
                   </div>
                 </div>
                 <div className="details">
-                  <ul>
-                    {job.bullets.map((bullet) => (
-                      <li>
-                        <h3 className="info">{bullet}</h3>
-                      </li>
+                  <motion.ul variants={listVariants}>
+                    {job.bullets.map((detail, index) => (
+                      <motion.li key={index} variants={listItemVariants}>
+                        <h3 className="info">
+                          <span>▹</span>
+                          &nbsp;
+                          {detail}
+                        </h3>
+                      </motion.li>
                     ))}
-                  </ul>
+                  </motion.ul>
                 </div>
               </div>
             ))}
@@ -93,29 +80,19 @@ const WorkAndSkills = () => {
           variants={textAnimateIn}
           initial="start"
           animate="end"
-          transition={{ ease: "easeIn", duration: 0.5, delay: 1.4 }}
+          transition={{ ease: "easeIn", duration: 0.5, delay: 0.8 }}
         >
-          <motion.div
-            className="title"
-            aria-label="experience"
-            whileHover={{ scale: 1.1 }}
-          >
-            <h1
-              onMouseEnter={togglePlainSkillsTitle}
-              className={
-                plainTitleSkills ? "plain-title-hidden" : "plain-title"
-              }
-            >
-              skILLs
-            </h1>
-            <h1
-              onMouseLeave={togglePlainSkillsTitle}
-              className={
-                plainTitleSkills ? "plain-title" : "plain-title-hidden"
-              }
-            >
-              skills
-            </h1>
+          <motion.div className="title">
+            <h1 className="plain-title">skills</h1>
+          </motion.div>
+          <motion.div className="skills">
+            <motion.ul variants={listVariants} className="skill-list">
+              {skillsInfo.map((skill, index) => (
+                <motion.li key={index} variants={listItemVariants}>
+                  <h2 className="skill">{skill}</h2>
+                </motion.li>
+              ))}
+            </motion.ul>
           </motion.div>
         </motion.div>
       </section>

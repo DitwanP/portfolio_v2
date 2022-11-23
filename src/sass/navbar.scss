@@ -9,9 +9,13 @@
   align-items: center;
   position: fixed;
   inset: 0;
-  padding: 0px 30px;
+  padding: 0px 5rem;
   z-index: 2;
   box-shadow: 0px 10px 70px 0px colors.$shadow;
+
+  @media (max-width: sizes.$small-tablet) {
+    padding: 0px 2.5rem;
+  }
 
   .logo-container {
     a {
@@ -25,7 +29,7 @@
   .nav-list-container {
     height: 100%;
 
-    @media (max-width: sizes.$small-tablet) {
+    @media (max-width: sizes.$tablet) {
       display: none;
     }
 
@@ -65,7 +69,7 @@
     color: colors.$white;
     display: none;
 
-    @media (max-width: sizes.$small-tablet) {
+    @media (max-width: sizes.$tablet) {
       display: flex;
       justify-content: flex-end;
     }

@@ -103,6 +103,32 @@ export const themesContainerVariants = {
   },
 }
 
+export const navListVariants = {
+  open: {
+    transition: { staggerChildren: 0.07, delayChildren: 0.5 },
+  },
+  closed: {
+    transition: { staggerChildren: 0.05, staggerDirection: -1 },
+  },
+}
+
+export const navListItemVariants = {
+  in: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      y: { stiffness: 1000, velocity: -100 },
+    },
+  },
+  notIn: {
+    y: 50,
+    opacity: 0,
+    transition: {
+      y: { stiffness: 1000 },
+    },
+  },
+}
+
 export const listVariants = {
   open: {
     transition: { staggerChildren: 0.07, delayChildren: 0.5 },
@@ -132,7 +158,6 @@ export const listItemVariants = {
 export const navTransitions = {
   ease: "easeInOut",
   duration: 0.5,
-  delay: 1.8,
 }
 
 export const themesTransitions = {

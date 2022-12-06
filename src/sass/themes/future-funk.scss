@@ -36,6 +36,12 @@
     transition: color 200ms linear;
   }
 
+  .skill-list {
+    .skill {
+      background-color: colors.$ff-theme-list-bg;
+    }
+  }
+
   .name-chars,
   .plain-title {
     &:hover {
@@ -87,6 +93,23 @@
         span {
           color: colors.$ff-primaryAccent;
           transition: color 200ms linear;
+        }
+      }
+    }
+
+    .nav-list-container-mobile {
+      background-color: colors.$ff-theme-list-bg;
+      transition: background-color 200ms linear;
+    }
+
+    .nav-list-mobile {
+      li {
+        a {
+          color: colors.$ff-textMain !important;
+
+          span {
+            color: colors.$ff-tertiaryAccent;
+          }
         }
       }
     }

@@ -75,7 +75,7 @@
     }
 
     .nav-list-container-mobile {
-      background-color: colors.$teal-accent-dim;
+      backdrop-filter: blur(40px);
       width: 100vw;
       height: 100vh;
       position: absolute;
@@ -84,6 +84,7 @@
       justify-content: center;
       align-items: center;
       z-index: 1;
+      overflow: hidden;
 
       .nav-list-mobile {
         padding: 0;
@@ -91,7 +92,7 @@
         flex-direction: column;
         text-align: center;
         list-style: none;
-        gap: 3.5rem;
+        gap: 6rem;
         z-index: 2;
 
         li {
@@ -107,7 +108,7 @@
 
           span {
             font-family: fonts.$NotoSansMono;
-            font-size: 2.4rem;
+            font-size: 1.6rem;
             color: colors.$orange-accent;
           }
 

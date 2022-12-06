@@ -88,7 +88,7 @@ const NavBar = (props) => {
               whileTap={{ scale: 0.95 }}
             >
               <Link to="/work-and-skills" onClick={toggleNav}>
-                <span>01.</span>WORK/SKILLS
+                <span>01.</span>work/skill
               </Link>
             </motion.li>
             <motion.li
@@ -97,7 +97,7 @@ const NavBar = (props) => {
               whileTap={{ scale: 0.95 }}
             >
               <Link to="/projects" onClick={toggleNav}>
-                <span>02.</span>PROJECTS
+                <span>02.</span>projects
               </Link>
             </motion.li>
             <motion.li
@@ -106,7 +106,7 @@ const NavBar = (props) => {
               whileTap={{ scale: 0.95 }}
             >
               <Link to="/contact" onClick={toggleNav}>
-                <span>03.</span>CONTACT
+                <span>03.</span>contact
               </Link>
             </motion.li>
           </motion.ul>

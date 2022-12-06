@@ -60,21 +60,20 @@ export const themesAnimateIn = {
 }
 
 export const navContainerVariants = {
-  open: (height = 1000) => ({
-    clipPath: `circle(${height * 2 + 200}px at ${window.innerWidth}px -10px)`,
+  open: {
+    x: 0,
     transition: {
-      type: "spring",
-      stiffness: 20,
+      type: "easeInOut",
+      stiffness: 50,
       restDelta: 2,
     },
-  }),
+  },
   closed: {
-    clipPath: `circle(1px at ${window.innerWidth}px -10px)`,
+    x: 500,
     transition: {
-      delay: 0.3,
-      type: "spring",
-      stiffness: 400,
-      damping: 40,
+      type: "easeInOut",
+      stiffness: 50,
+      restDelta: 2,
     },
   },
 }

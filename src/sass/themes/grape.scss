@@ -30,6 +30,12 @@
     transition: color 200ms linear;
   }
 
+  .skill-list {
+    .skill {
+      background-color: colors.$grape-theme-list-bg;
+    }
+  }
+
   .name-chars,
   .plain-title {
     &:hover {
@@ -85,6 +91,23 @@
       }
     }
 
+    .nav-list-container-mobile {
+      background-color: colors.$grape-theme-list-bg;
+      transition: background-color 200ms linear;
+    }
+
+    .nav-list-mobile {
+      li {
+        a {
+          color: colors.$grape-textMain !important;
+
+          span {
+            color: colors.$grape-primaryAccent;
+          }
+        }
+      }
+    }
+
     .nav-toggle-container {
       .toggle-button-container {
         .toggle-button {
@@ -113,7 +136,7 @@
 
       li {
         span {
-          color: colors.$grape-textMain;
+          color: colors.$grape-primaryAccent;
           transition: color 200ms linear;
         }
       }

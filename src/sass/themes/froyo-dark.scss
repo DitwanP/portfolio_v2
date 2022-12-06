@@ -1,93 +1,110 @@
 @use "../colors.scss" as colors;
 @use "../fonts.scss" as fonts;
 
-@mixin dmg {
+@mixin froyo-dark {
   .hero-container,
   .exp-page-container,
   .projects-page-container,
   .contact-page-container {
-    background-color: colors.$dmg-bg-color;
+    background-color: colors.$fd-bg-color;
     transition: background-color 200ms linear;
   }
 
   h1 {
-    color: colors.$dmg-primaryAccent;
+    color: colors.$fd-primaryAccent;
     transition: color 200ms linear;
 
     span {
-      color: colors.$dmg-tertiaryAccent;
+      color: colors.$fd-tertiaryAccent;
       transition: color 200ms linear;
     }
   }
 
   h2 {
-    color: colors.$dmg-secondaryAccent;
+    color: colors.$fd-secondaryAccent;
     transition: color 200ms linear;
   }
 
   h3 {
-    color: colors.$dmg-textMain;
+    color: colors.$fd-textMain;
     transition: color 200ms linear;
+  }
+
+  .skill-list {
+    .skill {
+      background-color: colors.$fd-theme-list-bg;
+    }
   }
 
   .name-chars,
   .plain-title {
     &:hover {
-      color: colors.$dmg-tertiaryAccent;
+      color: colors.$fd-tertiaryAccent;
       transition: color 200ms linear;
     }
   }
 
   .navbar-container {
-    background-color: colors.$dmg-header-bg-color;
+    background-color: colors.$fd-header-bg-color;
     transition: background-color 200ms linear;
 
     .logo-container {
       a {
-        color: colors.$dmg-tertiaryAccent;
+        color: colors.$fd-tertiaryAccent;
         transition: color 200ms linear;
 
         &:hover {
-          color: colors.$dmg-secondaryAccent;
+          color: colors.$fd-secondaryAccent;
         }
       }
     }
 
     .nav-list {
       a {
-        color: colors.$dmg-textMain;
+        color: colors.$fd-textMain;
         transition: color 200ms linear;
 
         &:hover {
-          color: colors.$dmg-primaryAccent;
+          color: colors.$fd-secondaryAccent;
         }
       }
 
       li:nth-child(1) {
         span {
-          color: colors.$dmg-secondaryAccent;
+          color: colors.$fd-primaryAccent;
           transition: color 200ms linear;
         }
       }
 
       li:nth-child(2) {
         span {
-          color: colors.$dmg-secondaryAccent;
+          color: colors.$fd-secondaryAccent;
           transition: color 200ms linear;
         }
       }
 
       li:nth-child(3) {
         span {
-          color: colors.$dmg-secondaryAccent;
+          color: colors.$fd-tertiaryAccent;
           transition: color 200ms linear;
         }
       }
     }
 
-    .nav-toggle-container {
-      span {
-        background: red;
+    .nav-list-container-mobile {
+      background-color: colors.$fd-theme-list-bg;
+      transition: background-color 200ms linear;
+    }
+
+    .nav-list-mobile {
+      li {
+        a {
+          color: colors.$fd-textMain !important;
+
+          span {
+            color: colors.$fd-primaryAccent;
+          }
+        }
       }
     }
 
@@ -95,14 +112,14 @@
       .toggle-button-container {
         .toggle-button {
           .hamburger {
-            background: colors.$dmg-primaryAccent;
+            background: colors.$fd-primaryAccent;
 
             &::before {
-              background: colors.$dmg-primaryAccent;
+              background: colors.$fd-primaryAccent;
             }
 
             &::after {
-              background: colors.$dmg-primaryAccent;
+              background: colors.$fd-primaryAccent;
             }
           }
         }
@@ -113,19 +130,19 @@
   .theme-container {
     .theme-list-container {
       button {
-        color: colors.$dmg-textMain;
+        color: colors.$fd-textMain;
         transition: color 200ms linear;
       }
 
       li {
         span {
-          color: colors.$dmg-primaryAccent;
+          color: colors.$fd-primaryAccent;
           transition: color 200ms linear;
         }
       }
 
       .theme-list {
-        background-color: colors.$dmg-theme-list-bg;
+        background-color: colors.$fd-theme-list-bg;
         transition: background-color 200ms linear;
         backdrop-filter: blur(15px);
       }
@@ -135,11 +152,11 @@
   .toggle-button-container {
     button {
       font-family: fonts.$MajorMono;
-      color: colors.$dmg-textMain;
+      color: colors.$fd-textMain;
       transition: color 200ms linear;
 
       &::after {
-        background-color: colors.$dmg-tertiaryAccent;
+        background-color: colors.$fd-tertiaryAccent;
         transition: background-color 200ms linear;
       }
     }

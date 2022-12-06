@@ -16,7 +16,7 @@ const ThemesModal = (props) => {
   const showThemesModal = props.showThemesModal
   const setShowThemesModal = props.setShowThemesModal
 
-  const themes = ["dmg", "future-funk", "ryujin", "grape", "dracula"]
+  const themes = ["froyo-dark", "future-funk", "ryujin", "grape", "dracula"]
   const orderedThemes = themes.sort()
 
   const toggleNav = () => {
@@ -61,7 +61,7 @@ const ThemesModal = (props) => {
           <div className="toggle-button-container" onClick={toggleNav}>
             <button className="toggle-button">
               <motion.span
-                className="hamburger"
+                className="theme-container-button-title"
                 whileHover={{ y: -10 }}
                 whileTap={{ scale: 0.95 }}
               >

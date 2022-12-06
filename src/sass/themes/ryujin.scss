@@ -98,6 +98,23 @@
       }
     }
 
+    .nav-list-container-mobile {
+      background-color: colors.$rs-theme-list-bg;
+      transition: background-color 200ms linear;
+    }
+
+    .nav-list-mobile {
+      li {
+        a {
+          color: colors.$rs-textMain !important;
+
+          span {
+            color: colors.$rs-primaryAccent;
+          }
+        }
+      }
+    }
+
     .nav-toggle-container {
       .toggle-button-container {
         .toggle-button {

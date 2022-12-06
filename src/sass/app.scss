@@ -3,7 +3,7 @@
 @import "./themes/future-funk.scss";
 @import "./themes/dracula.scss";
 @import "./themes/grape.scss";
-@import "./themes/dmg.scss";
+@import "./themes/froyo-dark.scss";
 @import "./themes/ryujin.scss";
 
 .app {
@@ -36,6 +36,6 @@
 }
 
 // DMG
-.app[theme="dmg"] {
-  @include dmg;
+.app[theme="froyo-dark"] {
+  @include froyo-dark;
 }

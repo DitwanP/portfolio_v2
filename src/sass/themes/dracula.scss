@@ -47,6 +47,10 @@
       a {
         color: colors.$dracula-tertiaryAccent;
         transition: color 200ms linear;
+
+        &:hover {
+          color: colors.$dracula-primaryAccent;
+        }
       }
     }
 
@@ -54,6 +58,10 @@
       a {
         color: colors.$dracula-textMain;
         transition: color 200ms linear;
+
+        &:hover {
+          color: colors.$dracula-secondaryAccent;
+        }
       }
 
       li:nth-child(1) {

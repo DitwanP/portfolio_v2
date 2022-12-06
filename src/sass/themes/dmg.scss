@@ -21,7 +21,7 @@
   }
 
   h2 {
-    color: colors.$dmg-textMain;
+    color: colors.$dmg-secondaryAccent;
     transition: color 200ms linear;
   }
 
@@ -46,6 +46,10 @@
       a {
         color: colors.$dmg-tertiaryAccent;
         transition: color 200ms linear;
+
+        &:hover {
+          color: colors.$dmg-secondaryAccent;
+        }
       }
     }
 
@@ -53,6 +57,10 @@
       a {
         color: colors.$dmg-textMain;
         transition: color 200ms linear;
+
+        &:hover {
+          color: colors.$dmg-primaryAccent;
+        }
       }
 
       li:nth-child(1) {
@@ -64,14 +72,14 @@
 
       li:nth-child(2) {
         span {
-          color: colors.$dmg-tertiaryAccent;
+          color: colors.$dmg-secondaryAccent;
           transition: color 200ms linear;
         }
       }
 
       li:nth-child(3) {
         span {
-          color: colors.$dmg-primaryAccent;
+          color: colors.$dmg-secondaryAccent;
           transition: color 200ms linear;
         }
       }

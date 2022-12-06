@@ -22,7 +22,7 @@
   }
 
   h2 {
-    color: colors.$rs-textMain;
+    color: colors.$rs-secondaryAccent;
     transition: color 200ms linear;
   }
 
@@ -59,6 +59,10 @@
       a {
         color: colors.$rs-tertiaryAccent;
         transition: color 200ms linear;
+
+        &:hover {
+          color: colors.$rs-secondaryAccent;
+        }
       }
     }
 
@@ -66,6 +70,10 @@
       a {
         color: colors.$rs-textMain;
         transition: color 200ms linear;
+
+        &:hover {
+          color: colors.$rs-secondaryAccent;
+        }
       }
 
       li:nth-child(1) {

@@ -40,21 +40,21 @@ const WorkAndSkills = () => {
               <div className="job" key={index}>
                 <div className="position-and-company">
                   <div className="company">
-                    <h1 className="label">Company:</h1>
+                    <h2 className="label">Company:</h2>
                     <h3 className="info">{job.company}</h3>
                   </div>
                   <div className="position">
-                    <h1 className="label">Position:</h1>
+                    <h2 className="label">Position:</h2>
                     <h3 className="info">{job.position}</h3>
                   </div>
                 </div>
                 <div className="dates">
                   <div className="start_date">
-                    <h1 className="label">Start-date:</h1>
+                    <h2 className="label">Start-date:</h2>
                     <h3 className="info">{job.start_date}</h3>
                   </div>
                   <div className="end_date">
-                    <h1 className="label">End-date:</h1>
+                    <h2 className="label">End-date:</h2>
                     <h3 className="info">{job.end_date}</h3>
                   </div>
                 </div>

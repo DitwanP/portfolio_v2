@@ -16,7 +16,7 @@ const ThemesModal = (props) => {
   const showThemesModal = props.showThemesModal
   const setShowThemesModal = props.setShowThemesModal
 
-  const themes = ["dmg", "future-funk", "ryujin", "graen", "dracula"]
+  const themes = ["dmg", "future-funk", "ryujin", "grape", "dracula"]
   const orderedThemes = themes.sort()
 
   const toggleNav = () => {

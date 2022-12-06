@@ -2,7 +2,7 @@
 @use "./fonts.scss" as fonts;
 @import "./themes/future-funk.scss";
 @import "./themes/dracula.scss";
-@import "./themes/graen.scss";
+@import "./themes/grape.scss";
 @import "./themes/dmg.scss";
 @import "./themes/ryujin.scss";
 
@@ -30,9 +30,9 @@
   @include ryujin;
 }
 
-// Graen
-.app[theme="graen"] {
-  @include graen;
+// Grape
+.app[theme="grape"] {
+  @include grape;
 }
 
 // DMG

@@ -102,8 +102,10 @@
           a {
             color: colors.$yellow-accent;
             font-family: fonts.$MajorMono;
-            font-size: 2.4rem;
+            font-size: 2rem;
             text-decoration: none;
+            display: flex;
+            flex-direction: column;
           }
 
           span {

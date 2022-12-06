@@ -12,11 +12,18 @@ import {
   themesTransitions,
 } from "./FramerVariants"
 
+export const themes = [
+  "froyo-dark",
+  "future-funk",
+  "ryujin",
+  "grape",
+  "dracula",
+]
+
 const ThemesModal = (props) => {
   const showThemesModal = props.showThemesModal
   const setShowThemesModal = props.setShowThemesModal
 
-  const themes = ["froyo-dark", "future-funk", "ryujin", "grape", "dracula"]
   const orderedThemes = themes.sort()
 
   const toggleNav = () => {

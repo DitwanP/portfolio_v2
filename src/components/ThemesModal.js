@@ -23,11 +23,9 @@ export const themes = [
 const ThemesModal = (props) => {
   const showThemesModal = props.showThemesModal
   const setShowThemesModal = props.setShowThemesModal
-
   const orderedThemes = themes.sort()
 
   const toggleNav = () => {
-    console.log(!showThemesModal)
     setShowThemesModal(!showThemesModal)
   }
 

@@ -36,8 +36,7 @@
     }
   }
 
-  .name-chars,
-  .plain-title {
+  .title {
     &:hover {
       color: colors.$grape-tertiaryAccent;
       transition: color 200ms linear;
@@ -160,5 +159,45 @@
         transition: background-color 200ms linear;
       }
     }
+  }
+
+  .contact-statement {
+    p {
+      color: colors.$grape-textMain;
+      transition: color 200ms linear;
+    }
+  }
+
+  .email-button {
+    a {
+      color: colors.$grape-tertiaryAccent;
+      border-color: colors.$grape-tertiaryAccent !important;
+
+      transition: border-color 200ms linear;
+      transition: color 200ms linear;
+
+      h3 {
+        color: colors.$grape-tertiaryAccent;
+        transition: color 200ms linear;
+      }
+
+      &:hover {
+        color: colors.$grape-secondaryAccent;
+        border-color: colors.$grape-secondaryAccent !important;
+        background-color: colors.$ff-theme-list-bg;
+        transition: background-color 200ms linear;
+        transition: border-color 200ms linear;
+
+        h3 {
+          color: colors.$grape-secondaryAccent;
+          transition: color 200ms linear;
+        }
+      }
+    }
+  }
+
+  .social-links {
+    color: colors.$grape-tertiaryAccent;
+    transition: color 200ms linear;
   }
 }

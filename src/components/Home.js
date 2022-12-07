@@ -89,11 +89,10 @@ const Home = () => {
           transition={{ ease: "easeIn", duration: 0.5, delay: 0.6 }}
         >
           <h3 aria-label="brief about me">
-            I'm an early career software engineer with experience working
-            productively in dynamic environments. I'm a detail-oriented,
-            organized, and reliable team player focused on achieving project
-            objectives with speed and effiency. I'm currently open to exploring
-            new oportunities so feel free to reach out!
+            I'm an early career software engineer that enjoys creating things
+            for the web. I find myself ejoying frontend work the most currently,
+            but I'm a detail-oriented, organized, and reliable team player that
+            can efficiently tackle whatever work comes my way.
           </h3>
         </motion.div>
       </section>

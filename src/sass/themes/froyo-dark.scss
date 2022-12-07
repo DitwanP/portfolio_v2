@@ -161,4 +161,44 @@
       }
     }
   }
+
+  .contact-statement {
+    p {
+      color: colors.$fd-textMain;
+      transition: color 200ms linear;
+    }
+  }
+
+  .email-button {
+    a {
+      color: colors.$fd-tertiaryAccent;
+      border-color: colors.$fd-tertiaryAccent !important;
+
+      transition: border-color 200ms linear;
+      transition: color 200ms linear;
+
+      h3 {
+        color: colors.$fd-tertiaryAccent;
+        transition: color 200ms linear;
+      }
+
+      &:hover {
+        color: colors.$fd-secondaryAccent;
+        border-color: colors.$fd-secondaryAccent !important;
+        background-color: colors.$ff-theme-list-bg;
+        transition: background-color 200ms linear;
+        transition: border-color 200ms linear;
+
+        h3 {
+          color: colors.$fd-secondaryAccent;
+          transition: color 200ms linear;
+        }
+      }
+    }
+  }
+
+  .social-links {
+    color: colors.$fd-tertiaryAccent;
+    transition: color 200ms linear;
+  }
 }

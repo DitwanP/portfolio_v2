@@ -1,17 +1,15 @@
-import React, { useState } from "react"
+import React from "react"
 import { motion } from "framer-motion"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+// import { faLinkedin, faGithubSquare } from "@fortawesome/free-brands-svg-icons"
+import { faPaperPlane } from "@fortawesome/free-solid-svg-icons"
+
 import { pageVariants, pageTransitions, textAnimateIn } from "./FramerVariants"
 
 import "../sass/contact.scss"
 import "../sass/app.scss"
 
 const Contact = () => {
-  const [plainTitleContact, toggleplainTitleContact] = useState(false)
-
-  const togglePlainContactTitle = () => {
-    toggleplainTitleContact(!plainTitleContact)
-  }
-
   return (
     <motion.div
       className="contact-page-container"
@@ -21,38 +19,67 @@ const Contact = () => {
       exit="outDown"
       transition={pageTransitions}
     >
-      <section className="contact-content">
+      <motion.div className="contact-content">
         <motion.div
-          className="contact-container"
+          className="title"
+          aria-label="Contact"
+          whileHover={{ scale: 1.1 }}
           variants={textAnimateIn}
           initial="start"
           animate="end"
           transition={{ ease: "easeIn", duration: 0.5, delay: 1.4 }}
         >
-          <motion.div
-            className="title"
-            aria-label="Contact"
-            whileHover={{ scale: 1.1 }}
-          >
-            <h1
-              onMouseEnter={togglePlainContactTitle}
-              className={
-                plainTitleContact ? "plain-title-hidden" : "plain-title"
-              }
-            >
-              ContAct
-            </h1>
-            <h1
-              onMouseLeave={togglePlainContactTitle}
-              className={
-                plainTitleContact ? "plain-title" : "plain-title-hidden"
-              }
-            >
-              contact
-            </h1>
-          </motion.div>
+          <h1 className="title">Get in toucH</h1>
         </motion.div>
-      </section>
+        <motion.div className="contact-statement">
+          <motion.p
+            variants={textAnimateIn}
+            initial="start"
+            animate="end"
+            transition={{ ease: "easeIn", duration: 0.5, delay: 1 }}
+          >
+            I'm currently working with some amazing people, but I also believe
+            it's time for me to look for new challenges. In my current role,
+            I've demonstrated my ability to meet timelines and objectives in a
+            fast-paced and dynamic environment. I'm confident I can do the same
+            wherever I end up.
+          </motion.p>
+          <motion.p
+            variants={textAnimateIn}
+            initial="start"
+            animate="end"
+            transition={{ ease: "easeIn", duration: 0.5, delay: 0.8 }}
+          >
+            I'm open to exploring new oportunities so if you think I would be a
+            good fit for a roll, don't hesitate to reach out!
+          </motion.p>
+        </motion.div>
+        <motion.div
+          className="email-button"
+          variants={textAnimateIn}
+          initial="start"
+          animate="end"
+          transition={{ ease: "easeIn", duration: 0.5, delay: 0.6 }}
+        >
+          <motion.a
+            whileHover={{ scale: 1.1 }}
+            href="mailto:price.ditwan@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faPaperPlane} />
+            <h3>Reach Out</h3>
+          </motion.a>
+        </motion.div>
+        {/* <motion.div className="social-links">
+          <motion.a whileHover={{ scale: 1.1 }}>
+            <FontAwesomeIcon icon={faLinkedin} />
+          </motion.a>
+          <motion.a whileHover={{ scale: 1.1 }}>
+            <FontAwesomeIcon icon={faGithubSquare} />
+          </motion.a>
+        </motion.div> */}
+      </motion.div>
     </motion.div>
   )
 }

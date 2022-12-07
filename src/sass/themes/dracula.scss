@@ -162,4 +162,44 @@
       }
     }
   }
+
+  .contact-statement {
+    p {
+      color: colors.$dracula-textMain;
+      transition: color 200ms linear;
+    }
+  }
+
+  .email-button {
+    a {
+      color: colors.$dracula-tertiaryAccent;
+      border-color: colors.$dracula-tertiaryAccent !important;
+
+      transition: border-color 200ms linear;
+      transition: color 200ms linear;
+
+      h3 {
+        color: colors.$dracula-tertiaryAccent;
+        transition: color 200ms linear;
+      }
+
+      &:hover {
+        color: colors.$dracula-secondaryAccent;
+        border-color: colors.$dracula-secondaryAccent !important;
+        background-color: colors.$ff-theme-list-bg;
+        transition: background-color 200ms linear;
+        transition: border-color 200ms linear;
+
+        h3 {
+          color: colors.$dracula-secondaryAccent;
+          transition: color 200ms linear;
+        }
+      }
+    }
+  }
+
+  .social-links {
+    color: colors.$dracula-tertiaryAccent;
+    transition: color 200ms linear;
+  }
 }

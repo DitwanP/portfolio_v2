@@ -32,8 +32,11 @@
   }
 
   .details {
-    span {
-      color: colors.$rs-primaryAccent;
+    ul {
+      span {
+        color: colors.$rs-secondaryAccent;
+        transition: color 200ms linear;
+      }
     }
   }
 

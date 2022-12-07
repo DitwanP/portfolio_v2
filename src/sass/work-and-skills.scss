@@ -24,11 +24,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 5px;
+    gap: 2.4rem;
 
     @media (max-width: sizes.$phone) {
       justify-content: flex-start;
       margin-top: 3rem;
+      gap: 1rem;
     }
 
     .work-container,

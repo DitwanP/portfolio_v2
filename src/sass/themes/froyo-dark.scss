@@ -30,6 +30,15 @@
     transition: color 200ms linear;
   }
 
+  .details {
+    ul {
+      span {
+        color: colors.$fd-tertiaryAccent;
+        transition: color 200ms linear;
+      }
+    }
+  }
+
   .skill-list {
     .skill {
       background-color: colors.$fd-theme-list-bg;

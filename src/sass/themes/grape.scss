@@ -30,6 +30,15 @@
     transition: color 200ms linear;
   }
 
+  .details {
+    ul {
+      span {
+        color: colors.$grape-secondaryAccent;
+        transition: color 200ms linear;
+      }
+    }
+  }
+
   .skill-list {
     .skill {
       background-color: colors.$grape-theme-list-bg;

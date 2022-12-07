@@ -31,6 +31,15 @@
     transition: color 200ms linear;
   }
 
+  .details {
+    ul {
+      span {
+        color: colors.$dracula-tertiaryAccent;
+        transition: color 200ms linear;
+      }
+    }
+  }
+
   .skill-list {
     .skill {
       background-color: colors.$dracula-theme-list-bg;

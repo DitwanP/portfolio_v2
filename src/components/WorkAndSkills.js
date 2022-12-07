@@ -25,17 +25,23 @@ const WorkAndSkills = () => {
       transition={pageTransitions}
     >
       <section className="exp-content">
-        <motion.div
-          className="work-container"
-          initial="start"
-          animate="end"
-          variants={textAnimateIn}
-          transition={{ ease: "easeIn", duration: 0.5, delay: 0.4 }}
-        >
-          <motion.div className="title">
+        <motion.div className="work-container">
+          <motion.div
+            className="title"
+            initial="start"
+            animate="end"
+            variants={textAnimateIn}
+            transition={{ ease: "easeIn", duration: 0.5, delay: 1.6 }}
+          >
             <h1 className="plain-title">where i've worked</h1>
           </motion.div>
-          <motion.div className="work">
+          <motion.div
+            className="work"
+            initial="start"
+            animate="end"
+            variants={textAnimateIn}
+            transition={{ ease: "easeIn", duration: 0.5, delay: 1.2 }}
+          >
             {jobsInfo.map((job, index) => (
               <div className="job" key={index}>
                 <div className="position-and-company">
@@ -75,17 +81,23 @@ const WorkAndSkills = () => {
             ))}
           </motion.div>
         </motion.div>
-        <motion.div
-          className="skills-container"
-          variants={textAnimateIn}
-          initial="start"
-          animate="end"
-          transition={{ ease: "easeIn", duration: 0.5, delay: 0.8 }}
-        >
-          <motion.div className="title">
+        <motion.div className="skills-container">
+          <motion.div
+            className="title"
+            initial="start"
+            animate="end"
+            variants={textAnimateIn}
+            transition={{ ease: "easeIn", duration: 0.5, delay: 0.8 }}
+          >
             <h1 className="plain-title">skills</h1>
           </motion.div>
-          <motion.div className="skills">
+          <motion.div
+            className="skills"
+            initial="start"
+            animate="end"
+            variants={textAnimateIn}
+            transition={{ ease: "easeIn", duration: 0.5, delay: 0.6 }}
+          >
             <motion.ul variants={listVariants} className="skill-list">
               {skillsInfo.map((skill, index) => (
                 <motion.li key={index} variants={listItemVariants}>

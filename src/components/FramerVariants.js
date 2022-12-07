@@ -69,7 +69,7 @@ export const navContainerVariants = {
     },
   },
   closed: {
-    x: 500,
+    x: 1500,
     transition: {
       type: "easeInOut",
       stiffness: 50,

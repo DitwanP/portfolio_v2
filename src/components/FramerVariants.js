@@ -3,17 +3,17 @@ export const pageVariants = {
     y: 0,
   },
   notIn: {
-    y: 1200,
+    y: 5000,
   },
   outDown: {
     scale: 1,
-    y: 1200,
+    y: 5000,
   },
 }
 
 export const pageTransitions = {
   type: "linear",
-  ease: "easeOut",
+  ease: "easeInOut",
   duration: 0.5,
 }
 

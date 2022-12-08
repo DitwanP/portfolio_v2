@@ -5,7 +5,6 @@
 .exp-page-container {
   margin-top: 9rem;
   height: calc(100vh - 9rem);
-  height: 100vh;
   width: 100%;
   padding: 0px 5rem;
   display: flex;
@@ -15,7 +14,7 @@
   overflow: hidden;
 
   @media (max-width: sizes.$small-tablet) {
-    padding: 0px 2.5rem;
+    padding: 0rem 2.5rem;
   }
 
   .exp-content {
@@ -25,8 +24,13 @@
     justify-content: center;
     align-items: flex-start;
     gap: 2.4rem;
+    padding: 0rem 5rem;
 
-    @media (max-width: sizes.$phone) {
+    @media (max-width: sizes.$tablet) {
+      padding: 0rem;
+    }
+
+    @media (max-width: sizes.$small-tablet) {
       justify-content: flex-start;
       margin-top: 3rem;
       gap: 1rem;

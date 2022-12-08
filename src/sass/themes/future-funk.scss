@@ -3,7 +3,7 @@
 
 // Future Funk
 @mixin future-funk {
-  .hero-container,
+  .home-container,
   .exp-page-container,
   .projects-page-container,
   .contact-page-container {
@@ -168,12 +168,17 @@
   .toggle-button-container {
     button {
       font-family: fonts.$MajorMono;
-      color: colors.$ff-secondaryAccent;
+      color: colors.$ff-textMain;
       transition: color 200ms linear;
 
       &::after {
         background-color: colors.$ff-tertiaryAccent;
         transition: background-color 200ms linear;
+      }
+
+      &:hover {
+        color: colors.$ff-tertiaryAccent;
+        transition: color 200ms linear;
       }
     }
   }
@@ -213,8 +218,22 @@
     }
   }
 
-  .social-links {
-    color: colors.$ff-tertiaryAccent;
-    transition: color 200ms linear;
+  .footer-container {
+    .social-links {
+      &::after {
+        background-color: colors.$ff-tertiaryAccent;
+        transition: color 200ms linear;
+      }
+
+      .link {
+        color: colors.$ff-textMain;
+        transition: color 200ms linear;
+
+        &:hover {
+          color: colors.$ff-tertiaryAccent;
+          transition: color 200ms linear;
+        }
+      }
+    }
   }
 }

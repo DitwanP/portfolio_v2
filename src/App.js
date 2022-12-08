@@ -5,7 +5,6 @@ import { useRef, useEffect, useState } from "react"
 import { themes } from "./components/ThemesModal.js"
 
 import "./sass/app.scss"
-import "./sass/themes/future-funk.scss"
 
 function App() {
   const defaultTheme = themes.includes(localStorage.getItem("theme"))

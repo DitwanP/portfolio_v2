@@ -2,7 +2,7 @@
 @use "../fonts.scss" as fonts;
 
 @mixin grape {
-  .hero-container,
+  .home-container,
   .exp-page-container,
   .projects-page-container,
   .contact-page-container {
@@ -167,6 +167,11 @@
         background-color: colors.$grape-tertiaryAccent;
         transition: background-color 200ms linear;
       }
+
+      &:hover {
+        color: colors.$grape-tertiaryAccent;
+        transition: color 200ms linear;
+      }
     }
   }
 
@@ -193,7 +198,7 @@
       &:hover {
         color: colors.$grape-secondaryAccent;
         border-color: colors.$grape-secondaryAccent !important;
-        background-color: colors.$ff-theme-list-bg;
+        background-color: colors.$grape-theme-list-bg;
         transition: background-color 200ms linear;
         transition: border-color 200ms linear;
 
@@ -208,5 +213,24 @@
   .social-links {
     color: colors.$grape-tertiaryAccent;
     transition: color 200ms linear;
+  }
+
+  .footer-container {
+    .social-links {
+      &::after {
+        background-color: colors.$grape-tertiaryAccent;
+        transition: color 200ms linear;
+      }
+
+      .link {
+        color: colors.$grape-textMain;
+        transition: color 200ms linear;
+
+        &:hover {
+          color: colors.$grape-tertiaryAccent;
+          transition: color 200ms linear;
+        }
+      }
+    }
   }
 }

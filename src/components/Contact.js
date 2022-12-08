@@ -1,7 +1,6 @@
 import React from "react"
 import { motion } from "framer-motion"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-// import { faLinkedin, faGithubSquare } from "@fortawesome/free-brands-svg-icons"
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons"
 
 import { pageVariants, pageTransitions, textAnimateIn } from "./FramerVariants"
@@ -71,14 +70,6 @@ const Contact = () => {
             <h3>Reach Out</h3>
           </motion.a>
         </motion.div>
-        {/* <motion.div className="social-links">
-          <motion.a whileHover={{ scale: 1.1 }}>
-            <FontAwesomeIcon icon={faLinkedin} />
-          </motion.a>
-          <motion.a whileHover={{ scale: 1.1 }}>
-            <FontAwesomeIcon icon={faGithubSquare} />
-          </motion.a>
-        </motion.div> */}
       </motion.div>
     </motion.div>
   )

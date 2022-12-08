@@ -2,7 +2,7 @@
 @use "../fonts.scss" as fonts;
 
 @mixin froyo-dark {
-  .hero-container,
+  .home-container,
   .exp-page-container,
   .projects-page-container,
   .contact-page-container {
@@ -168,6 +168,11 @@
         background-color: colors.$fd-tertiaryAccent;
         transition: background-color 200ms linear;
       }
+
+      &:hover {
+        color: colors.$fd-tertiaryAccent;
+        transition: color 200ms linear;
+      }
     }
   }
 
@@ -209,5 +214,24 @@
   .social-links {
     color: colors.$fd-tertiaryAccent;
     transition: color 200ms linear;
+  }
+
+  .footer-container {
+    .social-links {
+      &::after {
+        background-color: colors.$fd-tertiaryAccent;
+        transition: color 200ms linear;
+      }
+
+      .link {
+        color: colors.$fd-textMain;
+        transition: color 200ms linear;
+
+        &:hover {
+          color: colors.$fd-tertiaryAccent;
+          transition: color 200ms linear;
+        }
+      }
+    }
   }
 }

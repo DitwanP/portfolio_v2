@@ -1,3 +1,4 @@
+// PAGE
 export const pageVariants = {
   in: {
     y: 0,
@@ -17,6 +18,7 @@ export const pageTransitions = {
   duration: 0.5,
 }
 
+// TEXT
 export const textAnimateIn = {
   start: {
     y: -100,
@@ -28,7 +30,7 @@ export const textAnimateIn = {
   },
 }
 
-// Nav
+// NAV
 export const navAnimateIn = {
   in: {
     opacity: 1,
@@ -40,22 +42,6 @@ export const navAnimateIn = {
   outUp: {
     scale: 1,
     y: -200,
-  },
-}
-
-// themes
-export const themesAnimateIn = {
-  in: {
-    opacity: 1,
-    y: 0,
-  },
-  notIn: {
-    opacity: 0,
-    y: 500,
-  },
-  outDown: {
-    opacity: 0,
-    y: 500,
   },
 }
 
@@ -74,30 +60,6 @@ export const navContainerVariants = {
       type: "easeInOut",
       stiffness: 50,
       restDelta: 2,
-    },
-  },
-}
-
-export const themesContainerVariants = {
-  open: {
-    y: 0,
-    transition: {
-      type: "linear",
-    },
-  },
-  closed: {
-    y: 600,
-    transition: {
-      delay: 0.5,
-      type: "linear",
-      damping: 10,
-    },
-  },
-  outDown: {
-    y: 600,
-    transition: {
-      type: "linear",
-      damping: 10,
     },
   },
 }
@@ -159,8 +121,49 @@ export const navTransitions = {
   duration: 0.5,
 }
 
-export const themesTransitions = {
+// THEMES
+export const themesContainerVariants = {
+  open: {
+    y: 0,
+    transition: {
+      type: "linear",
+    },
+  },
+  closed: {
+    y: 1000,
+    transition: {
+      delay: 0.5,
+      type: "linear",
+      damping: 10,
+    },
+  },
+  outDown: {
+    y: 600,
+    transition: {
+      type: "linear",
+      damping: 10,
+    },
+  },
+}
+
+// FOOTER
+export const footerAnimateIn = {
+  in: {
+    opacity: 1,
+    y: 0,
+  },
+  notIn: {
+    opacity: 0,
+    y: 500,
+  },
+  outDown: {
+    opacity: 0,
+    y: 500,
+  },
+}
+
+export const footerTransitions = {
   ease: "easeInOut",
   duration: 0.5,
-  delay: 1.8,
+  delay: 2,
 }

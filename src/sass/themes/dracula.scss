@@ -3,7 +3,7 @@
 
 // Dracula
 @mixin dracula {
-  .hero-container,
+  .home-container,
   .exp-page-container,
   .projects-page-container,
   .contact-page-container {
@@ -162,12 +162,17 @@
   .toggle-button-container {
     button {
       font-family: fonts.$MajorMono;
-      color: colors.$dracula-secondaryAccent;
+      color: colors.$dracula-textMain;
       transition: color 200ms linear;
 
       &::after {
         background-color: colors.$dracula-tertiaryAccent;
         transition: background-color 200ms linear;
+      }
+
+      &:hover {
+        color: colors.$dracula-tertiaryAccent;
+        transition: color 200ms linear;
       }
     }
   }
@@ -210,5 +215,24 @@
   .social-links {
     color: colors.$dracula-tertiaryAccent;
     transition: color 200ms linear;
+  }
+
+  .footer-container {
+    .social-links {
+      &::after {
+        background-color: colors.$dracula-tertiaryAccent;
+        transition: color 200ms linear;
+      }
+
+      .link {
+        color: colors.$dracula-textMain;
+        transition: color 200ms linear;
+
+        &:hover {
+          color: colors.$dracula-tertiaryAccent;
+          transition: color 200ms linear;
+        }
+      }
+    }
   }
 }

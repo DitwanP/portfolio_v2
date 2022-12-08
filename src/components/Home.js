@@ -19,15 +19,15 @@ const Home = () => {
 
   return (
     <motion.div
-      id="hero-container"
-      className="hero-container"
+      id="home-container"
+      className="home-container"
       variants={pageVariants}
       initial="notIn"
       animate="in"
       exit="outDown"
       transition={pageTransitions}
     >
-      <section className="hero-content">
+      <section className="home-content">
         <motion.div
           className="greeting"
           initial="start"

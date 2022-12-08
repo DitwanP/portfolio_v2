@@ -2,7 +2,7 @@
 @use "./displaySizes.scss" as sizes;
 @use "./fonts.scss" as fonts;
 
-.hero-container {
+.home-container {
   margin-top: 9rem;
   height: calc(100vh - 9rem);
   width: 100%;
@@ -17,18 +17,19 @@
     padding: 0px 2.5rem;
   }
 
-  .hero-content {
+  .home-content {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 5px;
-  }
-}
+    padding: 0rem 5rem;
 
-.hero-container[theme="future-funk"] {
-  background: colors.$ff-bg-color;
+    @media (max-width: sizes.$tablet) {
+      padding: 0rem;
+    }
+  }
 }
 
 .greeting {

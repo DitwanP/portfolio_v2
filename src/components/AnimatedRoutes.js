@@ -7,15 +7,14 @@ import WorkAndSkills from "./WorkAndSkills.js"
 import Projects from "./Projects.js"
 import Contact from "./Contact.js"
 import NavBar from "./NavBar.js"
-import ThemesModal from "./ThemesModal.js"
+import Footer from "./Footer.js"
 
 import "../sass/navbar.scss"
-import "../sass/themes.scss"
+import "../sass/footer.scss"
 
 function AnimatedRoutes(props) {
   const location = useLocation()
   const [showNavList, setShowNavList] = useState(false)
-  const [showThemesModal, setShowThemesModal] = useState(false)
 
   return (
     <div className={showNavList ? "nav-open" : "nav-close"}>
@@ -27,11 +26,7 @@ function AnimatedRoutes(props) {
           <Route exact path="/projects" element={<Projects />} />
           <Route exact path="/contact" element={<Contact />} />
         </Routes>
-        <ThemesModal
-          switchTheme={props.switchTheme}
-          showThemesModal={showThemesModal}
-          setShowThemesModal={setShowThemesModal}
-        />
+        <Footer switchTheme={props.switchTheme} />
       </AnimatePresence>
     </div>
   )

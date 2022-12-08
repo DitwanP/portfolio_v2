@@ -3,7 +3,7 @@
 
 // Ryujin
 @mixin ryujin {
-  .hero-container,
+  .home-container,
   .exp-page-container,
   .projects-page-container,
   .contact-page-container {
@@ -169,6 +169,11 @@
         background-color: colors.$rs-tertiaryAccent;
         transition: background-color 200ms linear;
       }
+
+      &:hover {
+        color: colors.$rs-tertiaryAccent;
+        transition: color 200ms linear;
+      }
     }
   }
 
@@ -210,5 +215,24 @@
   .social-links {
     color: colors.$rs-tertiaryAccent;
     transition: color 200ms linear;
+  }
+
+  .footer-container {
+    .social-links {
+      &::after {
+        background-color: colors.$rs-tertiaryAccent;
+        transition: color 200ms linear;
+      }
+
+      .link {
+        color: colors.$rs-textMain;
+        transition: color 200ms linear;
+
+        &:hover {
+          color: colors.$rs-tertiaryAccent;
+          transition: color 200ms linear;
+        }
+      }
+    }
   }
 }

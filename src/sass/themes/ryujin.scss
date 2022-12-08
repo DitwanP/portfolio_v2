@@ -200,7 +200,35 @@
       &:hover {
         color: colors.$rs-secondaryAccent;
         border-color: colors.$rs-secondaryAccent !important;
-        background-color: colors.$ff-theme-list-bg;
+        background-color: colors.$rs-theme-list-bg;
+        transition: background-color 200ms linear;
+        transition: border-color 200ms linear;
+
+        h3 {
+          color: colors.$rs-secondaryAccent;
+          transition: color 200ms linear;
+        }
+      }
+    }
+  }
+
+  .resume-button {
+    a {
+      color: colors.$rs-tertiaryAccent;
+      border-color: colors.$rs-tertiaryAccent !important;
+
+      transition: border-color 200ms linear;
+      transition: color 200ms linear;
+
+      h3 {
+        color: colors.$rs-tertiaryAccent;
+        transition: color 200ms linear;
+      }
+
+      &:hover {
+        color: colors.$rs-secondaryAccent;
+        border-color: colors.$rs-secondaryAccent !important;
+        background-color: colors.$rs-theme-list-bg;
         transition: background-color 200ms linear;
         transition: border-color 200ms linear;
 

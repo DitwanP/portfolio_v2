@@ -9,7 +9,7 @@ import "./sass/app.scss"
 function App() {
   const defaultTheme = themes.includes(localStorage.getItem("theme"))
     ? localStorage.getItem("theme")
-    : "grape"
+    : themes[Math.floor(Math.random() * themes.length)]
 
   const ref = useRef(null)
   const [appElement, setAppElement] = useState(null)

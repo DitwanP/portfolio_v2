@@ -1,6 +1,10 @@
 import React, { useState } from "react"
 import { motion } from "framer-motion"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faFilePdf } from "@fortawesome/free-solid-svg-icons"
+
 import { pageVariants, pageTransitions, textAnimateIn } from "./FramerVariants"
+import Resume from "../assets/Ditwan_Price_Resume.PDF"
 
 import "../sass/home.scss"
 import "../sass/app.scss"
@@ -94,6 +98,17 @@ const Home = () => {
             but I'm a detail-oriented, organized, and reliable team player that
             can efficiently tackle whatever work comes my way.
           </h3>
+        </motion.div>
+        <motion.div
+          className="resume-button"
+          variants={textAnimateIn}
+          initial="start"
+          animate="end"
+          transition={{ ease: "easeIn", duration: 0.5, delay: 0.6 }}
+        >
+          <motion.a href={Resume} target="_blank" rel="noopener noreferrer">
+            <h3>Resume</h3>
+          </motion.a>
         </motion.div>
       </section>
     </motion.div>

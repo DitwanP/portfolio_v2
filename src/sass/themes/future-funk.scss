@@ -218,6 +218,34 @@
     }
   }
 
+  .resume-button {
+    a {
+      color: colors.$ff-tertiaryAccent;
+      border-color: colors.$ff-tertiaryAccent !important;
+
+      transition: border-color 200ms linear;
+      transition: color 200ms linear;
+
+      h3 {
+        color: colors.$ff-tertiaryAccent;
+        transition: color 200ms linear;
+      }
+
+      &:hover {
+        color: colors.$ff-secondaryAccent;
+        border-color: colors.$ff-secondaryAccent !important;
+        background-color: colors.$ff-theme-list-bg;
+        transition: background-color 200ms linear;
+        transition: border-color 200ms linear;
+
+        h3 {
+          color: colors.$ff-secondaryAccent;
+          transition: color 200ms linear;
+        }
+      }
+    }
+  }
+
   .footer-container {
     .social-links {
       &::after {

@@ -76,7 +76,7 @@
         transition: color 200ms linear;
 
         &:hover {
-          color: colors.$dracula-secondaryAccent;
+          color: colors.$dracula-secondaryAccent !important;
         }
       }
 

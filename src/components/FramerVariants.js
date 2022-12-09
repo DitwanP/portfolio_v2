@@ -5,14 +5,14 @@ export const pageTransitions = {
 }
 
 export const pageVariants = {
-  initial: { x: "100%", opacity: 0 },
+  initial: { y: "100%", opacity: 0 },
   enter: {
-    x: 0,
+    y: 0,
     opacity: 1,
     transition: pageTransitions,
   },
   exit: {
-    x: "-100%",
+    y: "50%",
     opacity: 0,
     transition: pageTransitions,
   },
@@ -21,7 +21,7 @@ export const pageVariants = {
 // TEXT
 export const textAnimateIn = {
   start: {
-    y: 50,
+    y: "50%",
     opacity: 0,
   },
   end: {

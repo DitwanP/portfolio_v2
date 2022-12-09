@@ -75,7 +75,7 @@
         transition: color 200ms linear;
 
         &:hover {
-          color: colors.$fd-secondaryAccent;
+          color: colors.$fd-secondaryAccent !important;
         }
       }
 

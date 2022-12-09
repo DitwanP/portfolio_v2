@@ -1,10 +1,6 @@
 @use "./colors.scss" as colors;
 @use "./fonts.scss" as fonts;
-@import "./themes/future-funk.scss";
-@import "./themes/dracula.scss";
-@import "./themes/grape.scss";
-@import "./themes/froyo-dark.scss";
-@import "./themes/ryujin.scss";
+@import "./themes/theme-controller.scss";
 
 .app {
   width: 100%;
@@ -17,25 +13,25 @@
 
 // Future funk
 .app[theme="future-funk"] {
-  @include future-funk;
+  @include theme-controller($theme-name: "ff");
 }
 
 // Dracula
 .app[theme="dracula"] {
-  @include dracula;
+  @include theme-controller($theme-name: "dracula");
 }
 
 // RyujinScales
 .app[theme="ryujin"] {
-  @include ryujin;
+  @include theme-controller($theme-name: "rs");
 }
 
 // Grape
 .app[theme="grape"] {
-  @include grape;
+  @include theme-controller($theme-name: "grape");
 }
 
 // DMG
 .app[theme="froyo-dark"] {
-  @include froyo-dark;
+  @include theme-controller($theme-name: "fd");
 }

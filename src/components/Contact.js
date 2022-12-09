@@ -65,7 +65,7 @@ const Contact = () => {
             }}
           >
             I'm open to exploring new oportunities so if you think I would be a
-            good fit for a roll, don't hesitate to reach out!
+            good fit for a role, don't hesitate to reach out!
           </motion.p>
         </motion.div>
         <motion.div

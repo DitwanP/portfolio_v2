@@ -10,15 +10,15 @@ import "../sass/app.scss"
 
 const Contact = () => {
   return (
-    <motion.div
-      className="contact-page-container"
-      variants={pageVariants}
-      initial="notIn"
-      animate="in"
-      exit="outDown"
-      transition={pageTransitions}
-    >
-      <motion.div className="contact-content">
+    <motion.div className="contact-page-container">
+      <motion.div
+        className="contact-content"
+        variants={pageVariants}
+        initial="notIn"
+        animate="in"
+        exit="outDown"
+        transition={pageTransitions}
+      >
         <motion.div
           className="title"
           aria-label="Contact"
@@ -26,7 +26,12 @@ const Contact = () => {
           variants={textAnimateIn}
           initial="start"
           animate="end"
-          transition={{ ease: "easeIn", duration: 0.5, delay: 1.4 }}
+          transition={{
+            type: "linear",
+            ease: "easeInOut",
+            duration: 0.6,
+            delay: 1.2,
+          }}
         >
           <h1 className="title">Get in toucH</h1>
         </motion.div>
@@ -35,7 +40,12 @@ const Contact = () => {
             variants={textAnimateIn}
             initial="start"
             animate="end"
-            transition={{ ease: "easeIn", duration: 0.5, delay: 1 }}
+            transition={{
+              type: "linear",
+              ease: "easeInOut",
+              duration: 0.6,
+              delay: 1.5,
+            }}
           >
             I'm currently working with some amazing people, but I also believe
             it's time for me to look for new challenges. In my current role,
@@ -47,7 +57,12 @@ const Contact = () => {
             variants={textAnimateIn}
             initial="start"
             animate="end"
-            transition={{ ease: "easeIn", duration: 0.5, delay: 0.8 }}
+            transition={{
+              type: "linear",
+              ease: "easeInOut",
+              duration: 0.6,
+              delay: 1.8,
+            }}
           >
             I'm open to exploring new oportunities so if you think I would be a
             good fit for a roll, don't hesitate to reach out!
@@ -58,7 +73,12 @@ const Contact = () => {
           variants={textAnimateIn}
           initial="start"
           animate="end"
-          transition={{ ease: "easeIn", duration: 0.5, delay: 0.6 }}
+          transition={{
+            type: "linear",
+            ease: "easeInOut",
+            duration: 0.6,
+            delay: 2.1,
+          }}
         >
           <motion.a
             whileHover={{ scale: 1.1 }}

@@ -1,5 +1,6 @@
 @use "../colors.scss" as colors;
 @use "../fonts.scss" as fonts;
+@use "../displaySizes.scss" as sizes;
 
 // Future Funk
 @mixin future-funk {
@@ -118,7 +119,7 @@
           color: colors.$ff-textMain !important;
 
           span {
-            color: colors.$ff-tertiaryAccent;
+            color: colors.$ff-primaryAccent !important;
           }
         }
       }
@@ -261,6 +262,35 @@
           color: colors.$ff-tertiaryAccent;
           transition: color 200ms linear;
         }
+      }
+    }
+  }
+
+  .social-links {
+    &::after {
+      background-color: colors.$ff-tertiaryAccent;
+      transition: color 200ms linear;
+    }
+
+    svg {
+      color: colors.$ff-textMain;
+      transition: color 200ms linear;
+
+      &:hover {
+        color: colors.$ff-tertiaryAccent;
+        transition: color 200ms linear;
+      }
+    }
+
+    @media (max-width: sizes.$tablet) {
+      h2 {
+        color: colors.$ff-textMain;
+        transition: color 200ms linear;
+      }
+
+      svg {
+        color: colors.$ff-primaryAccent;
+        transition: color 200ms linear;
       }
     }
   }

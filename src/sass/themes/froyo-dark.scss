@@ -1,5 +1,6 @@
 @use "../colors.scss" as colors;
 @use "../fonts.scss" as fonts;
+@use "../displaySizes.scss" as sizes;
 
 @mixin froyo-dark {
   .home-container,
@@ -111,7 +112,7 @@
           color: colors.$fd-textMain !important;
 
           span {
-            color: colors.$fd-primaryAccent;
+            color: colors.$fd-primaryAccent !important;
           }
         }
       }
@@ -259,6 +260,35 @@
           color: colors.$fd-tertiaryAccent;
           transition: color 200ms linear;
         }
+      }
+    }
+  }
+
+  .social-links {
+    &::after {
+      background-color: colors.$fd-tertiaryAccent;
+      transition: color 200ms linear;
+    }
+
+    svg {
+      color: colors.$fd-textMain;
+      transition: color 200ms linear;
+
+      &:hover {
+        color: colors.$fd-tertiaryAccent;
+        transition: color 200ms linear;
+      }
+    }
+
+    @media (max-width: sizes.$tablet) {
+      h2 {
+        color: colors.$fd-textMain;
+        transition: color 200ms linear;
+      }
+
+      svg {
+        color: colors.$fd-primaryAccent;
+        transition: color 200ms linear;
       }
     }
   }

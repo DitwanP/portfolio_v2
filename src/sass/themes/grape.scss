@@ -1,5 +1,6 @@
 @use "../colors.scss" as colors;
 @use "../fonts.scss" as fonts;
+@use "../displaySizes.scss" as sizes;
 
 @mixin grape {
   .home-container,
@@ -239,25 +240,30 @@
   }
 
   .social-links {
-    color: colors.$grape-tertiaryAccent;
-    transition: color 200ms linear;
-  }
+    &::after {
+      background-color: colors.$grape-tertiaryAccent;
+      transition: color 200ms linear;
+    }
 
-  .footer-container {
-    .social-links {
-      &::after {
-        background-color: colors.$grape-tertiaryAccent;
+    svg {
+      color: colors.$grape-textMain;
+      transition: color 200ms linear;
+
+      &:hover {
+        color: colors.$grape-tertiaryAccent;
+        transition: color 200ms linear;
+      }
+    }
+
+    @media (max-width: sizes.$tablet) {
+      h2 {
+        color: colors.$grape-textMain;
         transition: color 200ms linear;
       }
 
-      .link {
-        color: colors.$grape-textMain;
+      svg {
+        color: colors.$grape-primaryAccent;
         transition: color 200ms linear;
-
-        &:hover {
-          color: colors.$grape-tertiaryAccent;
-          transition: color 200ms linear;
-        }
       }
     }
   }

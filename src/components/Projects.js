@@ -13,25 +13,23 @@ const Projects = () => {
   }
 
   return (
-    <motion.div
-      className="projects-page-container"
-      variants={pageVariants}
-      initial="notIn"
-      animate="in"
-      exit="outDown"
-      transition={pageTransitions}
-    >
-      <section className="projects-content">
-        <motion.div
-          className="projects-container"
-          variants={textAnimateIn}
-          initial="start"
-          animate="end"
-          transition={{ ease: "easeIn", duration: 0.5, delay: 1.4 }}
-        >
+    <div className="projects-page-container">
+      <motion.div
+        className="projects-content"
+        variants={pageVariants}
+        initial="notIn"
+        animate="in"
+        exit="outDown"
+        transition={pageTransitions}
+      >
+        <div className="projects-container">
           <motion.div
             className="title"
             aria-label="Projects"
+            variants={textAnimateIn}
+            initial="start"
+            animate="end"
+            transition={{ ease: "easeIn", duration: 0.6, delay: 1.2 }}
             whileHover={{ scale: 1.1 }}
           >
             <h1
@@ -51,9 +49,9 @@ const Projects = () => {
               projects
             </h1>
           </motion.div>
-        </motion.div>
-      </section>
-    </motion.div>
+        </div>
+      </motion.div>
+    </div>
   )
 }
 

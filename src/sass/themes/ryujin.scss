@@ -1,5 +1,6 @@
 @use "../colors.scss" as colors;
 @use "../fonts.scss" as fonts;
+@use "../displaySizes.scss" as sizes;
 
 // Ryujin
 @mixin ryujin {
@@ -112,7 +113,7 @@
           color: colors.$rs-textMain !important;
 
           span {
-            color: colors.$rs-primaryAccent;
+            color: colors.$rs-primaryAccent !important;
           }
         }
       }
@@ -260,6 +261,35 @@
           color: colors.$rs-tertiaryAccent;
           transition: color 200ms linear;
         }
+      }
+    }
+  }
+
+  .social-links {
+    &::after {
+      background-color: colors.$rs-tertiaryAccent;
+      transition: color 200ms linear;
+    }
+
+    svg {
+      color: colors.$rs-textMain;
+      transition: color 200ms linear;
+
+      &:hover {
+        color: colors.$rs-tertiaryAccent;
+        transition: color 200ms linear;
+      }
+    }
+
+    @media (max-width: sizes.$tablet) {
+      h2 {
+        color: colors.$rs-textMain;
+        transition: color 200ms linear;
+      }
+
+      svg {
+        color: colors.$rs-primaryAccent;
+        transition: color 200ms linear;
       }
     }
   }

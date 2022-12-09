@@ -26,8 +26,8 @@ function AnimatedRoutes(props) {
           <Route exact path="/projects" element={<Projects />} />
           <Route exact path="/contact" element={<Contact />} />
         </Routes>
-        <Footer switchTheme={props.switchTheme} />
       </AnimatePresence>
+      <Footer switchTheme={props.switchTheme} />
     </div>
   )
 }

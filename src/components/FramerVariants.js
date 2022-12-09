@@ -1,27 +1,27 @@
 // PAGE
-export const pageVariants = {
-  in: {
-    y: 0,
-  },
-  notIn: {
-    y: 5000,
-  },
-  outDown: {
-    scale: 1,
-    y: 5000,
-  },
-}
-
 export const pageTransitions = {
   type: "linear",
   ease: "easeInOut",
-  duration: 0.5,
+}
+
+export const pageVariants = {
+  initial: { x: "100%", opacity: 0 },
+  enter: {
+    x: 0,
+    opacity: 1,
+    transition: pageTransitions,
+  },
+  exit: {
+    x: "-100%",
+    opacity: 0,
+    transition: pageTransitions,
+  },
 }
 
 // TEXT
 export const textAnimateIn = {
   start: {
-    y: -100,
+    y: 50,
     opacity: 0,
   },
   end: {
@@ -31,7 +31,7 @@ export const textAnimateIn = {
 }
 
 // NAV
-export const navAnimateIn = {
+export const navContentVariants = {
   in: {
     opacity: 1,
     y: 0,
@@ -39,10 +39,12 @@ export const navAnimateIn = {
   notIn: {
     y: -200,
   },
-  outUp: {
-    scale: 1,
-    y: -200,
-  },
+}
+
+export const navContentTransitions = {
+  type: "linear",
+  ease: "easeInOut",
+  duration: 1,
 }
 
 export const navContainerVariants = {
@@ -52,6 +54,7 @@ export const navContainerVariants = {
       type: "easeInOut",
       stiffness: 50,
       restDelta: 2,
+      duration: 0.8,
     },
   },
   closed: {
@@ -60,6 +63,7 @@ export const navContainerVariants = {
       type: "easeInOut",
       stiffness: 50,
       restDelta: 2,
+      duration: 0.8,
     },
   },
 }
@@ -114,11 +118,6 @@ export const listItemVariants = {
       y: { stiffness: 1000 },
     },
   },
-}
-
-export const navTransitions = {
-  ease: "easeInOut",
-  duration: 0.5,
 }
 
 // THEMES

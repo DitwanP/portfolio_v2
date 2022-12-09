@@ -5,7 +5,6 @@ import { jobsInfo } from "../assets/WorkInfo"
 import { skillsInfo } from "../assets/SkillsInfo"
 import {
   pageVariants,
-  pageTransitions,
   textAnimateIn,
   listVariants,
   listItemVariants,
@@ -16,22 +15,26 @@ import "../sass/app.scss"
 
 const WorkAndSkills = () => {
   return (
-    <motion.div
-      className="exp-page-container"
-      variants={pageVariants}
-      initial="notIn"
-      animate="in"
-      exit="outDown"
-      transition={pageTransitions}
-    >
-      <section className="exp-content">
-        <motion.div className="work-container">
+    <div className="exp-page-container">
+      <motion.div
+        className="exp-content"
+        variants={pageVariants}
+        initial="initial"
+        animate="enter"
+        exit="exit"
+      >
+        <div className="work-container">
           <motion.div
             className="title"
             initial="start"
             animate="end"
             variants={textAnimateIn}
-            transition={{ ease: "easeIn", duration: 0.5, delay: 1.6 }}
+            transition={{
+              type: "linear",
+              ease: "easeInOut",
+              duration: 0.6,
+              delay: 0.2,
+            }}
           >
             <h1 className="plain-title">where i've worked</h1>
           </motion.div>
@@ -40,7 +43,12 @@ const WorkAndSkills = () => {
             initial="start"
             animate="end"
             variants={textAnimateIn}
-            transition={{ ease: "easeIn", duration: 0.5, delay: 1.2 }}
+            transition={{
+              type: "linear",
+              ease: "easeInOut",
+              duration: 0.6,
+              delay: 0.5,
+            }}
           >
             {jobsInfo.map((job, index) => (
               <div className="job" key={index}>
@@ -80,14 +88,19 @@ const WorkAndSkills = () => {
               </div>
             ))}
           </motion.div>
-        </motion.div>
+        </div>
         <motion.div className="skills-container">
           <motion.div
             className="title"
             initial="start"
             animate="end"
             variants={textAnimateIn}
-            transition={{ ease: "easeIn", duration: 0.5, delay: 0.8 }}
+            transition={{
+              type: "linear",
+              ease: "easeInOut",
+              duration: 0.6,
+              delay: 0.8,
+            }}
           >
             <h1 className="plain-title">skills</h1>
           </motion.div>
@@ -96,7 +109,12 @@ const WorkAndSkills = () => {
             initial="start"
             animate="end"
             variants={textAnimateIn}
-            transition={{ ease: "easeIn", duration: 0.5, delay: 0.6 }}
+            transition={{
+              type: "linear",
+              ease: "easeInOut",
+              duration: 0.6,
+              delay: 1.1,
+            }}
           >
             <motion.ul variants={listVariants} className="skill-list">
               {skillsInfo.map((skill, index) => (
@@ -107,8 +125,8 @@ const WorkAndSkills = () => {
             </motion.ul>
           </motion.div>
         </motion.div>
-      </section>
-    </motion.div>
+      </motion.div>
+    </div>
   )
 }
 

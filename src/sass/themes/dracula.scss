@@ -1,5 +1,6 @@
 @use "../colors.scss" as colors;
 @use "../fonts.scss" as fonts;
+@use "../displaySizes.scss" as sizes;
 
 // Dracula
 @mixin dracula {
@@ -112,7 +113,7 @@
           color: colors.$dracula-textMain !important;
 
           span {
-            color: colors.$dracula-tertiaryAccent;
+            color: colors.$dracula-primaryAccent !important;
           }
         }
       }
@@ -260,6 +261,35 @@
           color: colors.$dracula-tertiaryAccent;
           transition: color 200ms linear;
         }
+      }
+    }
+  }
+
+  .social-links {
+    &::after {
+      background-color: colors.$dracula-tertiaryAccent;
+      transition: color 200ms linear;
+    }
+
+    svg {
+      color: colors.$dracula-textMain;
+      transition: color 200ms linear;
+
+      &:hover {
+        color: colors.$dracula-tertiaryAccent;
+        transition: color 200ms linear;
+      }
+    }
+
+    @media (max-width: sizes.$tablet) {
+      h2 {
+        color: colors.$dracula-textMain;
+        transition: color 200ms linear;
+      }
+
+      svg {
+        color: colors.$dracula-primaryAccent;
+        transition: color 200ms linear;
       }
     }
   }

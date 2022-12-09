@@ -1,9 +1,7 @@
 import React, { useState } from "react"
 import { motion } from "framer-motion"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faFilePdf } from "@fortawesome/free-solid-svg-icons"
 
-import { pageVariants, pageTransitions, textAnimateIn } from "./FramerVariants"
+import { pageVariants, textAnimateIn } from "./FramerVariants"
 import Resume from "../assets/Ditwan_Price_Resume.PDF"
 
 import "../sass/home.scss"
@@ -22,22 +20,25 @@ const Home = () => {
   }
 
   return (
-    <motion.div
-      id="home-container"
-      className="home-container"
-      variants={pageVariants}
-      initial="notIn"
-      animate="in"
-      exit="outDown"
-      transition={pageTransitions}
-    >
-      <section className="home-content">
+    <motion.div id="home-container" className="home-container">
+      <motion.div
+        className="home-content"
+        variants={pageVariants}
+        initial="initial"
+        animate="enter"
+        exit="exit"
+      >
         <motion.div
           className="greeting"
           initial="start"
           animate="end"
           variants={textAnimateIn}
-          transition={{ ease: "easeIn", duration: 0.5, delay: 1.4 }}
+          transition={{
+            type: "linear",
+            ease: "easeInOut",
+            duration: 0.6,
+            delay: 0.2,
+          }}
         >
           <h2>Hello, my name is</h2>
         </motion.div>
@@ -46,7 +47,12 @@ const Home = () => {
           variants={textAnimateIn}
           initial="start"
           animate="end"
-          transition={{ ease: "easeIn", duration: 0.5, delay: 1 }}
+          transition={{
+            type: "linear",
+            ease: "easeInOut",
+            duration: 0.6,
+            delay: 0.5,
+          }}
         >
           <motion.div
             className="firstName"
@@ -90,7 +96,12 @@ const Home = () => {
           variants={textAnimateIn}
           initial="start"
           animate="end"
-          transition={{ ease: "easeIn", duration: 0.5, delay: 0.6 }}
+          transition={{
+            type: "linear",
+            ease: "easeInOut",
+            duration: 0.6,
+            delay: 0.8,
+          }}
         >
           <h3 aria-label="brief about me">
             I'm an early career software engineer that enjoys creating things
@@ -104,13 +115,18 @@ const Home = () => {
           variants={textAnimateIn}
           initial="start"
           animate="end"
-          transition={{ ease: "easeIn", duration: 0.5, delay: 0.6 }}
+          transition={{
+            type: "linear",
+            ease: "easeInOut",
+            duration: 0.6,
+            delay: 1.1,
+          }}
         >
           <motion.a href={Resume} target="_blank" rel="noopener noreferrer">
             <h3>Resume</h3>
           </motion.a>
         </motion.div>
-      </section>
+      </motion.div>
     </motion.div>
   )
 }

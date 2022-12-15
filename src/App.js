@@ -7,6 +7,14 @@ import { themes } from "./components/ThemesModal.js"
 import "./sass/app.scss"
 
 function App() {
+  const viewHeight = window.innerHeight * 0.01
+  document.documentElement.style.setProperty("--vh", `${viewHeight}px`)
+
+  window.addEventListener("resize", () => {
+    const viewHeight = window.innerHeight * 0.01
+    document.documentElement.style.setProperty("--vh", `${viewHeight}px`)
+  })
+
   const defaultTheme = themes.includes(localStorage.getItem("theme"))
     ? localStorage.getItem("theme")
     : themes[Math.floor(Math.random() * themes.length)]
@@ -22,6 +30,7 @@ function App() {
       !appElement.hasAttribute("theme")
     ) {
       appElement.setAttribute("theme", theme)
+      document.body.setAttribute("theme", currentTheme)
       setCurrentTheme(theme)
     } else {
       return
@@ -30,6 +39,7 @@ function App() {
 
   useEffect(() => {
     setAppElement(ref.current)
+    document.body.setAttribute("theme", currentTheme)
     localStorage.setItem("theme", currentTheme)
   }, [currentTheme])
 

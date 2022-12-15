@@ -81,15 +81,19 @@
         backdrop-filter: blur(40px);
         width: 100vw;
         height: 100vh;
+        height: calc((var(--vh, 1vh) * 100));
         position: absolute;
         inset: 0px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        z-index: 1;
+        z-index: 0;
         overflow: hidden;
-        padding: 5rem 3rem;
+
+        @media (max-width: sizes.$tablet) and (orientation: landscape) {
+          gap: 5rem;
+        }
 
         .nav-list-mobile {
           padding: 0;
@@ -99,6 +103,10 @@
           list-style: none;
           gap: 6rem;
           z-index: 2;
+
+          @media (max-width: sizes.$tablet) and (orientation: landscape) {
+            flex-direction: row;
+          }
 
           li {
             display: flex;
@@ -173,12 +181,15 @@
       gap: 6rem;
       position: absolute;
       bottom: 0rem;
-      margin-bottom: 5rem;
-      padding-bottom: 2rem;
-      width: auto;
+      padding-bottom: 5rem;
 
       @media (min-width: sizes.$tablet) {
         display: none;
+      }
+
+      @media (max-width: sizes.$tablet) and (orientation: landscape) {
+        position: relative;
+        margin-bottom: 0;
       }
 
       &::after {

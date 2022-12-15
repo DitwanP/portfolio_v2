@@ -8,6 +8,31 @@
 }
 
 body {
+  overflow: hidden;
   background: colors.$black;
-  overflow-y: hidden;
+
+  // Future funk
+  &[theme="future-funk"] {
+    background: colors.$ff-bg-color;
+  }
+
+  // Dracula
+  &[theme="dracula"] {
+    background: colors.$dracula-bg-color;
+  }
+
+  // RyujinScales
+  &[theme="ryujin"] {
+    background: colors.$rs-bg-color;
+  }
+
+  // Grape
+  &[theme="grape"] {
+    background: colors.$grape-bg-color;
+  }
+
+  // DMG
+  &[theme="froyo-dark"] {
+    background: colors.$fd-bg-color;
+  }
 }

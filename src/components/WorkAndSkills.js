@@ -36,22 +36,23 @@ const WorkAndSkills = () => {
               delay: 0.2,
             }}
           >
-            <h1 className="plain-title">where i've worked</h1>
+            <h1 className="plain-title">WHeRe i'Ve WoRked</h1>
           </motion.div>
-          <motion.div
-            className="work"
-            initial="start"
-            animate="end"
-            variants={textAnimateIn}
-            transition={{
-              type: "linear",
-              ease: "easeInOut",
-              duration: 0.6,
-              delay: 0.5,
-            }}
-          >
+          <div className="work">
             {jobsInfo.map((job, index) => (
-              <div className="job" key={index}>
+              <motion.div
+                className="job"
+                key={index}
+                initial="start"
+                animate="end"
+                variants={textAnimateIn}
+                transition={{
+                  type: "linear",
+                  ease: "easeInOut",
+                  duration: 0.6,
+                  delay: 0.6,
+                }}
+              >
                 <div className="position-and-company">
                   <div className="company">
                     <h2 className="label">Company:</h2>
@@ -73,9 +74,19 @@ const WorkAndSkills = () => {
                   </div>
                 </div>
                 <div className="details">
-                  <motion.ul variants={listVariants}>
+                  <motion.ul
+                    initial="start"
+                    animate="end"
+                    variants={textAnimateIn}
+                    transition={{
+                      type: "linear",
+                      ease: "easeInOut",
+                      duration: 0.6,
+                      delay: 1,
+                    }}
+                  >
                     {job.bullets.map((detail, index) => (
-                      <motion.li key={index} variants={listItemVariants}>
+                      <motion.li key={index}>
                         <h3 className="info">
                           <span>▹</span>
                           &nbsp;
@@ -85,9 +96,9 @@ const WorkAndSkills = () => {
                     ))}
                   </motion.ul>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
         <motion.div className="skills-container">
           <motion.div
@@ -99,10 +110,10 @@ const WorkAndSkills = () => {
               type: "linear",
               ease: "easeInOut",
               duration: 0.6,
-              delay: 0.8,
+              delay: 1.4,
             }}
           >
-            <h1 className="plain-title">skills</h1>
+            <h1 className="plain-title">sKiLLs</h1>
           </motion.div>
           <motion.div
             className="skills"
@@ -113,7 +124,7 @@ const WorkAndSkills = () => {
               type: "linear",
               ease: "easeInOut",
               duration: 0.6,
-              delay: 1.1,
+              delay: 1.8,
             }}
           >
             <motion.ul variants={listVariants} className="skill-list">

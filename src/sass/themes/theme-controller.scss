@@ -55,7 +55,6 @@ $color-list: (
   "ff-theme-list-bg": rgba(240, 78, 151, 0.1)
 );
 
-// Ryujin
 @mixin theme-controller($theme-name) {
   .home-container,
   .exp-page-container,
@@ -228,11 +227,6 @@ $color-list: (
       &::after {
         background-color: map-get($color-list, $theme-name + "-tertiaryAccent");
         transition: background-color 200ms linear;
-      }
-
-      &:hover {
-        color: map-get($color-list, $theme-name + "-tertiaryAccent");
-        transition: color 200ms linear;
       }
     }
   }

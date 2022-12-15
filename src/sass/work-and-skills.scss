@@ -5,20 +5,17 @@
 .exp-page-container {
   margin-top: 9rem;
   height: calc(100vh - 9rem);
+  height: calc((var(--vh, 1vh) * 100) - 9rem);
   width: 100%;
-  padding: 0px 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow: hidden;
 
-  @media (max-width: sizes.$small-tablet) {
-    padding: 0rem 2.5rem;
-  }
-
   .exp-content {
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -26,14 +23,14 @@
     gap: 2.4rem;
     padding: 0rem 5rem;
 
-    @media (max-width: sizes.$tablet) {
-      padding: 0rem;
+    @media (max-width: sizes.$small-tablet) {
+      padding: 0rem 2.5rem;
     }
 
-    @media (max-width: sizes.$small-tablet) {
+    @media (max-width: sizes.$tablet) and (orientation: landscape) {
       justify-content: flex-start;
-      margin-top: 3rem;
-      gap: 1rem;
+      padding: 5rem;
+      overflow-y: auto;
     }
 
     .work-container,
@@ -52,7 +49,7 @@
           }
 
           @media (max-width: sizes.$phone) {
-            font-size: clamp(16px, 1.8rem, 50px);
+            font-size: clamp(16px, 2.4rem, 50px);
           }
         }
       }

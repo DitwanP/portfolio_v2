@@ -5,20 +5,17 @@
 .home-container {
   margin-top: 9rem;
   height: calc(100vh - 9rem);
+  height: calc((var(--vh, 1vh) * 100) - 9rem);
   width: 100%;
-  padding: 0px 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow: hidden;
 
-  @media (max-width: sizes.$small-tablet) {
-    padding: 0px 2.5rem;
-  }
-
   .home-content {
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -26,8 +23,14 @@
     padding: 0rem 5rem;
     gap: 2rem;
 
-    @media (max-width: sizes.$tablet) {
-      padding: 0rem;
+    @media (max-width: sizes.$small-tablet) {
+      padding: 0rem 2.5rem;
+    }
+
+    @media (max-width: sizes.$tablet) and (orientation: landscape) {
+      justify-content: flex-start;
+      padding: 5rem;
+      overflow-y: auto;
     }
   }
 }

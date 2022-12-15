@@ -30,7 +30,7 @@ const Contact = () => {
             type: "linear",
             ease: "easeInOut",
             duration: 0.6,
-            delay: 1.2,
+            delay: 0.2,
           }}
         >
           <h1 className="title">Get in toucH</h1>
@@ -44,7 +44,7 @@ const Contact = () => {
               type: "linear",
               ease: "easeInOut",
               duration: 0.6,
-              delay: 1.5,
+              delay: 0.6,
             }}
           >
             I'm currently working with some amazing people, but I also believe
@@ -61,7 +61,7 @@ const Contact = () => {
               type: "linear",
               ease: "easeInOut",
               duration: 0.6,
-              delay: 1.8,
+              delay: 1,
             }}
           >
             I'm open to exploring new oportunities so if you think I would be a
@@ -77,7 +77,7 @@ const Contact = () => {
             type: "linear",
             ease: "easeInOut",
             duration: 0.6,
-            delay: 2.1,
+            delay: 1.4,
           }}
         >
           <motion.a

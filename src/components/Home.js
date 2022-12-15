@@ -51,7 +51,7 @@ const Home = () => {
             type: "linear",
             ease: "easeInOut",
             duration: 0.6,
-            delay: 0.5,
+            delay: 0.6,
           }}
         >
           <motion.div
@@ -100,7 +100,7 @@ const Home = () => {
             type: "linear",
             ease: "easeInOut",
             duration: 0.6,
-            delay: 0.8,
+            delay: 1,
           }}
         >
           <h3 aria-label="brief about me">
@@ -119,7 +119,7 @@ const Home = () => {
             type: "linear",
             ease: "easeInOut",
             duration: 0.6,
-            delay: 1.1,
+            delay: 1.4,
           }}
         >
           <motion.a href={Resume} target="_blank" rel="noopener noreferrer">

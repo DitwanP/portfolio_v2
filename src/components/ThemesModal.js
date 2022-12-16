@@ -29,7 +29,7 @@ const ThemesModal = (props) => {
 
   return (
     <AnimatePresence mode="wait">
-      <motion.div className={"theme-container"} key="themesModal">
+      <motion.div className="theme-container" key="themesModal">
         <motion.div className="theme-container-toggle">
           <motion.div
             className="theme-list-container"

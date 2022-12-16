@@ -1,16 +1,17 @@
-import React, { useState } from "react"
+import React, { useState, Suspense } from "react"
 import { Routes, Route, useLocation } from "react-router-dom"
 import { AnimatePresence } from "framer-motion"
 
-import Home from "./Home.js"
-import WorkAndSkills from "./WorkAndSkills.js"
-import Projects from "./Projects.js"
-import Contact from "./Contact.js"
 import NavBar from "./NavBar.js"
 import Footer from "./Footer.js"
 
 import "../sass/navbar.scss"
 import "../sass/footer.scss"
+
+const Home = React.lazy(() => import("./Home.js"))
+const WorkAndSkills = React.lazy(() => import("./WorkAndSkills.js"))
+const Projects = React.lazy(() => import("./Projects.js"))
+const Contact = React.lazy(() => import("./Contact.js"))
 
 function AnimatedRoutes(props) {
   const location = useLocation()
@@ -21,10 +22,46 @@ function AnimatedRoutes(props) {
       <NavBar showNavList={showNavList} setShowNavList={setShowNavList} />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/work-and-skills" element={<WorkAndSkills />} />
-          <Route exact path="/projects" element={<Projects />} />
-          <Route exact path="/contact" element={<Contact />} />
+          <Route
+            exact
+            path="/"
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                {" "}
+                <Home />
+              </Suspense>
+            }
+          />
+          <Route
+            exact
+            path="/work-and-skills"
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                {" "}
+                <WorkAndSkills />
+              </Suspense>
+            }
+          />
+          <Route
+            exact
+            path="/projects"
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                {" "}
+                <Projects />
+              </Suspense>
+            }
+          />
+          <Route
+            exact
+            path="/contact"
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                {" "}
+                <Contact />
+              </Suspense>
+            }
+          />
         </Routes>
       </AnimatePresence>
       <Footer switchTheme={props.switchTheme} />

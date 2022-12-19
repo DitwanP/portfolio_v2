@@ -1,5 +1,6 @@
 @use "./fonts.scss" as fonts;
 @use "./colors.scss" as colors;
+@use "./displaySizes.scss" as sizes;
 
 .theme-container {
   position: absolute;
@@ -62,7 +63,11 @@
         content: "";
         display: block;
         width: 0.1rem;
-        height: 5rem;
+        height: 7rem;
+
+        @media (max-width: sizes.$phone) {
+          height: 3rem;
+        }
       }
     }
   }

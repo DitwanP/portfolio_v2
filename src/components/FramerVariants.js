@@ -18,6 +18,26 @@ export const pageVariants = {
   },
 }
 
+// CAROUSEL
+export const carouselVariants = {
+  enter: (direction) => {
+    return {
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0,
+    }
+  },
+  center: {
+    x: 0,
+    opacity: 1,
+  },
+  exit: (direction) => {
+    return {
+      opacity: 0,
+      x: direction < 0 ? 1000 : -1000,
+    }
+  },
+}
+
 // TEXT
 export const textAnimateIn = {
   start: {

@@ -6,7 +6,7 @@ $color-list: (
   //
   // GRAPE
   "grape-bg-color": #221223,
-  "grape-header-bg-color": #271528e9,
+  "grape-header-bg-color": #221223,
   "grape-textMain": #f8eee7,
   "grape-textSecondary": #f4decb,
   "grape-primaryAccent": #d68cce,
@@ -16,7 +16,7 @@ $color-list: (
   //
   // FROYO-DARK
   "fd-bg-color": #1b180f,
-  "fd-header-bg-color": #1f1c11d2,
+  "fd-header-bg-color": #1b180f,
   "fd-textMain": #e1dacb,
   "fd-textSecondary": #f7f2ea,
   "fd-primaryAccent": #ff7e73,
@@ -26,7 +26,7 @@ $color-list: (
   //
   // RYUJIN
   "rs-bg-color": #081426,
-  "rs-header-bg-color": rgb(8, 20, 38),
+  "rs-header-bg-color": #081426,
   "rs-textMain": #efeae9,
   "rs-textSecondary": #f7f2ea,
   "rs-primaryAccent": #f17754,
@@ -36,7 +36,7 @@ $color-list: (
   //
   // DRACULA
   "dracula-bg-color": #282a36,
-  "dracula-header-bg-color": rgb(40, 42, 54),
+  "dracula-header-bg-color": #282a36,
   "dracula-textMain": #f2f2f2,
   "dracula-textSecondary": #f7f2ea,
   "dracula-primaryAccent": #bd93f9,
@@ -44,9 +44,9 @@ $color-list: (
   "dracula-tertiaryAccent": #ec75c4,
   "dracula-theme-list-bg": rgba(189, 147, 249, 0.1),
   //
-  // FROYO-DARK
+  // FUTURE-FUNK
   "ff-bg-color": #2e1a47,
-  "ff-header-bg-color": rgb(46, 26, 71),
+  "ff-header-bg-color": #2e1a47,
   "ff-textMain": #f7f2ea,
   "ff-textSecondary": #f7f2ea,
   "ff-primaryAccent": #f04e98,
@@ -96,6 +96,47 @@ $color-list: (
   .skill-list {
     .skill {
       background-color: map-get($color-list, $theme-name + "-theme-list-bg");
+      transition: color 200ms linear;
+    }
+  }
+
+  .project-details {
+    background-color: map-get($color-list, $theme-name + "-theme-list-bg");
+    transition: background-color 200ms linear;
+
+    .title-container {
+      .project-link {
+        color: map-get($color-list, $theme-name + "-primaryAccent");
+        transition: color 200ms linear;
+      }
+    }
+
+    .project-description {
+      color: map-get($color-list, $theme-name + "-textMain");
+      transition: color 200ms linear;
+    }
+
+    .project-tools {
+      .tool {
+        background-color: map-get(
+          $color-list,
+          $theme-name + "-header-bg-color"
+        );
+        transition: color 200ms linear;
+        color: map-get($color-list, $theme-name + "-secondaryAccent");
+        transition: color 200ms linear;
+      }
+    }
+  }
+
+  .next,
+  .prev {
+    color: map-get($color-list, $theme-name + "-tertiaryAccent");
+    transition: color 200ms linear;
+
+    &:hover {
+      color: map-get($color-list, $theme-name + "-secondaryAccent");
+      transition: color 200ms linear;
     }
   }
 

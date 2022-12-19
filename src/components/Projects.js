@@ -1,17 +1,13 @@
-import React, { useState } from "react"
+import React from "react"
 import { motion } from "framer-motion"
 import { pageVariants, pageTransitions, textAnimateIn } from "./FramerVariants"
+
+import { ProjectsCarousel } from "./ProjectsCarousel"
 
 import "../sass/projects.scss"
 import "../sass/app.scss"
 
 const Projects = () => {
-  const [plainTitleProjects, togglePlainTitleProjects] = useState(false)
-
-  const togglePlainProjectsTitle = () => {
-    togglePlainTitleProjects(!plainTitleProjects)
-  }
-
   return (
     <div className="projects-page-container">
       <motion.div
@@ -29,26 +25,17 @@ const Projects = () => {
             variants={textAnimateIn}
             initial="start"
             animate="end"
-            transition={{ ease: "easeIn", duration: 0.6, delay: 1.2 }}
-            whileHover={{ scale: 1.1 }}
+            transition={{
+              type: "linear",
+              ease: "easeInOut",
+              duration: 0.6,
+              delay: 0.2,
+            }}
           >
-            <h1
-              onMouseEnter={togglePlainProjectsTitle}
-              className={
-                plainTitleProjects ? "plain-title-hidden" : "plain-title"
-              }
-            >
-              pRojects
-            </h1>
-            <h1
-              onMouseLeave={togglePlainProjectsTitle}
-              className={
-                plainTitleProjects ? "plain-title" : "plain-title-hidden"
-              }
-            >
-              projects
-            </h1>
+            <h1 className="title">pRojects</h1>
           </motion.div>
+
+          <ProjectsCarousel />
         </div>
       </motion.div>
     </div>

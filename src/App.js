@@ -38,8 +38,19 @@ function App() {
   }
 
   useEffect(() => {
+    const themeBackgroundColors = {
+      dracula: "#282a36",
+      ryujin: "#081426",
+      grape: "#221223",
+      "future-funk": "#2e1a47",
+      "froyo-dark": "#1b180f",
+    }
+
     setAppElement(ref.current)
     document.body.setAttribute("theme", currentTheme)
+    document
+      .querySelector('meta[name="theme-color"]')
+      .setAttribute("content", themeBackgroundColors[currentTheme])
     localStorage.setItem("theme", currentTheme)
   }, [currentTheme])
 

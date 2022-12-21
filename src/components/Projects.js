@@ -2,7 +2,7 @@ import React from "react"
 import { motion } from "framer-motion"
 import { pageVariants, pageTransitions, textAnimateIn } from "./FramerVariants"
 
-import { ProjectsCarousel } from "./ProjectsCarousel"
+import { ProjectsList } from "./ProjectsList"
 
 import "../sass/projects.scss"
 import "../sass/app.scss"
@@ -35,7 +35,7 @@ const Projects = () => {
             <h1 className="title">pRojects</h1>
           </motion.div>
 
-          <ProjectsCarousel />
+          <ProjectsList />
         </div>
       </motion.div>
     </div>

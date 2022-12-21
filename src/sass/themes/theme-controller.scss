@@ -13,6 +13,7 @@ $color-list: (
   "grape-secondaryAccent": #9873c4,
   "grape-tertiaryAccent": #765de7,
   "grape-theme-list-bg": rgba(214, 140, 206, 0.1),
+  "grape-scrollbar-color": #684664,
   //
   // FROYO-DARK
   "fd-bg-color": #1b180f,
@@ -23,6 +24,7 @@ $color-list: (
   "fd-secondaryAccent": #08d9a3,
   "fd-tertiaryAccent": #f5c370,
   "fd-theme-list-bg": rgba(8, 217, 161, 0.1),
+  "fd-scrollbar-color": #219274,
   //
   // RYUJIN
   "rs-bg-color": #081426,
@@ -33,6 +35,7 @@ $color-list: (
   "rs-secondaryAccent": #f19d86,
   "rs-tertiaryAccent": #f17754,
   "rs-theme-list-bg": rgba(241, 118, 84, 0.1),
+  "rs-scrollbar-color": #a4614f,
   //
   // DRACULA
   "dracula-bg-color": #282a36,
@@ -43,6 +46,7 @@ $color-list: (
   "dracula-secondaryAccent": #50fa7b,
   "dracula-tertiaryAccent": #ec75c4,
   "dracula-theme-list-bg": rgba(189, 147, 249, 0.1),
+  "dracula-scrollbar-color": #7a649a,
   //
   // FUTURE-FUNK
   "ff-bg-color": #2e1a47,
@@ -52,10 +56,18 @@ $color-list: (
   "ff-primaryAccent": #f04e98,
   "ff-secondaryAccent": #a4dbe8,
   "ff-tertiaryAccent": #f6eb61,
-  "ff-theme-list-bg": rgba(240, 78, 151, 0.1)
+  "ff-theme-list-bg": rgba(240, 78, 151, 0.1),
+  "ff-scrollbar-color": #a19b43
 );
 
 @mixin theme-controller($theme-name) {
+  * {
+    ::-webkit-scrollbar-thumb {
+      background-color: map-get($color-list, $theme-name + "-scrollbar-color");
+      transition: background-color 200ms linear;
+    }
+  }
+
   .home-container,
   .exp-page-container,
   .projects-page-container,
@@ -106,7 +118,7 @@ $color-list: (
 
     .title-container {
       .project-link {
-        color: map-get($color-list, $theme-name + "-primaryAccent");
+        color: map-get($color-list, $theme-name + "-secondaryAccent");
         transition: color 200ms linear;
       }
     }
@@ -123,7 +135,7 @@ $color-list: (
           $theme-name + "-header-bg-color"
         );
         transition: color 200ms linear;
-        color: map-get($color-list, $theme-name + "-secondaryAccent");
+        color: map-get($color-list, $theme-name + "-primaryAccent");
         transition: color 200ms linear;
       }
     }

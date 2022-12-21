@@ -11,6 +11,10 @@
   align-items: center;
   overflow: hidden;
 
+  @media (max-width: sizes.$phone) {
+    right: 1rem;
+  }
+
   li {
     button {
       background: none;

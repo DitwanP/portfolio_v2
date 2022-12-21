@@ -1,7 +1,7 @@
 import React from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faGithubAlt } from "@fortawesome/free-brands-svg-icons"
+import { faGithub } from "@fortawesome/free-brands-svg-icons"
 
 import { projectsInfo } from "../assets/ProjectsInfo"
 
@@ -30,7 +30,7 @@ export const ProjectsList = () => {
                     whileHover={{ scale: 1.2 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <FontAwesomeIcon icon={faGithubAlt} />
+                    <FontAwesomeIcon icon={faGithub} />
                   </motion.a>
                 </div>
                 <p className="project-description">{project.description}</p>

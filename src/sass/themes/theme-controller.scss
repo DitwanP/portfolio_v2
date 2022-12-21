@@ -118,8 +118,13 @@ $color-list: (
 
     .title-container {
       .project-link {
-        color: map-get($color-list, $theme-name + "-secondaryAccent");
+        color: map-get($color-list, $theme-name + "-textMain");
         transition: color 200ms linear;
+
+        &:hover {
+          color: map-get($color-list, $theme-name + "-secondaryAccent");
+          transition: color 200ms linear;
+        }
       }
     }
 

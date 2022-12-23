@@ -1,8 +1,8 @@
 import React from "react"
 import { motion } from "framer-motion"
 
-import { jobsInfo } from "../assets/WorkInfo"
-import { skillsInfo } from "../assets/SkillsInfo"
+import { jobsInfo } from "./data/WorkInfo"
+import { skillsInfo } from "./data/SkillsInfo"
 import {
   pageVariants,
   textAnimateIn,

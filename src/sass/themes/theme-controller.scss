@@ -66,6 +66,9 @@ $color-list: (
       background-color: map-get($color-list, $theme-name + "-scrollbar-color");
       transition: background-color 200ms linear;
     }
+    scrollbar-color: map-get($color-list, $theme-name + "-scrollbar-color")
+      map-get($color-list, $theme-name + "-bg-color");
+    transition: scrollbar-color 200ms linear;
   }
 
   .home-container,
@@ -118,12 +121,14 @@ $color-list: (
 
     .title-container {
       .project-link {
-        color: map-get($color-list, $theme-name + "-textMain");
-        transition: color 200ms linear;
+        svg {
+          fill: map-get($color-list, $theme-name + "-textMain");
+          transition: fill 200ms linear;
 
-        &:hover {
-          color: map-get($color-list, $theme-name + "-secondaryAccent");
-          transition: color 200ms linear;
+          &:hover {
+            fill: map-get($color-list, $theme-name + "-secondaryAccent");
+            transition: fill 200ms linear;
+          }
         }
       }
     }
@@ -143,17 +148,6 @@ $color-list: (
         color: map-get($color-list, $theme-name + "-primaryAccent");
         transition: color 200ms linear;
       }
-    }
-  }
-
-  .next,
-  .prev {
-    color: map-get($color-list, $theme-name + "-tertiaryAccent");
-    transition: color 200ms linear;
-
-    &:hover {
-      color: map-get($color-list, $theme-name + "-secondaryAccent");
-      transition: color 200ms linear;
     }
   }
 
@@ -297,6 +291,11 @@ $color-list: (
   }
 
   .email-button {
+    svg {
+      fill: map-get($color-list, $theme-name + "-tertiaryAccent");
+      transition: fill 200ms linear;
+    }
+
     a {
       color: map-get($color-list, $theme-name + "-tertiaryAccent");
       border-color: map-get(
@@ -326,11 +325,21 @@ $color-list: (
           color: map-get($color-list, $theme-name + "-secondaryAccent");
           transition: color 200ms linear;
         }
+
+        svg {
+          fill: map-get($color-list, $theme-name + "-secondaryAccent");
+          transition: fill 200ms linear;
+        }
       }
     }
   }
 
   .resume-button {
+    svg {
+      fill: map-get($color-list, $theme-name + "-tertiaryAccent");
+      transition: fill 200ms linear;
+    }
+
     a {
       color: map-get($color-list, $theme-name + "-tertiaryAccent");
       border-color: map-get(
@@ -359,6 +368,11 @@ $color-list: (
         h3 {
           color: map-get($color-list, $theme-name + "-secondaryAccent");
           transition: color 200ms linear;
+        }
+
+        svg {
+          fill: map-get($color-list, $theme-name + "-secondaryAccent");
+          transition: fill 200ms linear;
         }
       }
     }
@@ -377,12 +391,12 @@ $color-list: (
       }
 
       .link {
-        color: map-get($color-list, $theme-name + "-textMain");
-        transition: color 200ms linear;
+        fill: map-get($color-list, $theme-name + "-textMain");
+        transition: fill 200ms linear;
 
         &:hover {
-          color: map-get($color-list, $theme-name + "-tertiaryAccent");
-          transition: color 200ms linear;
+          fill: map-get($color-list, $theme-name + "-tertiaryAccent");
+          transition: fill 200ms linear;
         }
       }
     }

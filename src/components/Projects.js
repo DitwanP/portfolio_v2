@@ -29,7 +29,7 @@ const Projects = () => {
               type: "linear",
               ease: "easeInOut",
               duration: 0.6,
-              delay: 0.2,
+              delay: 0.6,
             }}
           >
             <h1 className="title">pRojects</h1>

@@ -1,7 +1,7 @@
 import React from "react"
 import { motion } from "framer-motion"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faPaperPlane } from "@fortawesome/free-solid-svg-icons"
+
+import { ReactComponent as PaperPlaneIcon } from "../assets/icons/paper-plane-regular.svg"
 
 import { pageVariants, pageTransitions, textAnimateIn } from "./FramerVariants"
 
@@ -47,11 +47,10 @@ const Contact = () => {
               delay: 0.6,
             }}
           >
-            I'm currently working with some amazing people, but I also believe
-            it's time for me to look for new challenges. In my current role,
-            I've demonstrated my ability to meet timelines and objectives in a
-            fast-paced and dynamic environment. I'm confident I can do the same
-            wherever I end up.
+            I'm working with some amazing people, but I'm also open to taking on
+            new challenges. In my current role, I've demonstrated my ability to
+            meet timelines and objectives in a fast-paced and dynamic
+            environment. I'm confident I can do the same wherever I end up.
           </motion.p>
           <motion.p
             variants={textAnimateIn}
@@ -64,8 +63,8 @@ const Contact = () => {
               delay: 1,
             }}
           >
-            I'm open to exploring new oportunities so if you think I would be a
-            good fit for a role, don't hesitate to reach out!
+            I'm open to exploring new opportunities, so if you think I would be
+            a good fit for a role, don't hesitate to reach out!
           </motion.p>
         </motion.div>
         <motion.div
@@ -86,7 +85,7 @@ const Contact = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FontAwesomeIcon icon={faPaperPlane} />
+            <PaperPlaneIcon />
             <h3>Reach Out</h3>
           </motion.a>
         </motion.div>

@@ -18,29 +18,6 @@ export const pageVariants = {
   },
 }
 
-// CAROUSEL
-export const carouselVariants = {
-  enter: (direction) => {
-    return {
-      y: 0,
-      x: direction > 0 ? 1000 : -1000,
-      opacity: 0,
-    }
-  },
-  center: {
-    y: 0,
-    x: 0,
-    opacity: 1,
-  },
-  exit: (direction) => {
-    return {
-      y: 0,
-      opacity: 0,
-      x: direction < 0 ? 1000 : -1000,
-    }
-  },
-}
-
 // TEXT
 export const textAnimateIn = {
   start: {
@@ -124,6 +101,11 @@ export const listVariants = {
   closed: {
     transition: { staggerChildren: 0.05, staggerDirection: -1 },
   },
+  hidden: { y: 500, opacity: 0 },
+  show: {
+    y: 0,
+    opacity: 1,
+  },
 }
 
 export const listItemVariants = {
@@ -139,6 +121,17 @@ export const listItemVariants = {
     opacity: 0,
     transition: {
       y: { stiffness: 1000 },
+    },
+  },
+  hidden: {
+    y: 500,
+    opacity: 0,
+  },
+  show: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      y: { type: "linear", ease: "easeInOut", delay: 1 },
     },
   },
 }

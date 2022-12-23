@@ -1,19 +1,33 @@
 import React from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faGithub } from "@fortawesome/free-brands-svg-icons"
 
-import { projectsInfo } from "../assets/ProjectsInfo"
+import { ReactComponent as GithubIcon } from "../assets/icons/github.svg"
+
+import { listVariants } from "./FramerVariants"
+import { projectsInfo } from "./data/ProjectsInfo"
 
 import "../sass/projectsList.scss"
 
 export const ProjectsList = () => {
   return (
     <div className="projects-list-container">
-      <AnimatePresence>
-        <motion.ul className="projects-list" key={"projects-list"}>
+      <motion.ul
+        className="projects-list"
+        key={"projects-list"}
+        variants={listVariants}
+        initial="hidden"
+        animate="show"
+        transition={{
+          staggerChildren: 1,
+          type: "linear",
+          ease: "easeInOut",
+          delay: 1.2,
+          duration: 0.6,
+        }}
+      >
+        <AnimatePresence>
           {projectsInfo.map((project, index) => (
-            <li key={index} className="project">
+            <motion.li key={index} className="project">
               <div className="project-image-container">
                 <div className="project-image">
                   <img alt={`${project.title} project`} src={project.image} />
@@ -30,7 +44,7 @@ export const ProjectsList = () => {
                     whileHover={{ scale: 1.2 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <FontAwesomeIcon icon={faGithub} />
+                    <GithubIcon />
                   </motion.a>
                 </div>
                 <p className="project-description">{project.description}</p>
@@ -42,10 +56,10 @@ export const ProjectsList = () => {
                   ))}
                 </ul>
               </div>
-            </li>
+            </motion.li>
           ))}
-        </motion.ul>
-      </AnimatePresence>
+        </AnimatePresence>
+      </motion.ul>
     </div>
   )
 }

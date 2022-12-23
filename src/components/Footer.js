@@ -1,7 +1,8 @@
 import React, { useState } from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faLinkedinIn, faGithubAlt } from "@fortawesome/free-brands-svg-icons"
 import { motion } from "framer-motion"
+
+import { ReactComponent as GithubIcon } from "../assets/icons/github.svg"
+import { ReactComponent as LinkedInIcon } from "../assets/icons/linkedin-in.svg"
 
 import ThemesModal from "./ThemesModal.js"
 import { footerAnimateIn, footerTransitions } from "./FramerVariants"
@@ -29,7 +30,7 @@ const Footer = (props) => {
           whileHover={{ scale: 1.2 }}
           whileTap={{ scale: 0.95 }}
         >
-          <FontAwesomeIcon icon={faLinkedinIn} />
+          <LinkedInIcon />
         </motion.a>
         <motion.a
           className="link"
@@ -39,7 +40,7 @@ const Footer = (props) => {
           whileHover={{ scale: 1.2 }}
           whileTap={{ scale: 0.95 }}
         >
-          <FontAwesomeIcon icon={faGithubAlt} />
+          <GithubIcon />
         </motion.a>
       </div>
       <ThemesModal

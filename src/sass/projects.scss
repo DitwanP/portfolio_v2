@@ -24,14 +24,14 @@
     z-index: 1;
     justify-content: flex-start;
     padding: 5rem;
-    overflow-y: auto;
+    overflow-y: scroll;
 
     @media (max-width: sizes.$tablet) {
       padding: 5rem 7rem;
     }
 
     @media (max-width: sizes.$phone) {
-      padding: 5rem 5rem;
+      padding: 4rem 5rem;
     }
 
     .projects-container {

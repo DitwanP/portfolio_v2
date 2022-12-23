@@ -1,6 +1,8 @@
 import React, { useState } from "react"
 import { motion } from "framer-motion"
 
+import { ReactComponent as PdfIcon } from "../assets/icons/file-pdf-solid.svg"
+
 import { pageVariants, textAnimateIn } from "./FramerVariants"
 import Resume from "../assets/Ditwan_Price_Resume.PDF"
 
@@ -105,9 +107,8 @@ const Home = () => {
         >
           <h3 aria-label="brief about me">
             I'm an early career software engineer that enjoys creating things
-            for the web. I find myself ejoying frontend work the most currently,
-            but I'm a detail-oriented, organized, and reliable team player that
-            can efficiently tackle whatever work comes my way.
+            for the web. I'm a detail-oriented, organized, and reliable team
+            player who can efficiently tackle whatever work comes my way.
           </h3>
         </motion.div>
         <motion.div
@@ -123,6 +124,7 @@ const Home = () => {
           }}
         >
           <motion.a href={Resume} target="_blank" rel="noopener noreferrer">
+            <PdfIcon />
             <h3>Resume</h3>
           </motion.a>
         </motion.div>

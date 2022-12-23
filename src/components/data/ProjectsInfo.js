@@ -1,7 +1,7 @@
-import homebaseImg from "./images/homebase.png"
-import crowdfundImg from "./images/crowdfund.png"
-import statifyImg from "./images/statify.png"
-import portfolioV1Img from "./images/portfolioV1.png"
+import homebaseImg from "../../assets/images/homebase.png"
+import crowdfundImg from "../../assets/images/crowdfund.png"
+import statifyImg from "../../assets/images/statify.png"
+import portfolioV1Img from "../../assets/images/portfolioV1.png"
 
 export const projectsInfo = [
   {

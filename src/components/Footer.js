@@ -21,33 +21,35 @@ const Footer = (props) => {
       exit="outDown"
       transition={footerTransitions}
     >
-      <div className="social-links">
-        <motion.a
-          className="link"
-          href="https://www.linkedin.com/in/ditwan/"
-          target="_blank"
-          rel="noopener noreferrer"
-          whileHover={{ scale: 1.2 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <LinkedInIcon />
-        </motion.a>
-        <motion.a
-          className="link"
-          href="https://github.com/DitwanP"
-          target="_blank"
-          rel="noopener noreferrer"
-          whileHover={{ scale: 1.2 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <GithubIcon />
-        </motion.a>
+      <div className="footer-content">
+        <div className="social-links">
+          <motion.a
+            className="link"
+            href="https://www.linkedin.com/in/ditwan/"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <LinkedInIcon />
+          </motion.a>
+          <motion.a
+            className="link"
+            href="https://github.com/DitwanP"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <GithubIcon />
+          </motion.a>
+        </div>
+        <ThemesModal
+          switchTheme={props.switchTheme}
+          showThemesModal={showThemesModal}
+          setShowThemesModal={setShowThemesModal}
+        />
       </div>
-      <ThemesModal
-        switchTheme={props.switchTheme}
-        showThemesModal={showThemesModal}
-        setShowThemesModal={setShowThemesModal}
-      />
     </motion.div>
   )
 }

@@ -4,6 +4,8 @@
 
 .navbar-container {
   height: 90px;
+  display: flex;
+  justify-content: center;
   position: fixed;
   inset: 0;
   padding: 2rem 5rem;

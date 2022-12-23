@@ -113,7 +113,7 @@ const WorkAndSkills = () => {
               delay: 1.4,
             }}
           >
-            <h1 className="title">sKiLLs</h1>
+            <h1 className="title">sKills</h1>
           </motion.div>
           <motion.div
             className="skills"

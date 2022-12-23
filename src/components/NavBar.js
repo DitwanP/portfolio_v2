@@ -2,8 +2,9 @@ import React, { useRef } from "react"
 import { useDimensions } from "./hooks/use-dimensions"
 import { motion, AnimatePresence } from "framer-motion"
 import { Link } from "react-router-dom"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faLinkedinIn, faGithubAlt } from "@fortawesome/free-brands-svg-icons"
+
+import { ReactComponent as GithubIcon } from "../assets/icons/github.svg"
+import { ReactComponent as LinkedInIcon } from "../assets/icons/linkedin-in.svg"
 
 import "../sass/navbar.scss"
 import "../sass/app.scss"
@@ -139,7 +140,7 @@ const NavBar = (props) => {
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <FontAwesomeIcon icon={faGithubAlt} />
+                  <GithubIcon />
                   <h2>github</h2>
                 </motion.a>
                 <motion.a
@@ -150,7 +151,7 @@ const NavBar = (props) => {
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <FontAwesomeIcon icon={faLinkedinIn} />
+                  <LinkedInIcon />
                   <h2>linkedin</h2>
                 </motion.a>
               </div>

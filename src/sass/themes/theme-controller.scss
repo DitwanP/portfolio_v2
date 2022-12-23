@@ -229,6 +229,11 @@ $color-list: (
       }
     }
 
+    .social-links {
+      fill: map-get($color-list, $theme-name + "-primaryAccent");
+      transition: fill 200ms linear;
+    }
+
     .nav-toggle-container {
       .toggle-button-container {
         .toggle-button {
@@ -376,11 +381,6 @@ $color-list: (
         }
       }
     }
-  }
-
-  .social-links {
-    color: map-get($color-list, $theme-name + "-tertiaryAccent");
-    transition: color 200ms linear;
   }
 
   .footer-container {

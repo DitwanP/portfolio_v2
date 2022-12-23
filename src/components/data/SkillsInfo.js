@@ -1,5 +1,5 @@
 export const skillsInfo = [
-  "React",
+  "React.js",
   "JavaScript",
   "TypeScript",
   "Python",

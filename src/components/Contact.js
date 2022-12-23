@@ -22,7 +22,6 @@ const Contact = () => {
         <motion.div
           className="title"
           aria-label="Contact"
-          whileHover={{ scale: 1.1 }}
           variants={textAnimateIn}
           initial="start"
           animate="end"

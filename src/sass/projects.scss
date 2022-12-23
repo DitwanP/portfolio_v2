@@ -43,6 +43,10 @@
       gap: 3rem;
 
       .title {
+        &:hover {
+          cursor: default;
+        }
+
         h1 {
           font-family: fonts.$MajorMono;
           font-size: 4rem;

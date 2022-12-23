@@ -11,21 +11,21 @@ export const projectsInfo = [
         assets but no instructions on how to build the site out. Although
         it looks simple, I learned a ton about frontend development throughout
         the building process.`,
-    tools: ["React", "JavaScript", "HTML", "Sass"],
+    tools: ["React.js", "JavaScript", "HTML", "Sass"],
     image: crowdfundImg,
     link: "https://github.com/DitwanP/Crowdfunding_product_page",
   },
 
   {
     title: "Statify",
-    description: `I created this site in for a user to visualize a 
+    description: `I created this site for a user to visualize a 
         simple and clean presentation of their Spotify data. I utilized 
-        the Spotify API in order for users to login and authenticate 
+        the Spotify API for users to log in and authenticate 
         externally, and then their most important account data gets 
         displayed to them.`,
     tools: [
-      "RactJS",
-      "ExpressJS",
+      "Ract.js",
+      "Express.js",
       "Sass",
       "Spotify API",
       "Framer Motion",
@@ -43,8 +43,7 @@ export const projectsInfo = [
         different APIs. There is also a simple to-do list for keeping 
         track of small tasks.`,
     tools: [
-      "RactJS",
-      "Django",
+      "Ract.js",
       "HTML",
       "Sass",
       "Unsplash API",
@@ -56,14 +55,13 @@ export const projectsInfo = [
   },
   {
     title: "Portfolio 1.0",
-    description: `This was version one of my portfolio site. 
-        In the process of building it, I was exposed to a some 
-        fun and interesting tools to create something that not 
-        only displayed my professional details but also something 
-        that I enjoyed creating from start to finish.`,
+    description: `This was version one of my portfolio site. While 
+    building it out, I was exposed to many fun and eye-catching 
+    tools to create a site that displayed my professional details 
+    but was also exciting to develop.`,
     tools: [
-      "React",
-      "Express",
+      "React.js",
+      "Express.js",
       "Sass",
       "NodeMailer",
       "Framer Motion",

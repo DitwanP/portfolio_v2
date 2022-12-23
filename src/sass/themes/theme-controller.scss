@@ -152,7 +152,7 @@ $color-list: (
   }
 
   .name-chars,
-  .plain-title {
+  .title {
     &:hover {
       color: map-get($color-list, $theme-name + "-tertiaryAccent");
       transition: color 200ms linear;

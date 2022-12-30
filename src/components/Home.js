@@ -65,7 +65,7 @@ const Home = () => {
               onMouseEnter={toggleFirstName}
               className={plainFirstName ? "name-chars-hidden" : "name-chars"}
             >
-              DitWAn
+              ditWAn
             </h1>
             <h1
               onMouseLeave={toggleFirstName}
@@ -83,7 +83,7 @@ const Home = () => {
               onMouseEnter={toggleLastName}
               className={plainLastName ? "name-chars-hidden" : "name-chars"}
             >
-              PRice<span>.</span>
+              pRice<span>.</span>
             </h1>
             <h1
               onMouseLeave={toggleLastName}

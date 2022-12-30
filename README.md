@@ -1,3 +1,4 @@
+![Portfolio V2](src/assets/images/portfolioV2.png)
 
 # Description
 This is version 2 of my portfolio site. Just as I did with the first version, I created this site to function as a visual representation of my current Software Engineering resume.

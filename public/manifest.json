@@ -3,17 +3,17 @@
   "name": "Ditwan Price",
   "icons": [
     {
-      "src": "./favicon.ico",
+      "src": "./favicons/favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "./apple-touch-icon.png",
+      "src": "./favicons/apple-touch-icon.png",
       "type": "image/png",
       "sizes": "180x180"
     },
     {
-      "src": "./android-chrome-512x512.png",
+      "src": "./favicons/android-chrome-512x512.png",
       "type": "image/png",
       "sizes": "512x512"
     }

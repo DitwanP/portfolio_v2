@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { ReactComponent as PdfIcon } from "../assets/icons/file-pdf-solid.svg"
 
 import { pageVariants, textAnimateIn } from "./FramerVariants"
-import Resume from "../assets/Ditwan_Price_Resume.PDF"
+import Resume from "../assets/Ditwan_Price_Resume-Dark.pdf"
 
 import "../sass/home.scss"
 import "../sass/app.scss"
@@ -106,9 +106,10 @@ const Home = () => {
           }}
         >
           <h3 aria-label="brief about me">
-            I'm an early career software engineer that enjoys creating things
-            for the web. I'm a detail-oriented, organized, and reliable team
-            player who can efficiently tackle whatever work comes my way.
+            Software Engineer with expertise in building user interfaces using
+            React and developing scalable applications with JavaScript.
+            Experienced in working collaboratively in dynamic environments to
+            achieve project objectives with speed and accuracy.
           </h3>
         </motion.div>
         <motion.div

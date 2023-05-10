@@ -46,10 +46,10 @@ const Contact = () => {
               delay: 0.6,
             }}
           >
-            I'm working with some amazing people, but I'm also open to taking on
-            new challenges. In my current role, I've demonstrated my ability to
-            meet timelines and objectives in a fast-paced and dynamic
-            environment. I'm confident I can do the same wherever I end up.
+            I'm actively seeking new opportunities and am excited to take on new
+            challenges. With a proven track record of meeting deadlines and
+            achieving objectives in fast-paced environments, I'm confident that
+            I can make a positive impact wherever I end up.
           </motion.p>
           <motion.p
             variants={textAnimateIn}
@@ -62,8 +62,9 @@ const Contact = () => {
               delay: 1,
             }}
           >
-            I'm open to exploring new opportunities, so if you think I would be
-            a good fit for a role, don't hesitate to reach out!
+            If you have a role that you believe would be a good fit for me,
+            please don't hesitate to reach out. I'd love to explore new
+            possibilities together.
           </motion.p>
         </motion.div>
         <motion.div

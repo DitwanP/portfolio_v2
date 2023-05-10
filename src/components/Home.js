@@ -42,7 +42,7 @@ const Home = () => {
             delay: 0.2,
           }}
         >
-          <h2>Hello, my name is</h2>
+          <h2>Hello, I'm</h2>
         </motion.div>
         <motion.div
           className="name"
@@ -65,7 +65,7 @@ const Home = () => {
               onMouseEnter={toggleFirstName}
               className={plainFirstName ? "name-chars-hidden" : "name-chars"}
             >
-              ditWAn
+              DitWAn
             </h1>
             <h1
               onMouseLeave={toggleFirstName}
@@ -83,7 +83,7 @@ const Home = () => {
               onMouseEnter={toggleLastName}
               className={plainLastName ? "name-chars-hidden" : "name-chars"}
             >
-              pRice<span>.</span>
+              PRice<span>.</span>
             </h1>
             <h1
               onMouseLeave={toggleLastName}
@@ -106,10 +106,11 @@ const Home = () => {
           }}
         >
           <h3 aria-label="brief about me">
-            Software Engineer with expertise in building user interfaces using
-            React and developing scalable applications with JavaScript.
-            Experienced in working collaboratively in dynamic environments to
-            achieve project objectives with speed and accuracy.
+            A productive and creative software engineer with 2+ years of
+            experience in building complex user interfaces and developing
+            scalable applications. Experience collaborating with
+            cross-functional teams to achieve project objectives, and committed
+            to ensuring a seamless user experience.
           </h3>
         </motion.div>
         <motion.div

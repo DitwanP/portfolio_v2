@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { ReactComponent as PdfIcon } from "../assets/icons/file-pdf-solid.svg"
 
 import { pageVariants, textAnimateIn } from "./FramerVariants"
-import Resume from "../assets/Ditwan_Price_Resume-Dark.pdf"
+import Resume from "../assets/Ditwan_Price_Resume.pdf"
 
 import "../sass/home.scss"
 import "../sass/app.scss"

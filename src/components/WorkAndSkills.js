@@ -36,7 +36,7 @@ const WorkAndSkills = () => {
               delay: 0.2,
             }}
           >
-            <h1 className="title">WHeRe i'Ve WoRked</h1>
+            <h1 className="title">pRoFessionAl eXpeRience</h1>
           </motion.div>
           <div className="work">
             {jobsInfo.map((job, index) => (

@@ -143,20 +143,17 @@ export const themesContainerVariants = {
     transition: {
       type: "linear",
     },
+    visibility: "visible",
   },
   closed: {
-    y: 1000,
+    y: 700,
     transition: {
       delay: 0.5,
       type: "linear",
       damping: 10,
     },
-  },
-  outDown: {
-    y: 600,
-    transition: {
-      type: "linear",
-      damping: 10,
+    transitionEnd: {
+      visibility: "hidden",
     },
   },
 }

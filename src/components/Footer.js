@@ -12,6 +12,10 @@ import "../sass/footer.scss"
 const Footer = (props) => {
   const [showThemesModal, setShowThemesModal] = useState(false)
 
+  const toggleThemeList = () => {
+    setShowThemesModal(!showThemesModal)
+  }
+
   return (
     <motion.div
       className="footer-container"
@@ -49,6 +53,21 @@ const Footer = (props) => {
           showThemesModal={showThemesModal}
           setShowThemesModal={setShowThemesModal}
         />
+        <div className="toggle-button-container">
+          <button
+            className="toggle-button"
+            tabIndex="-1"
+            onClick={toggleThemeList}
+          >
+            <motion.span
+              className="theme-container-button-title"
+              whileHover={{ y: -5 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              theme
+            </motion.span>
+          </button>
+        </div>
       </div>
     </motion.div>
   )

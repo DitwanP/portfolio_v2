@@ -1,5 +1,5 @@
 export const skillsInfo = [
-  "React.js",
+  "React",
   "JavaScript",
   "TypeScript",
   "Python",
@@ -7,5 +7,8 @@ export const skillsInfo = [
   "CSS",
   "SASS",
   "Git",
-  "Node.js",
+  "Vue",
+  "Problem solving",
+  "Object-oriented Programming",
+  "Written & Verbal Communication",
 ]

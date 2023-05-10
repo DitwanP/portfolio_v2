@@ -10,6 +10,7 @@
   text-align: left;
   align-items: center;
   overflow: hidden;
+  visibility: visible;
 
   @media (max-width: sizes.$phone) {
     right: 1rem;

@@ -5,18 +5,6 @@ import portfolioV1Img from "../../assets/images/portfolioV1.png"
 
 export const projectsInfo = [
   {
-    title: "Crowdfund",
-    description: `This project was a landing page challenge I came across 
-        on Frontend Mentor. It was pretty straight forward and provided the
-        assets but no instructions on how to build the site out. Although
-        it looks simple, I learned a ton about frontend development throughout
-        the building process.`,
-    tools: ["React.js", "JavaScript", "HTML"],
-    image: crowdfundImg,
-    link: "https://github.com/DitwanP/Crowdfunding_product_page",
-  },
-
-  {
     title: "Statify",
     description: `I created this site for a user to visualize a 
         simple and clean presentation of their Spotify data. I utilized 
@@ -51,6 +39,17 @@ export const projectsInfo = [
     ],
     image: homebaseImg,
     link: "https://github.com/DitwanP/Homebase",
+  },
+  {
+    title: "Crowdfund",
+    description: `This project was a landing page challenge I came across 
+        on Frontend Mentor. It was pretty straight forward and provided the
+        assets but no instructions on how to build the site out. Although
+        it looks simple, I learned a ton about frontend development throughout
+        the building process.`,
+    tools: ["React.js", "JavaScript", "HTML"],
+    image: crowdfundImg,
+    link: "https://github.com/DitwanP/Crowdfunding_product_page",
   },
   {
     title: "Portfolio 1.0",

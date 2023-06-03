@@ -52,18 +52,12 @@ export const navContainerVariants = {
     x: 0,
     transition: {
       type: "easeInOut",
-      stiffness: 50,
-      restDelta: 2,
-      duration: 0.8,
     },
   },
   closed: {
     x: 1500,
     transition: {
       type: "easeInOut",
-      stiffness: 50,
-      restDelta: 2,
-      duration: 0.8,
     },
   },
 }
@@ -148,9 +142,8 @@ export const themesContainerVariants = {
   closed: {
     y: 700,
     transition: {
-      delay: 0.5,
+      delay: 0.7,
       type: "linear",
-      damping: 10,
     },
     transitionEnd: {
       visibility: "hidden",

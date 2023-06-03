@@ -160,8 +160,8 @@
         font-size: 2.4rem;
         font-weight: 400;
         font-family: fonts.$NotoSansMono;
-        padding: 0.5rem 1.2rem;
-        border-radius: 0.2rem;
+        padding: 1rem 1.6rem;
+        border-radius: 0.4rem;
 
         @media (max-width: sizes.$tablet) {
           font-size: clamp(12px, 1.8rem, 30px);

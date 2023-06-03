@@ -338,42 +338,43 @@ $color-list: (
 
   .resume-button {
     svg {
-      fill: map-get($color-list, $theme-name + "-tertiaryAccent");
+      fill: map-get($color-list, $theme-name + "-textMain");
       transition: fill 200ms linear;
     }
 
     a {
-      color: map-get($color-list, $theme-name + "-tertiaryAccent");
+      color: map-get($color-list, $theme-name + "-secondaryAccent");
       border-color: map-get(
         $color-list,
-        $theme-name + "-tertiaryAccent"
+        $theme-name + "-secondaryAccent"
       ) !important;
+      background-color: map-get($color-list, $theme-name + "-theme-list-bg");
 
       transition: border-color 200ms linear;
       transition: color 200ms linear;
 
       h3 {
-        color: map-get($color-list, $theme-name + "-tertiaryAccent");
+        color: map-get($color-list, $theme-name + "-textMain");
         transition: color 200ms linear;
       }
 
       &:hover {
-        color: map-get($color-list, $theme-name + "-secondaryAccent");
+        color: map-get($color-list, $theme-name + "-tertiaryAccent");
         border-color: map-get(
           $color-list,
-          $theme-name + "-secondaryAccent"
+          $theme-name + "-tertiaryAccent"
         ) !important;
         background-color: map-get($color-list, $theme-name + "-theme-list-bg");
         transition: background-color 200ms linear;
         transition: border-color 200ms linear;
 
         h3 {
-          color: map-get($color-list, $theme-name + "-secondaryAccent");
+          color: map-get($color-list, $theme-name + "-tertiaryAccent");
           transition: color 200ms linear;
         }
 
         svg {
-          fill: map-get($color-list, $theme-name + "-secondaryAccent");
+          fill: map-get($color-list, $theme-name + "-tertiaryAccent");
           transition: fill 200ms linear;
         }
       }

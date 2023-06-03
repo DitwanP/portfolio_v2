@@ -25,7 +25,7 @@ const ThemesModal = (props) => {
   return (
     <AnimatePresence mode="wait">
       <motion.div
-        className="theme-container"
+        className=" theme-container"
         key="themesModal"
         variants={themesContainerVariants}
         animate={showThemesModal ? "open" : "closed"}

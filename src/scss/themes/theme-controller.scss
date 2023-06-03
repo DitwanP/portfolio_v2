@@ -184,23 +184,9 @@ $color-list: (
         }
       }
 
-      li:nth-child(1) {
+      li {
         span {
           color: map-get($color-list, $theme-name + "-secondaryAccent");
-          transition: color 200ms linear;
-        }
-      }
-
-      li:nth-child(2) {
-        span {
-          color: map-get($color-list, $theme-name + "-tertiaryAccent");
-          transition: color 200ms linear;
-        }
-      }
-
-      li:nth-child(3) {
-        span {
-          color: map-get($color-list, $theme-name + "-primaryAccent");
           transition: color 200ms linear;
         }
       }

@@ -50,10 +50,20 @@ const NavBar = (props) => {
                 variants={navListItemVariants}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
+                key="home"
+              >
+                <Link to="/">
+                  <span>01.</span>home
+                </Link>
+              </motion.li>
+              <motion.li
+                variants={navListItemVariants}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
                 key="work and skills"
               >
                 <Link to="/work-and-skills">
-                  <span>01.</span>work/skills
+                  <span>02.</span>work/skills
                 </Link>
               </motion.li>
               <motion.li
@@ -63,7 +73,7 @@ const NavBar = (props) => {
                 key="projects"
               >
                 <Link to="/projects">
-                  <span>02.</span>projects
+                  <span>03.</span>projects
                 </Link>
               </motion.li>
               <motion.li
@@ -73,7 +83,7 @@ const NavBar = (props) => {
                 key="contact"
               >
                 <Link to="/contact">
-                  <span>03.</span>contact
+                  <span>04.</span>contact
                 </Link>
               </motion.li>
             </motion.ul>

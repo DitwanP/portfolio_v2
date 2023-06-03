@@ -2,7 +2,7 @@ export const jobsInfo = [
   {
     company: "AltoIRA",
     position: "Software Engineer",
-    location: "Nashville, TN (Remote)",
+    location: "(Remote)",
     start_date: "May 2021",
     end_date: "May 2023",
     bullets: [

@@ -26,7 +26,7 @@
     padding: 5rem 10rem;
   }
 
-  @media (orientation: landscape) and (min-width: sizes.$desktop-lg) {
+  @media (min-width: sizes.$desktop-lg) {
     justify-content: center;
   }
 

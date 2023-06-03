@@ -1,8 +1,8 @@
 import React from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
-import "../sass/themes.scss"
-import "../sass/app.scss"
+import "../scss/themes.scss"
+import "../scss/app.scss"
 
 import {
   themesContainerVariants,

@@ -5,8 +5,8 @@ import { AnimatePresence } from "framer-motion"
 import NavBar from "./NavBar.js"
 import Footer from "./Footer.js"
 
-import "../sass/navbar.scss"
-import "../sass/footer.scss"
+import "../scss/navbar.scss"
+import "../scss/footer.scss"
 
 const Home = React.lazy(() => import("./Home.js"))
 const WorkAndSkills = React.lazy(() => import("./WorkAndSkills.js"))

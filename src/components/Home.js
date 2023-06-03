@@ -6,8 +6,9 @@ import { ReactComponent as PdfIcon } from "../assets/icons/file-pdf-solid.svg"
 import { pageVariants, textAnimateIn } from "./FramerVariants"
 import Resume from "../assets/Ditwan_Price_Resume.pdf"
 
-import "../sass/home.scss"
-import "../sass/app.scss"
+import "../scss/home.scss"
+import "../scss/app.scss"
+import "../scss/utility.scss"
 
 const Home = () => {
   const [plainFirstName, togglePlainFirstName] = useState(false)
@@ -22,7 +23,7 @@ const Home = () => {
   }
 
   return (
-    <motion.div id="home-container" className="home-container">
+    <motion.div id="home-container" className="page-container">
       <motion.div
         className="home-content"
         variants={pageVariants}

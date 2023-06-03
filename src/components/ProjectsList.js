@@ -6,7 +6,7 @@ import { ReactComponent as GithubIcon } from "../assets/icons/github.svg"
 import { listVariants } from "./FramerVariants"
 import { projectsInfo } from "./data/ProjectsInfo"
 
-import "../sass/projectsList.scss"
+import "../scss/projectsList.scss"
 
 export const ProjectsList = () => {
   return (

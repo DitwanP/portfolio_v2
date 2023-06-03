@@ -3,7 +3,7 @@ export const jobsInfo = [
     company: "AltoIRA",
     position: "Software Engineer",
     location: "Nashville, TN (Remote)",
-    start_date: "June 2021",
+    start_date: "May 2021",
     end_date: "May 2023",
     bullets: [
       "Developed a web app that automated the onboarding process for investor clients, reducing the time required by 50%. The app streamlined the collection of client information, providing a seamless flow that did not previously exist and eliminating the need for manual data entry.",

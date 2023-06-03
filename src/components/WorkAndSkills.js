@@ -10,12 +10,13 @@ import {
   listItemVariants,
 } from "./FramerVariants"
 
-import "../sass/work-and-skills.scss"
-import "../sass/app.scss"
+import "../scss/work-and-skills.scss"
+import "../scss/app.scss"
+import "../scss/utility.scss"
 
 const WorkAndSkills = () => {
   return (
-    <div className="exp-page-container">
+    <div className="page-container">
       <motion.div
         className="exp-content"
         variants={pageVariants}
@@ -56,7 +57,9 @@ const WorkAndSkills = () => {
                 <div className="position-and-company">
                   <div className="company">
                     <h2 className="label">Company:</h2>
-                    <h3 className="info">{job.company}</h3>
+                    <h3 className="info">
+                      {job.company} - {job.location}
+                    </h3>
                   </div>
                   <div className="position">
                     <h2 className="label">Position:</h2>

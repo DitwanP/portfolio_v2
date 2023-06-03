@@ -5,10 +5,11 @@ export const skillsInfo = [
   "Python",
   "HTML",
   "CSS",
-  "SASS",
+  "SCSS/SASS",
   "Git",
-  "Vue",
+  "GitHub",
   "Problem solving",
   "Object-oriented Programming",
   "Written & Verbal Communication",
+  "Agile Development Methodology",
 ]

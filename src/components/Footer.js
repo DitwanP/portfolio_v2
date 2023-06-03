@@ -7,7 +7,7 @@ import { ReactComponent as LinkedInIcon } from "../assets/icons/linkedin-in.svg"
 import ThemesModal from "./ThemesModal.js"
 import { footerAnimateIn, footerTransitions } from "./FramerVariants"
 
-import "../sass/footer.scss"
+import "../scss/footer.scss"
 
 const Footer = (props) => {
   const [showThemesModal, setShowThemesModal] = useState(false)

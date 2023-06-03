@@ -11,7 +11,7 @@ export const projectsInfo = [
         assets but no instructions on how to build the site out. Although
         it looks simple, I learned a ton about frontend development throughout
         the building process.`,
-    tools: ["React.js", "JavaScript", "HTML", "Sass"],
+    tools: ["React.js", "JavaScript", "HTML"],
     image: crowdfundImg,
     link: "https://github.com/DitwanP/Crowdfunding_product_page",
   },
@@ -26,7 +26,7 @@ export const projectsInfo = [
     tools: [
       "Ract.js",
       "Express.js",
-      "Sass",
+      "Scss",
       "Spotify API",
       "Framer Motion",
       "React Router",
@@ -45,7 +45,6 @@ export const projectsInfo = [
     tools: [
       "Ract.js",
       "HTML",
-      "Sass",
       "Unsplash API",
       "Quotes API",
       "OpenWeatherMap API",
@@ -62,7 +61,7 @@ export const projectsInfo = [
     tools: [
       "React.js",
       "Express.js",
-      "Sass",
+      "Scss",
       "NodeMailer",
       "Framer Motion",
       "React Particles",

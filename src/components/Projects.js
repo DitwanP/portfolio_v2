@@ -4,12 +4,13 @@ import { pageVariants, pageTransitions, textAnimateIn } from "./FramerVariants"
 
 import { ProjectsList } from "./ProjectsList"
 
-import "../sass/projects.scss"
-import "../sass/app.scss"
+import "../scss/projects.scss"
+import "../scss/app.scss"
+import "../scss/utility.scss"
 
 const Projects = () => {
   return (
-    <div className="projects-page-container">
+    <div className="page-container">
       <motion.div
         className="projects-content"
         variants={pageVariants}

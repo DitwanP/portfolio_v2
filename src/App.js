@@ -4,7 +4,7 @@ import { useRef, useEffect, useState } from "react"
 
 import { themes } from "./components/ThemesModal.js"
 
-import "./sass/app.scss"
+import "./scss/app.scss"
 
 function App() {
   const viewHeight = window.innerHeight * 0.01

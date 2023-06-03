@@ -6,8 +6,8 @@ import { Link } from "react-router-dom"
 import { ReactComponent as GithubIcon } from "../assets/icons/github.svg"
 import { ReactComponent as LinkedInIcon } from "../assets/icons/linkedin-in.svg"
 
-import "../sass/navbar.scss"
-import "../sass/app.scss"
+import "../scss/navbar.scss"
+import "../scss/app.scss"
 
 import {
   navContentVariants,
@@ -158,7 +158,7 @@ const NavBar = (props) => {
             </motion.div>
             <div className="toggle-button-container" onClick={toggleNav}>
               <button className="toggle-button">
-                <span className="hamburger"></span>
+                <span className="hamburger testing"></span>
               </button>
             </div>
           </motion.nav>

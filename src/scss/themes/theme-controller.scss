@@ -71,10 +71,7 @@ $color-list: (
     transition: scrollbar-color 200ms linear;
   }
 
-  .home-container,
-  .exp-page-container,
-  .projects-page-container,
-  .contact-page-container {
+  .page-container {
     background-color: map-get($color-list, $theme-name + "-bg-color");
     transition: background-color 200ms linear;
   }
@@ -409,7 +406,7 @@ $color-list: (
     }
 
     svg {
-      color: map-get($color-list, $theme-name + "-textMain");
+      fill: map-get($color-list, $theme-name + "-textMain");
       transition: color 200ms linear;
 
       &:hover {
@@ -425,7 +422,7 @@ $color-list: (
       }
 
       svg {
-        color: map-get($color-list, $theme-name + "-primaryAccent");
+        fill: map-get($color-list, $theme-name + "-primaryAccent");
         transition: color 200ms linear;
       }
     }

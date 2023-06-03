@@ -5,12 +5,13 @@ import { ReactComponent as PaperPlaneIcon } from "../assets/icons/paper-plane-re
 
 import { pageVariants, pageTransitions, textAnimateIn } from "./FramerVariants"
 
-import "../sass/contact.scss"
-import "../sass/app.scss"
+import "../scss/contact.scss"
+import "../scss/app.scss"
+import "../scss/utility.scss"
 
 const Contact = () => {
   return (
-    <motion.div className="contact-page-container">
+    <motion.div className="page-container">
       <motion.div
         className="contact-content"
         variants={pageVariants}

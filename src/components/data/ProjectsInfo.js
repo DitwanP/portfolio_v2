@@ -2,8 +2,27 @@ import homebaseImg from "../../assets/images/homebase.png"
 import crowdfundImg from "../../assets/images/crowdfund.png"
 import statifyImg from "../../assets/images/statify.png"
 import portfolioV1Img from "../../assets/images/portfolioV1.png"
+import countrySearcher from "../../assets/images/CountrySearcher.png"
 
 export const projectsInfo = [
+  {
+    title: "Country Searcher",
+    description: `Frontend Mentor challenge for an interactive Country Explorer. Browse the 
+                  API-fueled homepage, search for nations, and filter by regions. Dive deeper 
+                  by clicking on a country for comprehensive insights and effortlessly 
+                  navigate to its neighbors.`,
+    tools: [
+      "React.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Rest Countries API",
+      "Vite",
+      "React Query",
+    ],
+    image: countrySearcher,
+    githubLink: "https://github.com/DitwanP/CountrySearcher/tree/main",
+    liveLink: "https://ditwanp.github.io/CountrySearcher/",
+  },
   {
     title: "Statify",
     description: `I created this site for a user to visualize a 
@@ -13,6 +32,7 @@ export const projectsInfo = [
         displayed to them.`,
     tools: [
       "Ract.js",
+      "JavaScript",
       "Express.js",
       "Scss",
       "Spotify API",
@@ -21,7 +41,7 @@ export const projectsInfo = [
       "Loadable",
     ],
     image: statifyImg,
-    link: "https://github.com/DitwanP/Statify",
+    githubLink: "https://github.com/DitwanP/Statify",
   },
   {
     title: "Homebase",
@@ -38,7 +58,7 @@ export const projectsInfo = [
       "OpenWeatherMap API",
     ],
     image: homebaseImg,
-    link: "https://github.com/DitwanP/Homebase",
+    githubLink: "https://github.com/DitwanP/Homebase",
   },
   {
     title: "Crowdfund",
@@ -49,7 +69,7 @@ export const projectsInfo = [
         the building process.`,
     tools: ["React.js", "JavaScript", "HTML"],
     image: crowdfundImg,
-    link: "https://github.com/DitwanP/Crowdfunding_product_page",
+    githubLink: "https://github.com/DitwanP/Crowdfunding_product_page",
   },
   {
     title: "Portfolio 1.0",
@@ -67,6 +87,6 @@ export const projectsInfo = [
       "SendGrid API",
     ],
     image: portfolioV1Img,
-    link: "https://github.com/DitwanP/Portfolio",
+    githubLink: "https://github.com/DitwanP/Portfolio",
   },
 ]

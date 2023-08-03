@@ -2,6 +2,7 @@ import React from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
 import { ReactComponent as GithubIcon } from "../assets/icons/github.svg"
+import { ReactComponent as LinkIcon } from "../assets/icons/link.svg"
 
 import { listVariants } from "./FramerVariants"
 import { projectsInfo } from "./data/ProjectsInfo"
@@ -36,16 +37,33 @@ export const ProjectsList = () => {
               <div className="project-details">
                 <div className="title-container">
                   <h2 className="project-title">{project.title}</h2>
-                  <motion.a
-                    className="project-link"
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.2 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <GithubIcon />
-                  </motion.a>
+
+                  <div className="project-links">
+                    {project.liveLink && (
+                      <motion.a
+                        className="project-link"
+                        href={project.liveLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.2 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <LinkIcon />
+                      </motion.a>
+                    )}
+                    {project.githubLink && (
+                      <motion.a
+                        className="project-link"
+                        href={project.githubLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.2 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <GithubIcon />
+                      </motion.a>
+                    )}
+                  </div>
                 </div>
                 <p className="project-description">{project.description}</p>
                 <ul className="project-tools">

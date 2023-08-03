@@ -167,8 +167,8 @@ const NavBar = (props) => {
               </div>
             </motion.div>
             <div className="toggle-button-container" onClick={toggleNav}>
-              <button className="toggle-button">
-                <span className="hamburger testing"></span>
+              <button className="toggle-button" aria-label="primary-navigation">
+                <div className="hamburger"></div>
               </button>
             </div>
           </motion.nav>

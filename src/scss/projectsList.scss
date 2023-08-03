@@ -112,18 +112,26 @@
             }
           }
 
-          .project-link {
-            height: 100%;
+          .project-links {
             display: flex;
-            align-items: center;
+            gap: 2rem;
 
-            svg {
-              height: 2.6rem;
-              width: 2.6rem;
-            }
+            .project-link {
+              height: 100%;
+              display: flex;
+              align-items: center;
+              &:hover {
+                cursor: pointer;
+              }
 
-            @media (max-width: sizes.$phone) {
-              font-size: clamp(12px, 3.6rem, 50px);
+              svg {
+                height: 2.6rem;
+                width: 2.6rem;
+              }
+
+              @media (max-width: sizes.$phone) {
+                font-size: clamp(12px, 3.6rem, 50px);
+              }
             }
           }
         }

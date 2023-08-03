@@ -32,7 +32,7 @@ $color-list: (
   "rs-textMain": #efeae9,
   "rs-textSecondary": #f7f2ea,
   "rs-primaryAccent": #f17754,
-  "rs-secondaryAccent": #f19d86,
+  "rs-secondaryAccent": #f17754,
   "rs-tertiaryAccent": #f17754,
   "rs-theme-list-bg": rgba(241, 118, 84, 0.1),
   "rs-scrollbar-color": #a4614f,
@@ -221,14 +221,20 @@ $color-list: (
       .toggle-button-container {
         .toggle-button {
           .hamburger {
-            background: map-get($color-list, $theme-name + "-primaryAccent");
+            background: map-get($color-list, $theme-name + "-secondaryAccent");
 
             &::before {
-              background: map-get($color-list, $theme-name + "-primaryAccent");
+              background: map-get(
+                $color-list,
+                $theme-name + "-secondaryAccent"
+              );
             }
 
             &::after {
-              background: map-get($color-list, $theme-name + "-primaryAccent");
+              background: map-get(
+                $color-list,
+                $theme-name + "-secondaryAccent"
+              );
             }
           }
         }

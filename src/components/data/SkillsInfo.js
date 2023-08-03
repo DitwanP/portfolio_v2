@@ -6,6 +6,7 @@ export const skillsInfo = [
   "HTML",
   "CSS",
   "SCSS/SASS",
+  "Tailwind CSS",
   "Git",
   "GitHub",
   "Problem solving",

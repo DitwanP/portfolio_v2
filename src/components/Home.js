@@ -59,7 +59,7 @@ const Home = () => {
         >
           <motion.div
             className="firstName"
-            aria-label="Ditwan"
+            aria-label="first name"
             whileHover={{ scale: 1.1 }}
           >
             <h1
@@ -77,7 +77,7 @@ const Home = () => {
           </motion.div>
           <motion.div
             className="lastName"
-            aria-label="Price"
+            aria-label="last name"
             whileHover={{ scale: 1.1 }}
           >
             <h1

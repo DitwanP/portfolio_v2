@@ -12,6 +12,9 @@
 
 .footer-content {
   width: 100%;
+  max-width: 1800px;
+  height: fit-content;
+  position: relative;
 
   .social-links {
     display: flex;

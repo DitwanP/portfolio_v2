@@ -1,8 +1,8 @@
 import React from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
-import { ReactComponent as GithubIcon } from "../assets/icons/github.svg"
-import { ReactComponent as LinkIcon } from "../assets/icons/link.svg"
+import githubIcon from "../assets/icons/github.svg"
+import linkIcon from "../assets/icons/link.svg"
 
 import { listVariants } from "./FramerVariants"
 import { projectsInfo } from "./data/ProjectsInfo"
@@ -48,7 +48,7 @@ export const ProjectsList = () => {
                         whileHover={{ scale: 1.2 }}
                         whileTap={{ scale: 0.95 }}
                       >
-                        <LinkIcon />
+                        <img src={linkIcon} className="icon" alt="Link icon" />
                       </motion.a>
                     )}
                     {project.githubLink && (
@@ -60,7 +60,7 @@ export const ProjectsList = () => {
                         whileHover={{ scale: 1.2 }}
                         whileTap={{ scale: 0.95 }}
                       >
-                        <GithubIcon />
+                        <img src={githubIcon} className="icon" alt="GitHub icon" />
                       </motion.a>
                     )}
                   </div>

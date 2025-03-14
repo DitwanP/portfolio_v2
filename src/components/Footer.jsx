@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { motion } from "framer-motion"
-import GithubIcon from "../assets/icons/github.svg"
-import LinkedInIcon from "../assets/icons/linkedin-in.svg"
+import githubIcon from "../assets/icons/github.svg"
+import linkedInIcon from "../assets/icons/linkedin-in.svg"
 
 import ThemesModal from "./ThemesModal.jsx"
 import { footerAnimateIn, footerTransitions } from "./FramerVariants"
@@ -34,7 +34,7 @@ const Footer = (props) => {
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.95 }}
           >
-            <LinkedInIcon />
+            <img src={linkedInIcon} className="icon" alt="LinkedIn icon" />
           </motion.a>
           <motion.a
             className="link"
@@ -44,7 +44,7 @@ const Footer = (props) => {
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.95 }}
           >
-            <GithubIcon />
+            <img src={githubIcon} className="icon" alt="GitHub icon" />
           </motion.a>
         </div>
         <ThemesModal

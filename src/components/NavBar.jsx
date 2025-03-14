@@ -3,8 +3,8 @@ import { useDimensions } from "./hooks/use-dimensions"
 import { motion, AnimatePresence } from "framer-motion"
 import { Link } from "react-router-dom"
 
-import { ReactComponent as GithubIcon } from "../assets/icons/github.svg"
-import { ReactComponent as LinkedInIcon } from "../assets/icons/linkedin-in.svg"
+import githubIcon from "../assets/icons/github.svg"
+import linkedInIcon from "../assets/icons/linkedin-in.svg"
 
 import "../scss/navbar.scss"
 import "../scss/app.scss"
@@ -150,7 +150,7 @@ const NavBar = (props) => {
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <GithubIcon />
+                  <img src={githubIcon} className="icon" alt="GitHub icon" />
                   <h2>github</h2>
                 </motion.a>
                 <motion.a
@@ -161,7 +161,7 @@ const NavBar = (props) => {
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <LinkedInIcon />
+                  <img src={linkedInIcon} className="icon" alt="LinkedIn icon" />
                   <h2>linkedin</h2>
                 </motion.a>
               </div>

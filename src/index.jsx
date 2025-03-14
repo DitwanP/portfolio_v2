@@ -1,10 +1,9 @@
-import "./scss/index.scss"
-import { StrictMode } from "react"
-import hydrateRoot from "react-dom/client"
-import App from "./App"
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './scss/index.scss'
+import App from './App.jsx'
 
-hydrateRoot(
-  document.getElementById('root'),
+createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
   </StrictMode>,

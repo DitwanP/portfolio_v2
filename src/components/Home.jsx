@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { motion } from "framer-motion"
 
-import { ReactComponent as PdfIcon } from "../assets/icons/file-pdf-solid.svg"
+import pdfIcon from "../assets/icons/file-pdf-solid.svg"
 
 import { pageVariants, textAnimateIn } from "./FramerVariants"
 import Resume from "../assets/Ditwan_Price_Resume.pdf"
@@ -127,7 +127,7 @@ const Home = () => {
           }}
         >
           <motion.a href={Resume} target="_blank" rel="noopener noreferrer">
-            <PdfIcon />
+            <img src={pdfIcon} className="icon" alt="PDF icon" />
             <h3>Resume</h3>
           </motion.a>
         </motion.div>

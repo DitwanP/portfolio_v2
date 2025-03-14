@@ -1,7 +1,7 @@
 import React from "react"
 import { motion } from "framer-motion"
 
-import { ReactComponent as PaperPlaneIcon } from "../assets/icons/paper-plane-regular.svg"
+import paperPlaneIcon from "../assets/icons/paper-plane-regular.svg"
 
 import { pageVariants, pageTransitions, textAnimateIn } from "./FramerVariants"
 
@@ -86,7 +86,7 @@ const Contact = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <PaperPlaneIcon />
+            <img src={paperPlaneIcon} className="icon" alt="Paper plane icon" />
             <h3>Reach Out</h3>
           </motion.a>
         </motion.div>

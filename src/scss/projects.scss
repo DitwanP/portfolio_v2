@@ -47,4 +47,11 @@
       }
     }
   }
+
+  @media (min-width: sizes.$tablet + 1px) {
+    .projects-container .title h1 {
+      font-size: 3.2rem;
+      line-height: 1.25;
+    }
+  }
 }

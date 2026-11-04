@@ -22,7 +22,12 @@ function App() {
   }, [])
 
   const [currentTheme, setCurrentTheme] = useState(() => {
-    const storedTheme = localStorage.getItem("theme")
+    let storedTheme = null
+    try {
+      storedTheme = localStorage.getItem("theme")
+    } catch (error) {
+      console.warn("Unable to read the saved theme; using an in-memory theme.", error)
+    }
     return themes.includes(storedTheme)
       ? storedTheme
       : themes[Math.floor(Math.random() * themes.length)]
@@ -37,7 +42,11 @@ function App() {
     document
       .querySelector('meta[name="theme-color"]')
       .setAttribute("content", themeBackgroundColors[currentTheme])
-    localStorage.setItem("theme", currentTheme)
+    try {
+      localStorage.setItem("theme", currentTheme)
+    } catch (error) {
+      console.warn("Unable to save the theme; changes will remain in memory.", error)
+    }
   }, [currentTheme])
 
   return (

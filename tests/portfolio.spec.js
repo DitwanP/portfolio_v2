@@ -20,7 +20,7 @@ const test = base.extend({
 })
 
 const routes = [
-  { path: "/", content: ".home-content", heading: "DitWAn" },
+  { path: "/", content: ".home-content", heading: "ditwan" },
   { path: "/work-and-skills", content: ".exp-content", heading: "pRoFessionAl eXpeRience" },
   { path: "/projects", content: ".projects-content", heading: "pRojects" },
   { path: "/contact", content: ".contact-content", heading: "Get in toucH" },

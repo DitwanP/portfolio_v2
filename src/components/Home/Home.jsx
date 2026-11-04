@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import PdfIcon from "../../assets/icons/file-pdf-solid.svg?react"
 
 import { useAnimationSettings } from "../FramerVariants"
+import { usePageEntrance } from "../use-page-entrance"
 import { homeContent } from "./Home.content.js"
 import Resume from "../../assets/Ditwan_Price_Resume.pdf"
 
@@ -12,14 +13,16 @@ import "../../scss/app.scss"
 import "../../scss/utility.scss"
 
 const Home = () => {
+  const { pageClassName, complete } = usePageEntrance(["page", "greeting", "name", "about", "resume"])
   const { pageVariants, textAnimateIn, transition, interaction } = useAnimationSettings()
   const [plainFirstName, setPlainFirstName] = useState(true)
   const [plainLastName, setPlainLastName] = useState(true)
 
   return (
-    <motion.div id="home-container" className="page-container">
+    <motion.div id="home-container" className={pageClassName}>
       <motion.div
         className="home-content"
+        onAnimationComplete={() => complete("page")}
         variants={pageVariants}
         initial="initial"
         animate="enter"
@@ -27,6 +30,7 @@ const Home = () => {
       >
         <motion.div
           className="greeting"
+          onAnimationComplete={() => complete("greeting")}
           initial="start"
           animate="end"
           variants={textAnimateIn}
@@ -41,6 +45,7 @@ const Home = () => {
         </motion.div>
         <motion.div
           className="name"
+          onAnimationComplete={() => complete("name")}
           variants={textAnimateIn}
           initial="start"
           animate="end"
@@ -92,6 +97,7 @@ const Home = () => {
         </motion.div>
         <motion.div
           className="about-me"
+          onAnimationComplete={() => complete("about")}
           variants={textAnimateIn}
           initial="start"
           animate="end"
@@ -108,6 +114,7 @@ const Home = () => {
         </motion.div>
         <motion.div
           className="resume-button"
+          onAnimationComplete={() => complete("resume")}
           variants={textAnimateIn}
           initial="start"
           animate="end"

@@ -5,17 +5,23 @@ import { jobsInfo } from "../data/WorkInfo"
 import { skillsInfo } from "../data/SkillsInfo"
 import { workAndSkillsContent } from "./WorkAndSkills.content.js"
 import { useAnimationSettings } from "../FramerVariants"
+import { usePageEntrance } from "../use-page-entrance"
 
 import "../../scss/work-and-skills.scss"
 import "../../scss/app.scss"
 import "../../scss/utility.scss"
 
 const WorkAndSkills = () => {
+  const { pageClassName, complete } = usePageEntrance([
+    "page", "title", "skills-title", "skills",
+    ...jobsInfo.flatMap((_, index) => [`job-${index}`, `details-${index}`]),
+  ])
   const { pageVariants, textAnimateIn, listVariants, listItemVariants, transition } = useAnimationSettings()
   return (
-    <div className="page-container">
+    <div className={pageClassName}>
       <motion.div
         className="exp-content"
+        onAnimationComplete={() => complete("page")}
         variants={pageVariants}
         initial="initial"
         animate="enter"
@@ -24,6 +30,7 @@ const WorkAndSkills = () => {
         <div className="work-container">
           <motion.div
             className="title"
+            onAnimationComplete={() => complete("title")}
             initial="start"
             animate="end"
             variants={textAnimateIn}
@@ -40,6 +47,7 @@ const WorkAndSkills = () => {
             {jobsInfo.map((job, index) => (
               <motion.div
                 className="job"
+                onAnimationComplete={() => complete(`job-${index}`)}
                 key={index}
                 initial="start"
                 animate="end"
@@ -75,6 +83,7 @@ const WorkAndSkills = () => {
                 </div>
                 <div className="details">
                   <motion.ul
+                    onAnimationComplete={() => complete(`details-${index}`)}
                     initial="start"
                     animate="end"
                     variants={textAnimateIn}
@@ -103,6 +112,7 @@ const WorkAndSkills = () => {
         <motion.div className="skills-container">
           <motion.div
             className="title"
+            onAnimationComplete={() => complete("skills-title")}
             initial="start"
             animate="end"
             variants={textAnimateIn}
@@ -117,6 +127,7 @@ const WorkAndSkills = () => {
           </motion.div>
           <motion.div
             className="skills"
+            onAnimationComplete={() => complete("skills")}
             initial="start"
             animate="end"
             variants={textAnimateIn}

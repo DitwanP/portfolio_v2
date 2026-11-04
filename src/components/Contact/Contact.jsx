@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import PaperPlaneIcon from "../../assets/icons/paper-plane-regular.svg?react"
 
 import { pageTransitions, useAnimationSettings } from "../FramerVariants"
+import { usePageEntrance } from "../use-page-entrance"
 import { contactContent } from "./Contact.content.js"
 
 import "../../scss/contact.scss"
@@ -11,11 +12,13 @@ import "../../scss/app.scss"
 import "../../scss/utility.scss"
 
 const Contact = () => {
+  const { pageClassName, complete } = usePageEntrance(["page", "title", "introduction", "invitation", "email"])
   const { pageVariants, textAnimateIn, transition, interaction } = useAnimationSettings()
   return (
-    <motion.div className="page-container">
+    <motion.div className={pageClassName}>
       <motion.div
         className="contact-content"
+        onAnimationComplete={() => complete("page")}
         variants={pageVariants}
         initial="initial"
         animate="enter"
@@ -24,6 +27,7 @@ const Contact = () => {
       >
         <motion.div
           className="title"
+          onAnimationComplete={() => complete("title")}
           aria-label={contactContent.accessibleLabel}
           variants={textAnimateIn}
           initial="start"
@@ -39,6 +43,7 @@ const Contact = () => {
         </motion.div>
         <motion.div className="contact-statement">
           <motion.p
+            onAnimationComplete={() => complete("introduction")}
             variants={textAnimateIn}
             initial="start"
             animate="end"
@@ -52,6 +57,7 @@ const Contact = () => {
             {contactContent.introduction}
           </motion.p>
           <motion.p
+            onAnimationComplete={() => complete("invitation")}
             variants={textAnimateIn}
             initial="start"
             animate="end"
@@ -67,6 +73,7 @@ const Contact = () => {
         </motion.div>
         <motion.div
           className="email-button"
+          onAnimationComplete={() => complete("email")}
           variants={textAnimateIn}
           initial="start"
           animate="end"

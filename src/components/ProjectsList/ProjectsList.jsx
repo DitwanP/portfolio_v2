@@ -11,12 +11,13 @@ import { projectsListContent } from "./ProjectsList.content.js"
 
 import "../../scss/projectsList.scss"
 
-export const ProjectsList = () => {
+export const ProjectsList = ({ onAnimationComplete }) => {
   const { listVariants, transition, interaction } = useAnimationSettings()
   return (
     <div className="projects-list-container">
       <motion.ul
         className="projects-list"
+        onAnimationComplete={onAnimationComplete}
         key={"projects-list"}
         variants={listVariants}
         initial="hidden"

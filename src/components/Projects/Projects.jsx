@@ -1,6 +1,7 @@
 import React from "react"
 import { motion } from "framer-motion"
 import { pageTransitions, useAnimationSettings } from "../FramerVariants"
+import { usePageEntrance } from "../use-page-entrance"
 
 import { ProjectsList } from "../ProjectsList/ProjectsList.jsx"
 import { projectsContent } from "./Projects.content.js"
@@ -10,11 +11,13 @@ import "../../scss/app.scss"
 import "../../scss/utility.scss"
 
 const Projects = () => {
+  const { pageClassName, complete } = usePageEntrance(["page", "title", "list"])
   const { pageVariants, textAnimateIn, transition } = useAnimationSettings()
   return (
-    <div className="page-container">
+    <div className={pageClassName}>
       <motion.div
         className="projects-content"
+        onAnimationComplete={() => complete("page")}
         variants={pageVariants}
         initial="initial"
         animate="enter"
@@ -24,6 +27,7 @@ const Projects = () => {
         <div className="projects-container">
           <motion.div
             className="title"
+            onAnimationComplete={() => complete("title")}
             aria-label={projectsContent.accessibleLabel}
             variants={textAnimateIn}
             initial="start"
@@ -38,7 +42,7 @@ const Projects = () => {
             <h1 className="title">{projectsContent.title}</h1>
           </motion.div>
 
-          <ProjectsList />
+          <ProjectsList onAnimationComplete={() => complete("list")} />
         </div>
       </motion.div>
     </div>

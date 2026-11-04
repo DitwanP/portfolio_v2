@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useRef, useState } from "react"
 import { motion } from "framer-motion"
 import GithubIcon from "../../assets/icons/github.svg?react"
 import LinkedInIcon from "../../assets/icons/linkedin-in.svg?react"
@@ -12,9 +12,10 @@ import "../../scss/footer.scss"
 
 const Footer = (props) => {
   const [showThemesModal, setShowThemesModal] = useState(false)
+  const themeToggleRef = useRef(null)
 
   const toggleThemeList = () => {
-    setShowThemesModal(!showThemesModal)
+    setShowThemesModal((open) => !open)
   }
 
   return (
@@ -26,7 +27,21 @@ const Footer = (props) => {
       exit="outDown"
       transition={footerTransitions}
     >
-      <div className="footer-content">
+      <div
+        className="footer-content"
+        onKeyDown={(event) => {
+          if (event.key === "Escape" && showThemesModal) {
+            event.preventDefault()
+            setShowThemesModal(false)
+            themeToggleRef.current.focus()
+          }
+        }}
+        onBlur={(event) => {
+          if (!event.currentTarget.contains(event.relatedTarget)) {
+            setShowThemesModal(false)
+          }
+        }}
+      >
         <div className="social-links">
           <motion.a
             className="link"
@@ -60,12 +75,15 @@ const Footer = (props) => {
         <ThemesModal
           switchTheme={props.switchTheme}
           showThemesModal={showThemesModal}
-          setShowThemesModal={setShowThemesModal}
+          toggleRef={themeToggleRef}
         />
         <div className="toggle-button-container">
           <button
             className="toggle-button"
-            tabIndex="-1"
+            type="button"
+            ref={themeToggleRef}
+            aria-expanded={showThemesModal}
+            aria-controls="theme-options"
             onClick={toggleThemeList}
           >
             <motion.span

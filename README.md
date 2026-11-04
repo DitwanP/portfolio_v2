@@ -84,3 +84,11 @@ After updating dependencies, check the development server and production preview
 - Open the theme picker, try all five themes, and reload to verify persistence.
 - At a mobile viewport, open the navigation menu and select a page; confirm it closes.
 - Confirm the resume PDF loads and project, social, and email links retain their destinations.
+- Using only the keyboard, Tab to the theme or mobile navigation toggle and open
+  it with Enter or Space. Focus moves into the open panel; Tab and Shift+Tab
+  navigate its controls. Escape closes it and restores focus to the toggle.
+  Leaving the disclosure closes it, and closed panels are excluded from keyboard
+  navigation and the accessibility tree.
+- In the theme picker, Up/Down arrows move focus between themes and wrap at either
+  end without changing the selected theme. Enter or Space applies the focused
+  theme; Tab and Shift+Tab still work normally.

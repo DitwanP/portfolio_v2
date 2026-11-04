@@ -24,9 +24,16 @@ const NavBar = (props) => {
   const setShowNavList = props.setShowNavList
   const containerRef = useRef("nav")
   const { height } = useDimensions(containerRef)
+  const toggleRef = useRef(null)
+  const panelRef = useRef(null)
 
   const toggleNav = () => {
-    setShowNavList(!showNavList)
+    setShowNavList((open) => !open)
+  }
+
+  const closeNav = () => {
+    setShowNavList(false)
+    toggleRef.current.focus()
   }
 
   return (
@@ -100,10 +107,33 @@ const NavBar = (props) => {
             custom={height}
             initial={false}
             ref={containerRef}
+            onKeyDown={(event) => {
+              if (event.key === "Escape" && showNavList) {
+                event.preventDefault()
+                closeNav()
+              }
+            }}
+            onBlur={(event) => {
+              if (!event.currentTarget.contains(event.relatedTarget)) {
+                setShowNavList(false)
+              }
+            }}
           >
             <motion.div
               className="nav-list-container-mobile"
+              id="mobile-navigation"
+              ref={panelRef}
+              aria-hidden={!showNavList}
+              inert={showNavList ? undefined : ""}
               variants={navContainerVariants}
+              onAnimationComplete={(definition) => {
+                if (
+                  definition === "open" &&
+                  document.activeElement === toggleRef.current
+                ) {
+                  panelRef.current.querySelector("a").focus()
+                }
+              }}
             >
               <motion.ul variants={navListVariants} className="nav-list-mobile">
                 <motion.li
@@ -112,7 +142,7 @@ const NavBar = (props) => {
                   whileTap={{ scale: 0.95 }}
                   key="home"
                 >
-                  <Link to="/" onClick={toggleNav}>
+                  <Link to="/" onClick={closeNav}>
                     <span>{navBarContent.home.number}</span>
                     {navBarContent.home.label}
                   </Link>
@@ -123,7 +153,7 @@ const NavBar = (props) => {
                   whileTap={{ scale: 0.95 }}
                   key="work and skills"
                 >
-                  <Link to="/work-and-skills" onClick={toggleNav}>
+                  <Link to="/work-and-skills" onClick={closeNav}>
                     <span>{navBarContent.workAndSkills.number}</span>
                     {navBarContent.workAndSkills.mobileLabel}
                   </Link>
@@ -134,7 +164,7 @@ const NavBar = (props) => {
                   whileTap={{ scale: 0.95 }}
                   key="projects"
                 >
-                  <Link to="/projects" onClick={toggleNav}>
+                  <Link to="/projects" onClick={closeNav}>
                     <span>{navBarContent.projects.number}</span>
                     {navBarContent.projects.label}
                   </Link>
@@ -145,7 +175,7 @@ const NavBar = (props) => {
                   whileTap={{ scale: 0.95 }}
                   key="contact"
                 >
-                  <Link to="/contact" onClick={toggleNav}>
+                  <Link to="/contact" onClick={closeNav}>
                     <span>{navBarContent.contact.number}</span>
                     {navBarContent.contact.label}
                   </Link>
@@ -184,10 +214,15 @@ const NavBar = (props) => {
                 </motion.a>
               </div>
             </motion.div>
-            <div className="toggle-button-container" onClick={toggleNav}>
+            <div className="toggle-button-container">
               <button
                 className="toggle-button"
                 aria-label={navBarContent.toggleLabel}
+                type="button"
+                ref={toggleRef}
+                onClick={toggleNav}
+                aria-expanded={showNavList}
+                aria-controls="mobile-navigation"
               >
                 <div className="hamburger"></div>
               </button>

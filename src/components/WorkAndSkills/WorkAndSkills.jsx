@@ -4,18 +4,14 @@ import { motion } from "framer-motion"
 import { jobsInfo } from "../data/WorkInfo"
 import { skillsInfo } from "../data/SkillsInfo"
 import { workAndSkillsContent } from "./WorkAndSkills.content.js"
-import {
-  pageVariants,
-  textAnimateIn,
-  listVariants,
-  listItemVariants,
-} from "../FramerVariants"
+import { useAnimationSettings } from "../FramerVariants"
 
 import "../../scss/work-and-skills.scss"
 import "../../scss/app.scss"
 import "../../scss/utility.scss"
 
 const WorkAndSkills = () => {
+  const { pageVariants, textAnimateIn, listVariants, listItemVariants, transition } = useAnimationSettings()
   return (
     <div className="page-container">
       <motion.div
@@ -31,12 +27,12 @@ const WorkAndSkills = () => {
             initial="start"
             animate="end"
             variants={textAnimateIn}
-            transition={{
+            transition={transition({
               type: "tween",
               ease: "easeInOut",
               duration: 0.6,
               delay: 0.2,
-            }}
+            })}
           >
             <h1 className="title">{workAndSkillsContent.experienceTitle}</h1>
           </motion.div>
@@ -48,12 +44,12 @@ const WorkAndSkills = () => {
                 initial="start"
                 animate="end"
                 variants={textAnimateIn}
-                transition={{
+                transition={transition({
                   type: "tween",
                   ease: "easeInOut",
                   duration: 0.6,
                   delay: 0.6,
-                }}
+                })}
               >
                 <div className="position-and-company">
                   <div className="company">
@@ -82,12 +78,12 @@ const WorkAndSkills = () => {
                     initial="start"
                     animate="end"
                     variants={textAnimateIn}
-                    transition={{
+                    transition={transition({
                       type: "tween",
                       ease: "easeInOut",
                       duration: 0.6,
                       delay: 1,
-                    }}
+                    })}
                   >
                     {job.bullets.map((detail, index) => (
                       <motion.li key={index}>
@@ -110,12 +106,12 @@ const WorkAndSkills = () => {
             initial="start"
             animate="end"
             variants={textAnimateIn}
-            transition={{
+            transition={transition({
               type: "tween",
               ease: "easeInOut",
               duration: 0.6,
               delay: 1.4,
-            }}
+            })}
           >
             <h1 className="title">{workAndSkillsContent.skillsTitle}</h1>
           </motion.div>
@@ -124,12 +120,12 @@ const WorkAndSkills = () => {
             initial="start"
             animate="end"
             variants={textAnimateIn}
-            transition={{
+            transition={transition({
               type: "tween",
               ease: "easeInOut",
               duration: 0.6,
               delay: 1.8,
-            }}
+            })}
           >
             <motion.ul variants={listVariants} className="skill-list">
               {skillsInfo.map((skill, index) => (

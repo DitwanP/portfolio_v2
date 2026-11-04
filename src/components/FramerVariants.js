@@ -1,3 +1,12 @@
+import { useReducedMotion } from "framer-motion"
+
+const instantTransition = {
+  duration: 0,
+  delay: 0,
+  delayChildren: 0,
+  staggerChildren: 0,
+}
+
 // PAGE
 export const pageTransitions = {
   type: "tween",
@@ -174,4 +183,38 @@ export const footerTransitions = {
   ease: "easeInOut",
   duration: 0.5,
   delay: 2,
+}
+
+const animationVariants = {
+  pageVariants,
+  textAnimateIn,
+  navContentVariants,
+  navContainerVariants,
+  navListVariants,
+  navListItemVariants,
+  listVariants,
+  listItemVariants,
+  themesContainerVariants,
+  footerAnimateIn,
+}
+
+const reducedVariants = Object.fromEntries(
+  Object.entries(animationVariants).map(([name, variants]) => [
+    name,
+    Object.fromEntries(
+      Object.entries(variants).map(([state, target]) => [
+        state,
+        { ...target, transition: instantTransition },
+      ]),
+    ),
+  ]),
+)
+
+export function useAnimationSettings() {
+  const reduceMotion = useReducedMotion()
+  return {
+    ...(reduceMotion ? reducedVariants : animationVariants),
+    transition: (settings) => reduceMotion ? instantTransition : settings,
+    interaction: (settings) => reduceMotion ? undefined : settings,
+  }
 }

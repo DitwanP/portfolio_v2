@@ -11,21 +11,16 @@ import { navigation } from "../../config/navigation.js"
 import "../../scss/navbar.scss"
 import "../../scss/app.scss"
 
-import {
-  navContentVariants,
-  navContainerVariants,
-  navListVariants,
-  navListItemVariants,
-  navContentTransitions,
-} from "../FramerVariants"
+import { navContentTransitions, useAnimationSettings } from "../FramerVariants"
 
-const NavigationItems = ({ onNavigate }) =>
-  navigation.map(({ id, path }) => (
+const NavigationItems = ({ onNavigate }) => {
+  const { navListItemVariants, interaction } = useAnimationSettings()
+  return navigation.map(({ id, path }) => (
     <motion.li
       key={id}
       variants={navListItemVariants}
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.95 }}
+      whileHover={interaction({ scale: 1.1 })}
+      whileTap={interaction({ scale: 0.95 })}
     >
       <Link to={path} onClick={onNavigate}>
         <span>{navBarContent[id].number}</span>
@@ -33,8 +28,10 @@ const NavigationItems = ({ onNavigate }) =>
       </Link>
     </motion.li>
   ))
+}
 
 const NavBar = (props) => {
+  const { navContentVariants, navContainerVariants, navListVariants, transition, interaction } = useAnimationSettings()
   const showNavList = props.showNavList
   const setShowNavList = props.setShowNavList
   const toggleRef = useRef(null)
@@ -58,7 +55,7 @@ const NavBar = (props) => {
           initial="notIn"
           animate="in"
           exit="outUp"
-          transition={navContentTransitions}
+          transition={transition(navContentTransitions)}
         >
           <div className="logo-container">
             <Link to="/">{navBarContent.logo}</Link>
@@ -95,12 +92,16 @@ const NavBar = (props) => {
               inert={showNavList ? undefined : ""}
               variants={navContainerVariants}
               onAnimationComplete={(definition) => {
-                if (
-                  definition === "open" &&
-                  document.activeElement === toggleRef.current
-                ) {
-                  panelRef.current.querySelector("a").focus()
-                }
+                if (definition !== "open") return
+                requestAnimationFrame(() => {
+                  if (
+                    panelRef.current &&
+                    !panelRef.current.inert &&
+                    document.activeElement === toggleRef.current
+                  ) {
+                    panelRef.current.querySelector("a").focus()
+                  }
+                })
               }}
             >
               <motion.ul variants={navListVariants} className="nav-list-mobile">
@@ -112,8 +113,8 @@ const NavBar = (props) => {
                   href={socialLinks.github.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.95 }}
+                  whileHover={interaction({ scale: 1.2 })}
+                  whileTap={interaction({ scale: 0.95 })}
                 >
                   <GithubIcon
                     className="icon"
@@ -127,8 +128,8 @@ const NavBar = (props) => {
                   href={socialLinks.linkedin.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.95 }}
+                  whileHover={interaction({ scale: 1.2 })}
+                  whileTap={interaction({ scale: 0.95 })}
                 >
                   <LinkedInIcon
                     className="icon"

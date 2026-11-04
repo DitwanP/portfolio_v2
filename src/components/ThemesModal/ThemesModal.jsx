@@ -6,13 +6,10 @@ import "../../scss/app.scss"
 import { themesModalContent } from "./ThemesModal.content.js"
 import { themes } from "../../config/themes.js"
 
-import {
-  themesContainerVariants,
-  listVariants,
-  listItemVariants,
-} from "../FramerVariants"
+import { useAnimationSettings } from "../FramerVariants"
 
 const ThemesModal = (props) => {
+  const { themesContainerVariants, listVariants, listItemVariants, interaction } = useAnimationSettings()
   const showThemesModal = props.showThemesModal
   const panelRef = useRef(null)
 
@@ -45,12 +42,16 @@ const ThemesModal = (props) => {
         variants={themesContainerVariants}
         animate={showThemesModal ? "open" : "closed"}
         onAnimationComplete={(definition) => {
-          if (
-            definition === "open" &&
-            document.activeElement === props.toggleRef.current
-          ) {
-            panelRef.current.querySelector("button").focus()
-          }
+          if (definition !== "open") return
+          requestAnimationFrame(() => {
+            if (
+              panelRef.current &&
+              !panelRef.current.inert &&
+              document.activeElement === props.toggleRef.current
+            ) {
+              panelRef.current.querySelector("button").focus()
+            }
+          })
         }}
       >
         <motion.div className="theme-container-toggle">
@@ -64,8 +65,8 @@ const ThemesModal = (props) => {
                 <motion.li
                   key={index}
                   variants={listItemVariants}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
+                  whileHover={interaction({ scale: 1.1 })}
+                  whileTap={interaction({ scale: 0.95 })}
                 >
                   <button
                     onClick={() => props.switchTheme(theme)}

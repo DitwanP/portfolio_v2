@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 
 import PdfIcon from "../../assets/icons/file-pdf-solid.svg?react"
 
-import { pageVariants, textAnimateIn } from "../FramerVariants"
+import { useAnimationSettings } from "../FramerVariants"
 import { homeContent } from "./Home.content.js"
 import Resume from "../../assets/Ditwan_Price_Resume.pdf"
 
@@ -12,6 +12,7 @@ import "../../scss/app.scss"
 import "../../scss/utility.scss"
 
 const Home = () => {
+  const { pageVariants, textAnimateIn, transition, interaction } = useAnimationSettings()
   const [plainFirstName, setPlainFirstName] = useState(true)
   const [plainLastName, setPlainLastName] = useState(true)
 
@@ -29,12 +30,12 @@ const Home = () => {
           initial="start"
           animate="end"
           variants={textAnimateIn}
-          transition={{
+          transition={transition({
             type: "tween",
             ease: "easeInOut",
             duration: 0.6,
             delay: 0.2,
-          }}
+          })}
         >
           <h2>{homeContent.greeting}</h2>
         </motion.div>
@@ -43,17 +44,17 @@ const Home = () => {
           variants={textAnimateIn}
           initial="start"
           animate="end"
-          transition={{
+          transition={transition({
             type: "tween",
             ease: "easeInOut",
             duration: 0.6,
             delay: 0.6,
-          }}
+          })}
         >
           <motion.div
             className="firstName"
             aria-label={homeContent.firstName.accessibleLabel}
-            whileHover={{ scale: 1.1 }}
+            whileHover={interaction({ scale: 1.1 })}
             onMouseEnter={() => setPlainFirstName(false)}
             onMouseLeave={() => setPlainFirstName(true)}
           >
@@ -71,7 +72,7 @@ const Home = () => {
           <motion.div
             className="lastName"
             aria-label={homeContent.lastName.accessibleLabel}
-            whileHover={{ scale: 1.1 }}
+            whileHover={interaction({ scale: 1.1 })}
             onMouseEnter={() => setPlainLastName(false)}
             onMouseLeave={() => setPlainLastName(true)}
           >
@@ -94,12 +95,12 @@ const Home = () => {
           variants={textAnimateIn}
           initial="start"
           animate="end"
-          transition={{
+          transition={transition({
             type: "tween",
             ease: "easeInOut",
             duration: 0.6,
             delay: 1,
-          }}
+          })}
         >
           <h3 aria-label={homeContent.introduction.accessibleLabel}>
             {homeContent.introduction.text}
@@ -110,12 +111,12 @@ const Home = () => {
           variants={textAnimateIn}
           initial="start"
           animate="end"
-          transition={{
+          transition={transition({
             type: "tween",
             ease: "easeInOut",
             duration: 0.6,
             delay: 1.4,
-          }}
+          })}
         >
           <motion.a href={Resume} target="_blank" rel="noopener noreferrer">
             <PdfIcon

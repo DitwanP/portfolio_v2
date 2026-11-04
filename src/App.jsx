@@ -1,6 +1,7 @@
 import { BrowserRouter as Router } from "react-router-dom"
 import AnimatedRoutes from "./components/AnimatedRoutes/AnimatedRoutes.jsx"
 import { useEffect, useState } from "react"
+import { MotionConfig } from "framer-motion"
 
 import { themes, themeBackgroundColors } from "./config/themes.js"
 
@@ -51,9 +52,11 @@ function App() {
 
   return (
     <div className="app" theme={currentTheme}>
-      <Router>
-        <AnimatedRoutes switchTheme={switchTheme} />
-      </Router>
+      <MotionConfig reducedMotion="user">
+        <Router>
+          <AnimatedRoutes switchTheme={switchTheme} />
+        </Router>
+      </MotionConfig>
     </div>
   )
 }

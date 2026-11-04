@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 
 import PaperPlaneIcon from "../../assets/icons/paper-plane-regular.svg?react"
 
-import { pageVariants, pageTransitions, textAnimateIn } from "../FramerVariants"
+import { pageTransitions, useAnimationSettings } from "../FramerVariants"
 import { contactContent } from "./Contact.content.js"
 
 import "../../scss/contact.scss"
@@ -11,6 +11,7 @@ import "../../scss/app.scss"
 import "../../scss/utility.scss"
 
 const Contact = () => {
+  const { pageVariants, textAnimateIn, transition, interaction } = useAnimationSettings()
   return (
     <motion.div className="page-container">
       <motion.div
@@ -19,7 +20,7 @@ const Contact = () => {
         initial="initial"
         animate="enter"
         exit="exit"
-        transition={pageTransitions}
+        transition={transition(pageTransitions)}
       >
         <motion.div
           className="title"
@@ -27,12 +28,12 @@ const Contact = () => {
           variants={textAnimateIn}
           initial="start"
           animate="end"
-          transition={{
+          transition={transition({
             type: "tween",
             ease: "easeInOut",
             duration: 0.6,
             delay: 0.2,
-          }}
+          })}
         >
           <h1 className="title">{contactContent.title}</h1>
         </motion.div>
@@ -41,12 +42,12 @@ const Contact = () => {
             variants={textAnimateIn}
             initial="start"
             animate="end"
-            transition={{
+            transition={transition({
               type: "tween",
               ease: "easeInOut",
               duration: 0.6,
               delay: 0.6,
-            }}
+            })}
           >
             {contactContent.introduction}
           </motion.p>
@@ -54,12 +55,12 @@ const Contact = () => {
             variants={textAnimateIn}
             initial="start"
             animate="end"
-            transition={{
+            transition={transition({
               type: "tween",
               ease: "easeInOut",
               duration: 0.6,
               delay: 1,
-            }}
+            })}
           >
             {contactContent.invitation}
           </motion.p>
@@ -69,15 +70,15 @@ const Contact = () => {
           variants={textAnimateIn}
           initial="start"
           animate="end"
-          transition={{
+          transition={transition({
             type: "tween",
             ease: "easeInOut",
             duration: 0.6,
             delay: 1.4,
-          }}
+          })}
         >
           <motion.a
-            whileHover={{ scale: 1.1 }}
+            whileHover={interaction({ scale: 1.1 })}
             href={contactContent.email.href}
             target="_blank"
             rel="noopener noreferrer"

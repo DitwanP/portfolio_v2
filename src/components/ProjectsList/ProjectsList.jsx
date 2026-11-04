@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import GithubIcon from "../../assets/icons/github.svg?react"
 import LinkIcon from "../../assets/icons/link.svg?react"
 
-import { listVariants } from "../FramerVariants"
+import { useAnimationSettings } from "../FramerVariants"
 import { projectsInfo } from "../data/ProjectsInfo"
 import { socialLinks } from "../data/SocialLinks.js"
 import { projectsListContent } from "./ProjectsList.content.js"
@@ -12,6 +12,7 @@ import { projectsListContent } from "./ProjectsList.content.js"
 import "../../scss/projectsList.scss"
 
 export const ProjectsList = () => {
+  const { listVariants, transition, interaction } = useAnimationSettings()
   return (
     <div className="projects-list-container">
       <motion.ul
@@ -20,13 +21,13 @@ export const ProjectsList = () => {
         variants={listVariants}
         initial="hidden"
         animate="show"
-        transition={{
+        transition={transition({
           staggerChildren: 1,
           type: "tween",
           ease: "easeInOut",
           delay: 1.2,
           duration: 0.6,
-        }}
+        })}
       >
         <AnimatePresence>
           {projectsInfo.map((project, index) => (
@@ -50,8 +51,8 @@ export const ProjectsList = () => {
                         href={project.liveLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        whileHover={{ scale: 1.2 }}
-                        whileTap={{ scale: 0.95 }}
+                        whileHover={interaction({ scale: 1.2 })}
+                        whileTap={interaction({ scale: 0.95 })}
                       >
                         <LinkIcon
                           className="icon"
@@ -66,8 +67,8 @@ export const ProjectsList = () => {
                         href={project.githubLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        whileHover={{ scale: 1.2 }}
-                        whileTap={{ scale: 0.95 }}
+                        whileHover={interaction({ scale: 1.2 })}
+                        whileTap={interaction({ scale: 0.95 })}
                       >
                         <GithubIcon
                           className="icon"

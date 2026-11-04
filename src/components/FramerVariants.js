@@ -2,6 +2,7 @@
 export const pageTransitions = {
   type: "tween",
   ease: "easeInOut",
+  duration: 0.3,
 }
 
 export const pageVariants = {

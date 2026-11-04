@@ -16,9 +16,9 @@ const Contact = () => {
       <motion.div
         className="contact-content"
         variants={pageVariants}
-        initial="notIn"
-        animate="in"
-        exit="outDown"
+        initial="initial"
+        animate="enter"
+        exit="exit"
         transition={pageTransitions}
       >
         <motion.div

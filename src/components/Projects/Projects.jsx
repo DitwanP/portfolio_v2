@@ -15,9 +15,9 @@ const Projects = () => {
       <motion.div
         className="projects-content"
         variants={pageVariants}
-        initial="notIn"
-        animate="in"
-        exit="outDown"
+        initial="initial"
+        animate="enter"
+        exit="exit"
         transition={pageTransitions}
       >
         <div className="projects-container">

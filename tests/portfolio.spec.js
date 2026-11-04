@@ -44,6 +44,14 @@ async function expectTheme(page, theme) {
 
 test("all routes support navigation and direct refresh", async ({ page, isMobile }) => {
   await page.goto("/")
+  const expectedLabels = ["01.home", "02.work/skills", "03.projects", "04.contact"]
+  for (const selector of [".nav-list", ".nav-list-mobile"]) {
+    const links = page.locator(`${selector} a`)
+    await expect(links).toHaveText(expectedLabels)
+    for (const [index, route] of routes.entries()) {
+      await expect(links.nth(index)).toHaveAttribute("href", route.path)
+    }
+  }
   for (const route of [...routes.slice(1), routes[0]]) {
     if (isMobile) await page.getByRole("button", { name: "primary-navigation" }).click()
     const navigation = page.locator(isMobile ? ".nav-list-mobile" : ".nav-list")
@@ -54,6 +62,7 @@ test("all routes support navigation and direct refresh", async ({ page, isMobile
     await expect(page.locator(".page-container")).toHaveCount(1)
     if (isMobile) {
       await expect(page.getByRole("button", { name: "primary-navigation" })).toHaveAttribute("aria-expanded", "false")
+      await expect(page.getByRole("button", { name: "primary-navigation" })).toBeFocused()
     }
     await page.reload()
     await expect(page.locator(route.content)).toBeVisible()

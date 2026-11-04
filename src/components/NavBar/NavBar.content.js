@@ -8,7 +8,6 @@ export const navBarContent = {
   workAndSkills: {
     number: "02.",
     label: "work/skills",
-    mobileLabel: "work/skill",
   },
   projects: {
     number: "03.",

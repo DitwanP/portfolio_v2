@@ -7,6 +7,7 @@ import GithubIcon from "../../assets/icons/github.svg?react"
 import LinkedInIcon from "../../assets/icons/linkedin-in.svg?react"
 import { navBarContent } from "./NavBar.content.js"
 import { socialLinks } from "../data/SocialLinks.js"
+import { navigation } from "../../config/navigation.js"
 
 import "../../scss/navbar.scss"
 import "../../scss/app.scss"
@@ -18,6 +19,21 @@ import {
   navListItemVariants,
   navContentTransitions,
 } from "../FramerVariants"
+
+const NavigationItems = ({ onNavigate }) =>
+  navigation.map(({ id, path }) => (
+    <motion.li
+      key={id}
+      variants={navListItemVariants}
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.95 }}
+    >
+      <Link to={path} onClick={onNavigate}>
+        <span>{navBarContent[id].number}</span>
+        {navBarContent[id].label}
+      </Link>
+    </motion.li>
+  ))
 
 const NavBar = (props) => {
   const showNavList = props.showNavList
@@ -55,50 +71,7 @@ const NavBar = (props) => {
             variants={navContainerVariants}
           >
             <motion.ul variants={navListVariants} className="nav-list">
-              <motion.li
-                variants={navListItemVariants}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                key="home"
-              >
-                <Link to="/">
-                  <span>{navBarContent.home.number}</span>
-                  {navBarContent.home.label}
-                </Link>
-              </motion.li>
-              <motion.li
-                variants={navListItemVariants}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                key="work and skills"
-              >
-                <Link to="/work-and-skills">
-                  <span>{navBarContent.workAndSkills.number}</span>
-                  {navBarContent.workAndSkills.label}
-                </Link>
-              </motion.li>
-              <motion.li
-                variants={navListItemVariants}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                key="projects"
-              >
-                <Link to="/projects">
-                  <span>{navBarContent.projects.number}</span>
-                  {navBarContent.projects.label}
-                </Link>
-              </motion.li>
-              <motion.li
-                variants={navListItemVariants}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                key="contact"
-              >
-                <Link to="/contact">
-                  <span>{navBarContent.contact.number}</span>
-                  {navBarContent.contact.label}
-                </Link>
-              </motion.li>
+              <NavigationItems />
             </motion.ul>
           </motion.div>
           <motion.nav
@@ -136,50 +109,7 @@ const NavBar = (props) => {
               }}
             >
               <motion.ul variants={navListVariants} className="nav-list-mobile">
-                <motion.li
-                  variants={navListItemVariants}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  key="home"
-                >
-                  <Link to="/" onClick={closeNav}>
-                    <span>{navBarContent.home.number}</span>
-                    {navBarContent.home.label}
-                  </Link>
-                </motion.li>
-                <motion.li
-                  variants={navListItemVariants}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  key="work and skills"
-                >
-                  <Link to="/work-and-skills" onClick={closeNav}>
-                    <span>{navBarContent.workAndSkills.number}</span>
-                    {navBarContent.workAndSkills.mobileLabel}
-                  </Link>
-                </motion.li>
-                <motion.li
-                  variants={navListItemVariants}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  key="projects"
-                >
-                  <Link to="/projects" onClick={closeNav}>
-                    <span>{navBarContent.projects.number}</span>
-                    {navBarContent.projects.label}
-                  </Link>
-                </motion.li>
-                <motion.li
-                  variants={navListItemVariants}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  key="contact"
-                >
-                  <Link to="/contact" onClick={closeNav}>
-                    <span>{navBarContent.contact.number}</span>
-                    {navBarContent.contact.label}
-                  </Link>
-                </motion.li>
+                <NavigationItems onNavigate={closeNav} />
               </motion.ul>
               <div className="social-links">
                 <motion.a

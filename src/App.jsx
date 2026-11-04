@@ -7,13 +7,19 @@ import { themes } from "./components/ThemesModal/ThemesModal.jsx"
 import "./scss/app.scss"
 
 function App() {
-  const viewHeight = window.innerHeight * 0.01
-  document.documentElement.style.setProperty("--vh", `${viewHeight}px`)
+  useEffect(() => {
+    const updateViewportHeight = () => {
+      const viewHeight = window.innerHeight * 0.01
+      document.documentElement.style.setProperty("--vh", `${viewHeight}px`)
+    }
 
-  window.addEventListener("resize", () => {
-    const viewHeight = window.innerHeight * 0.01
-    document.documentElement.style.setProperty("--vh", `${viewHeight}px`)
-  })
+    updateViewportHeight()
+    window.addEventListener("resize", updateViewportHeight)
+
+    return () => {
+      window.removeEventListener("resize", updateViewportHeight)
+    }
+  }, [])
 
   const defaultTheme = themes.includes(localStorage.getItem("theme"))
     ? localStorage.getItem("theme")

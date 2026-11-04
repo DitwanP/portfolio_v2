@@ -1,18 +1,19 @@
 import React from "react"
 import { motion } from "framer-motion"
 
-import { jobsInfo } from "./data/WorkInfo"
-import { skillsInfo } from "./data/SkillsInfo"
+import { jobsInfo } from "../data/WorkInfo"
+import { skillsInfo } from "../data/SkillsInfo"
+import { workAndSkillsContent } from "./WorkAndSkills.content.js"
 import {
   pageVariants,
   textAnimateIn,
   listVariants,
   listItemVariants,
-} from "./FramerVariants"
+} from "../FramerVariants"
 
-import "../scss/work-and-skills.scss"
-import "../scss/app.scss"
-import "../scss/utility.scss"
+import "../../scss/work-and-skills.scss"
+import "../../scss/app.scss"
+import "../../scss/utility.scss"
 
 const WorkAndSkills = () => {
   return (
@@ -37,7 +38,7 @@ const WorkAndSkills = () => {
               delay: 0.2,
             }}
           >
-            <h1 className="title">pRoFessionAl eXpeRience</h1>
+            <h1 className="title">{workAndSkillsContent.experienceTitle}</h1>
           </motion.div>
           <div className="work">
             {jobsInfo.map((job, index) => (
@@ -56,23 +57,23 @@ const WorkAndSkills = () => {
               >
                 <div className="position-and-company">
                   <div className="company">
-                    <h2 className="label">Company:</h2>
+                    <h2 className="label">{workAndSkillsContent.labels.company}</h2>
                     <h3 className="info">
                       {job.company} - {job.location}
                     </h3>
                   </div>
                   <div className="position">
-                    <h2 className="label">Position:</h2>
+                    <h2 className="label">{workAndSkillsContent.labels.position}</h2>
                     <h3 className="info">{job.position}</h3>
                   </div>
                 </div>
                 <div className="dates">
                   <div className="start_date">
-                    <h2 className="label">Start-date:</h2>
+                    <h2 className="label">{workAndSkillsContent.labels.startDate}</h2>
                     <h3 className="info">{job.start_date}</h3>
                   </div>
                   <div className="end_date">
-                    <h2 className="label">End-date:</h2>
+                    <h2 className="label">{workAndSkillsContent.labels.endDate}</h2>
                     <h3 className="info">{job.end_date}</h3>
                   </div>
                 </div>
@@ -116,7 +117,7 @@ const WorkAndSkills = () => {
               delay: 1.4,
             }}
           >
-            <h1 className="title">sKills</h1>
+            <h1 className="title">{workAndSkillsContent.skillsTitle}</h1>
           </motion.div>
           <motion.div
             className="skills"

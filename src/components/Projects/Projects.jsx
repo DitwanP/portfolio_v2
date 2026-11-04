@@ -1,12 +1,13 @@
 import React from "react"
 import { motion } from "framer-motion"
-import { pageVariants, pageTransitions, textAnimateIn } from "./FramerVariants"
+import { pageVariants, pageTransitions, textAnimateIn } from "../FramerVariants"
 
-import { ProjectsList } from "./ProjectsList"
+import { ProjectsList } from "../ProjectsList/ProjectsList.jsx"
+import { projectsContent } from "./Projects.content.js"
 
-import "../scss/projects.scss"
-import "../scss/app.scss"
-import "../scss/utility.scss"
+import "../../scss/projects.scss"
+import "../../scss/app.scss"
+import "../../scss/utility.scss"
 
 const Projects = () => {
   return (
@@ -22,7 +23,7 @@ const Projects = () => {
         <div className="projects-container">
           <motion.div
             className="title"
-            aria-label="Projects"
+            aria-label={projectsContent.accessibleLabel}
             variants={textAnimateIn}
             initial="start"
             animate="end"
@@ -33,7 +34,7 @@ const Projects = () => {
               delay: 0.6,
             }}
           >
-            <h1 className="title">pRojects</h1>
+            <h1 className="title">{projectsContent.title}</h1>
           </motion.div>
 
           <ProjectsList />

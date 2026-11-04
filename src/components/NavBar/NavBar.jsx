@@ -1,13 +1,15 @@
 import React, { useRef } from "react"
-import { useDimensions } from "./hooks/use-dimensions"
+import { useDimensions } from "../hooks/use-dimensions"
 import { motion, AnimatePresence } from "framer-motion"
 import { Link } from "react-router-dom"
 
-import githubIcon from "../assets/icons/github.svg"
-import linkedInIcon from "../assets/icons/linkedin-in.svg"
+import GithubIcon from "../../assets/icons/github.svg?react"
+import LinkedInIcon from "../../assets/icons/linkedin-in.svg?react"
+import { navBarContent } from "./NavBar.content.js"
+import { socialLinks } from "../data/SocialLinks.js"
 
-import "../scss/navbar.scss"
-import "../scss/app.scss"
+import "../../scss/navbar.scss"
+import "../../scss/app.scss"
 
 import {
   navContentVariants,
@@ -15,7 +17,7 @@ import {
   navListVariants,
   navListItemVariants,
   navContentTransitions,
-} from "./FramerVariants"
+} from "../FramerVariants"
 
 const NavBar = (props) => {
   const showNavList = props.showNavList
@@ -39,7 +41,7 @@ const NavBar = (props) => {
           transition={navContentTransitions}
         >
           <div className="logo-container">
-            <Link to="/">DP</Link>
+            <Link to="/">{navBarContent.logo}</Link>
           </div>
           <motion.div
             className="nav-list-container"
@@ -53,7 +55,8 @@ const NavBar = (props) => {
                 key="home"
               >
                 <Link to="/">
-                  <span>01.</span>home
+                  <span>{navBarContent.home.number}</span>
+                  {navBarContent.home.label}
                 </Link>
               </motion.li>
               <motion.li
@@ -63,7 +66,8 @@ const NavBar = (props) => {
                 key="work and skills"
               >
                 <Link to="/work-and-skills">
-                  <span>02.</span>work/skills
+                  <span>{navBarContent.workAndSkills.number}</span>
+                  {navBarContent.workAndSkills.label}
                 </Link>
               </motion.li>
               <motion.li
@@ -73,7 +77,8 @@ const NavBar = (props) => {
                 key="projects"
               >
                 <Link to="/projects">
-                  <span>03.</span>projects
+                  <span>{navBarContent.projects.number}</span>
+                  {navBarContent.projects.label}
                 </Link>
               </motion.li>
               <motion.li
@@ -83,7 +88,8 @@ const NavBar = (props) => {
                 key="contact"
               >
                 <Link to="/contact">
-                  <span>04.</span>contact
+                  <span>{navBarContent.contact.number}</span>
+                  {navBarContent.contact.label}
                 </Link>
               </motion.li>
             </motion.ul>
@@ -107,7 +113,8 @@ const NavBar = (props) => {
                   key="home"
                 >
                   <Link to="/" onClick={toggleNav}>
-                    <span>01.</span>home
+                    <span>{navBarContent.home.number}</span>
+                    {navBarContent.home.label}
                   </Link>
                 </motion.li>
                 <motion.li
@@ -117,7 +124,8 @@ const NavBar = (props) => {
                   key="work and skills"
                 >
                   <Link to="/work-and-skills" onClick={toggleNav}>
-                    <span>02.</span>work/skill
+                    <span>{navBarContent.workAndSkills.number}</span>
+                    {navBarContent.workAndSkills.mobileLabel}
                   </Link>
                 </motion.li>
                 <motion.li
@@ -127,7 +135,8 @@ const NavBar = (props) => {
                   key="projects"
                 >
                   <Link to="/projects" onClick={toggleNav}>
-                    <span>03.</span>projects
+                    <span>{navBarContent.projects.number}</span>
+                    {navBarContent.projects.label}
                   </Link>
                 </motion.li>
                 <motion.li
@@ -137,37 +146,49 @@ const NavBar = (props) => {
                   key="contact"
                 >
                   <Link to="/contact" onClick={toggleNav}>
-                    <span>04.</span>contact
+                    <span>{navBarContent.contact.number}</span>
+                    {navBarContent.contact.label}
                   </Link>
                 </motion.li>
               </motion.ul>
               <div className="social-links">
                 <motion.a
                   className="link"
-                  href="https://github.com/DitwanP"
+                  href={socialLinks.github.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <img src={githubIcon} className="icon" alt="GitHub icon" />
-                  <h2>github</h2>
+                  <GithubIcon
+                    className="icon"
+                    role="img"
+                    aria-label={socialLinks.github.iconAlt}
+                  />
+                  <h2>{socialLinks.github.label}</h2>
                 </motion.a>
                 <motion.a
                   className="link"
-                  href="https://www.linkedin.com/in/ditwan/"
+                  href={socialLinks.linkedin.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <img src={linkedInIcon} className="icon" alt="LinkedIn icon" />
-                  <h2>linkedin</h2>
+                  <LinkedInIcon
+                    className="icon"
+                    role="img"
+                    aria-label={socialLinks.linkedin.iconAlt}
+                  />
+                  <h2>{socialLinks.linkedin.label}</h2>
                 </motion.a>
               </div>
             </motion.div>
             <div className="toggle-button-container" onClick={toggleNav}>
-              <button className="toggle-button" aria-label="primary-navigation">
+              <button
+                className="toggle-button"
+                aria-label={navBarContent.toggleLabel}
+              >
                 <div className="hamburger"></div>
               </button>
             </div>

@@ -2,16 +2,17 @@ import React, { useState, Suspense } from "react"
 import { Routes, Route, useLocation } from "react-router-dom"
 import { AnimatePresence } from "framer-motion"
 
-import NavBar from "./NavBar.jsx"
-import Footer from "./Footer.jsx"
+import NavBar from "../NavBar/NavBar.jsx"
+import Footer from "../Footer/Footer.jsx"
+import { animatedRoutesContent } from "./AnimatedRoutes.content.js"
 
-import "../scss/navbar.scss"
-import "../scss/footer.scss"
+import "../../scss/navbar.scss"
+import "../../scss/footer.scss"
 
-const Home = React.lazy(() => import("./Home.jsx"))
-const WorkAndSkills = React.lazy(() => import("./WorkAndSkills.jsx"))
-const Projects = React.lazy(() => import("./Projects.jsx"))
-const Contact = React.lazy(() => import("./Contact.jsx"))
+const Home = React.lazy(() => import("../Home/Home.jsx"))
+const WorkAndSkills = React.lazy(() => import("../WorkAndSkills/WorkAndSkills.jsx"))
+const Projects = React.lazy(() => import("../Projects/Projects.jsx"))
+const Contact = React.lazy(() => import("../Contact/Contact.jsx"))
 
 function AnimatedRoutes(props) {
   const location = useLocation()
@@ -26,7 +27,7 @@ function AnimatedRoutes(props) {
             exact
             path="/"
             element={
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<div>{animatedRoutesContent.loading}</div>}>
                 {" "}
                 <Home />
               </Suspense>
@@ -36,7 +37,7 @@ function AnimatedRoutes(props) {
             exact
             path="/work-and-skills"
             element={
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<div>{animatedRoutesContent.loading}</div>}>
                 {" "}
                 <WorkAndSkills />
               </Suspense>
@@ -46,7 +47,7 @@ function AnimatedRoutes(props) {
             exact
             path="/projects"
             element={
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<div>{animatedRoutesContent.loading}</div>}>
                 {" "}
                 <Projects />
               </Suspense>
@@ -56,7 +57,7 @@ function AnimatedRoutes(props) {
             exact
             path="/contact"
             element={
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<div>{animatedRoutesContent.loading}</div>}>
                 {" "}
                 <Contact />
               </Suspense>

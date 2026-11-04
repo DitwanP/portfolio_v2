@@ -1,13 +1,15 @@
 import React from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
-import githubIcon from "../assets/icons/github.svg"
-import linkIcon from "../assets/icons/link.svg"
+import GithubIcon from "../../assets/icons/github.svg?react"
+import LinkIcon from "../../assets/icons/link.svg?react"
 
-import { listVariants } from "./FramerVariants"
-import { projectsInfo } from "./data/ProjectsInfo"
+import { listVariants } from "../FramerVariants"
+import { projectsInfo } from "../data/ProjectsInfo"
+import { socialLinks } from "../data/SocialLinks.js"
+import { projectsListContent } from "./ProjectsList.content.js"
 
-import "../scss/projectsList.scss"
+import "../../scss/projectsList.scss"
 
 export const ProjectsList = () => {
   return (
@@ -31,7 +33,10 @@ export const ProjectsList = () => {
             <motion.li key={index} className="project">
               <div className="project-image-container">
                 <div className="project-image">
-                  <img alt={`${project.title} project`} src={project.image} />
+                  <img
+                    alt={`${project.title} ${projectsListContent.projectImageAltSuffix}`}
+                    src={project.image}
+                  />
                 </div>
               </div>
               <div className="project-details">
@@ -48,7 +53,11 @@ export const ProjectsList = () => {
                         whileHover={{ scale: 1.2 }}
                         whileTap={{ scale: 0.95 }}
                       >
-                        <img src={linkIcon} className="icon" alt="Link icon" />
+                        <LinkIcon
+                          className="icon"
+                          role="img"
+                          aria-label={projectsListContent.liveLinkIconAlt}
+                        />
                       </motion.a>
                     )}
                     {project.githubLink && (
@@ -60,7 +69,11 @@ export const ProjectsList = () => {
                         whileHover={{ scale: 1.2 }}
                         whileTap={{ scale: 0.95 }}
                       >
-                        <img src={githubIcon} className="icon" alt="GitHub icon" />
+                        <GithubIcon
+                          className="icon"
+                          role="img"
+                          aria-label={socialLinks.github.iconAlt}
+                        />
                       </motion.a>
                     )}
                   </div>

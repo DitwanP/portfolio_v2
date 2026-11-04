@@ -1,14 +1,15 @@
 import React from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
-import "../scss/themes.scss"
-import "../scss/app.scss"
+import "../../scss/themes.scss"
+import "../../scss/app.scss"
+import { themesModalContent } from "./ThemesModal.content.js"
 
 import {
   themesContainerVariants,
   listVariants,
   listItemVariants,
-} from "./FramerVariants"
+} from "../FramerVariants"
 
 export const themes = [
   "froyo-dark",
@@ -45,7 +46,7 @@ const ThemesModal = (props) => {
                     tabIndex="-1"
                   >
                     <span>0{index + 1}.</span>
-                    {theme}
+                    {themesModalContent.labels[theme]}
                   </button>
                 </motion.li>
               ))}

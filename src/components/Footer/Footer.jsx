@@ -1,12 +1,14 @@
 import React, { useState } from "react"
 import { motion } from "framer-motion"
-import githubIcon from "../assets/icons/github.svg"
-import linkedInIcon from "../assets/icons/linkedin-in.svg"
+import GithubIcon from "../../assets/icons/github.svg?react"
+import LinkedInIcon from "../../assets/icons/linkedin-in.svg?react"
 
-import ThemesModal from "./ThemesModal.jsx"
-import { footerAnimateIn, footerTransitions } from "./FramerVariants"
+import ThemesModal from "../ThemesModal/ThemesModal.jsx"
+import { footerAnimateIn, footerTransitions } from "../FramerVariants"
+import { socialLinks } from "../data/SocialLinks.js"
+import { footerContent } from "./Footer.content.js"
 
-import "../scss/footer.scss"
+import "../../scss/footer.scss"
 
 const Footer = (props) => {
   const [showThemesModal, setShowThemesModal] = useState(false)
@@ -28,23 +30,31 @@ const Footer = (props) => {
         <div className="social-links">
           <motion.a
             className="link"
-            href="https://www.linkedin.com/in/ditwan/"
+            href={socialLinks.linkedin.href}
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.95 }}
           >
-            <img src={linkedInIcon} className="icon" alt="LinkedIn icon" />
+            <LinkedInIcon
+              className="icon"
+              role="img"
+              aria-label={socialLinks.linkedin.iconAlt}
+            />
           </motion.a>
           <motion.a
             className="link"
-            href="https://github.com/DitwanP"
+            href={socialLinks.github.href}
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.95 }}
           >
-            <img src={githubIcon} className="icon" alt="GitHub icon" />
+            <GithubIcon
+              className="icon"
+              role="img"
+              aria-label={socialLinks.github.iconAlt}
+            />
           </motion.a>
         </div>
         <ThemesModal
@@ -63,7 +73,7 @@ const Footer = (props) => {
               whileHover={{ y: -5 }}
               whileTap={{ scale: 0.9 }}
             >
-              theme
+              {footerContent.themeButton}
             </motion.span>
           </button>
         </div>

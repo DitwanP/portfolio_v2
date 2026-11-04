@@ -1,13 +1,14 @@
 import React from "react"
 import { motion } from "framer-motion"
 
-import paperPlaneIcon from "../assets/icons/paper-plane-regular.svg"
+import PaperPlaneIcon from "../../assets/icons/paper-plane-regular.svg?react"
 
-import { pageVariants, pageTransitions, textAnimateIn } from "./FramerVariants"
+import { pageVariants, pageTransitions, textAnimateIn } from "../FramerVariants"
+import { contactContent } from "./Contact.content.js"
 
-import "../scss/contact.scss"
-import "../scss/app.scss"
-import "../scss/utility.scss"
+import "../../scss/contact.scss"
+import "../../scss/app.scss"
+import "../../scss/utility.scss"
 
 const Contact = () => {
   return (
@@ -22,7 +23,7 @@ const Contact = () => {
       >
         <motion.div
           className="title"
-          aria-label="Contact"
+          aria-label={contactContent.accessibleLabel}
           variants={textAnimateIn}
           initial="start"
           animate="end"
@@ -33,7 +34,7 @@ const Contact = () => {
             delay: 0.2,
           }}
         >
-          <h1 className="title">Get in toucH</h1>
+          <h1 className="title">{contactContent.title}</h1>
         </motion.div>
         <motion.div className="contact-statement">
           <motion.p
@@ -47,10 +48,7 @@ const Contact = () => {
               delay: 0.6,
             }}
           >
-            I'm actively seeking new opportunities and am excited to take on new
-            challenges. With a proven track record of meeting deadlines and
-            achieving objectives in fast-paced environments, I'm confident that
-            I can make a positive impact wherever I end up.
+            {contactContent.introduction}
           </motion.p>
           <motion.p
             variants={textAnimateIn}
@@ -63,9 +61,7 @@ const Contact = () => {
               delay: 1,
             }}
           >
-            If you have a role that you believe would be a good fit for me,
-            please don't hesitate to reach out. I'd love to explore new
-            possibilities together.
+            {contactContent.invitation}
           </motion.p>
         </motion.div>
         <motion.div
@@ -82,12 +78,16 @@ const Contact = () => {
         >
           <motion.a
             whileHover={{ scale: 1.1 }}
-            href="mailto:price.ditwan@gmail.com"
+            href={contactContent.email.href}
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={paperPlaneIcon} className="icon" alt="Paper plane icon" />
-            <h3>Reach Out</h3>
+            <PaperPlaneIcon
+              className="icon"
+              role="img"
+              aria-label={contactContent.email.iconAlt}
+            />
+            <h3>{contactContent.email.label}</h3>
           </motion.a>
         </motion.div>
       </motion.div>

@@ -1,8 +1,8 @@
 import { BrowserRouter as Router } from "react-router-dom"
-import AnimatedRoutes from "./components/AnimatedRoutes.jsx"
+import AnimatedRoutes from "./components/AnimatedRoutes/AnimatedRoutes.jsx"
 import { useRef, useEffect, useState } from "react"
 
-import { themes } from "./components/ThemesModal.jsx"
+import { themes } from "./components/ThemesModal/ThemesModal.jsx"
 
 import "./scss/app.scss"
 

@@ -1,5 +1,4 @@
 import React, { useRef } from "react"
-import { useDimensions } from "../hooks/use-dimensions"
 import { motion, AnimatePresence } from "framer-motion"
 import { Link } from "react-router-dom"
 
@@ -38,8 +37,6 @@ const NavigationItems = ({ onNavigate }) =>
 const NavBar = (props) => {
   const showNavList = props.showNavList
   const setShowNavList = props.setShowNavList
-  const containerRef = useRef("nav")
-  const { height } = useDimensions(containerRef)
   const toggleRef = useRef(null)
   const panelRef = useRef(null)
 
@@ -77,9 +74,7 @@ const NavBar = (props) => {
           <motion.nav
             className="nav-toggle-container"
             animate={showNavList ? "open" : "closed"}
-            custom={height}
             initial={false}
-            ref={containerRef}
             onKeyDown={(event) => {
               if (event.key === "Escape" && showNavList) {
                 event.preventDefault()

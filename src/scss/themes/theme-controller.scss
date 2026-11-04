@@ -1,4 +1,5 @@
 @use "sass:map";
+@use "sass:color";
 @use "../colors.scss" as colors;
 @use "../fonts.scss" as fonts;
 @use "../displaySizes.scss" as sizes;
@@ -194,7 +195,7 @@ $color-list: (
     }
 
     .nav-list-container-mobile {
-      background-color: map.get($color-list, $theme-name + "-theme-list-bg");
+      background-color: map.get($color-list, $theme-name + "-bg-color");
       transition: background-color 200ms linear;
     }
 
@@ -206,7 +207,7 @@ $color-list: (
           span {
             color: map.get(
               $color-list,
-              $theme-name + "-primaryAccent"
+              $theme-name + "-tertiaryAccent"
             ) !important;
           }
         }
@@ -252,15 +253,23 @@ $color-list: (
 
       li {
         span {
-          color: map.get($color-list, $theme-name + "-primaryAccent");
+          color: map.get($color-list, $theme-name + "-tertiaryAccent");
           transition: color 200ms linear;
         }
       }
 
       .theme-list {
-        background-color: map.get($color-list, $theme-name + "-theme-list-bg");
-        transition: background-color 200ms linear;
-        backdrop-filter: blur(15px);
+        background-color: color.mix(
+          #fff,
+          map.get($color-list, $theme-name + "-bg-color"),
+          6%
+        );
+        border-color: color.mix(
+          map.get($color-list, $theme-name + "-primaryAccent"),
+          map.get($color-list, $theme-name + "-bg-color"),
+          30%
+        );
+        transition: background-color 200ms linear, border-color 200ms linear;
       }
     }
   }

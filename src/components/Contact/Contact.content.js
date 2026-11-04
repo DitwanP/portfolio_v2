@@ -1,8 +1,8 @@
 export const contactContent = {
   title: "Get in toucH",
   accessibleLabel: "Contact",
-  introduction: "I'm actively seeking new opportunities and am excited to take on new challenges. With a proven track record of meeting deadlines and achieving objectives in fast-paced environments, I'm confident that I can make a positive impact wherever I end up.",
-  invitation: "If you have a role that you believe would be a good fit for me, please don't hesitate to reach out. I'd love to explore new possibilities together.",
+  introduction: "I'm always open to connecting with new people, sharing ideas, and exploring interesting opportunities. Whether it's discussing a project, collaborating on something new, or simply exchanging experiences.",
+  invitation: "If you'd like to get in touch, feel free to reach out. I'm always happy to connect!",
   email: {
     href: "mailto:price.ditwan@gmail.com",
     label: "Reach Out",

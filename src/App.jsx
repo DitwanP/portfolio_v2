@@ -2,7 +2,7 @@ import { BrowserRouter as Router } from "react-router-dom"
 import AnimatedRoutes from "./components/AnimatedRoutes/AnimatedRoutes.jsx"
 import { useEffect, useState } from "react"
 
-import { themes } from "./components/ThemesModal/ThemesModal.jsx"
+import { themes, themeBackgroundColors } from "./config/themes.js"
 
 import "./scss/app.scss"
 
@@ -33,14 +33,6 @@ function App() {
   }
 
   useEffect(() => {
-    const themeBackgroundColors = {
-      dracula: "#282a36",
-      ryujin: "#081426",
-      grape: "#221223",
-      "future-funk": "#2e1a47",
-      "froyo-dark": "#1b180f",
-    }
-
     document.body.setAttribute("theme", currentTheme)
     document
       .querySelector('meta[name="theme-color"]')

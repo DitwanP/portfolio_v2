@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import "../../scss/themes.scss"
 import "../../scss/app.scss"
 import { themesModalContent } from "./ThemesModal.content.js"
+import { themes } from "../../config/themes.js"
 
 import {
   themesContainerVariants,
@@ -11,17 +12,8 @@ import {
   listItemVariants,
 } from "../FramerVariants"
 
-export const themes = [
-  "froyo-dark",
-  "future-funk",
-  "ryujin",
-  "grape",
-  "dracula",
-]
-
 const ThemesModal = (props) => {
   const showThemesModal = props.showThemesModal
-  const orderedThemes = themes.sort()
   const panelRef = useRef(null)
 
   const navigateThemes = (event) => {
@@ -68,7 +60,7 @@ const ThemesModal = (props) => {
               className="theme-list"
               onKeyDown={navigateThemes}
             >
-              {orderedThemes.map((theme, index) => (
+              {themes.map((theme, index) => (
                 <motion.li
                   key={index}
                   variants={listItemVariants}

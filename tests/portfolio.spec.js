@@ -63,9 +63,13 @@ test("all routes support navigation and direct refresh", async ({ page, isMobile
 test("all five themes synchronize and persist after reload", async ({ page }) => {
   await page.goto("/")
   await page.getByRole("button", { name: "theme", exact: true }).click()
+  const expectedOptions = themes.map((theme, index) => `0${index + 1}.${theme.name}`)
+  const options = page.locator("#theme-options button")
+  await expect(options).toHaveText(expectedOptions)
   for (const theme of themes) {
     await page.getByRole("button", { name: new RegExp(theme.name) }).click()
     await expectTheme(page, theme)
+    await expect(options).toHaveText(expectedOptions)
     await expect(page.locator(".theme-list")).not.toHaveCSS("background-color", theme.background)
   }
   await page.keyboard.press("Escape")

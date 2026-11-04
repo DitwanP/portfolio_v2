@@ -40,6 +40,11 @@ Page metadata and the JavaScript-disabled message remain in `index.html`, and
 installable-app names remain in `public/manifest.json`, so they are available
 without running React.
 
+Theme IDs, picker ordering, and browser theme background colors are defined in
+`src/config/themes.js`. Its frozen configuration is shared by the app and picker;
+rendering does not sort or mutate it. Display labels remain in
+`ThemesModal.content.js`, and visual palettes remain in the SCSS theme styles.
+
 Import themed SVG icons with the `?react` suffix so `vite-plugin-svgr` renders
 inline SVGs. This lets the existing SCSS control icon size, fill, and hover
 colors. Keep their accessible labels in the component content modules.

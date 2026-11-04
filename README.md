@@ -74,8 +74,40 @@ and page refreshes work with the browser router.
 
 ```sh
 npm audit
-npm run build
+npm run lint
+npm run test:smoke
 ```
+
+`npm run lint` checks application code, configuration, and tests with ESLint's
+flat configuration, React JSX checks, and React Hooks rules. Warnings fail the
+command. Generated builds and test reports are excluded.
+
+Before running smoke tests for the first time (or after upgrading Playwright),
+install the matching Chromium browser:
+
+```sh
+npx playwright install chromium
+```
+
+On Linux CI hosts, use `npx playwright install --with-deps chromium` to install
+the browser's system dependencies too.
+
+`npm run test:smoke` builds the app and starts its own production preview on
+`127.0.0.1:4173`. Stop any existing preview on that port first. Playwright shuts
+the server down when the run finishes. Tests run in isolated desktop Chromium
+and mobile-emulated Chromium sessions; mobile emulation is not a real-device
+or cross-browser compatibility test.
+
+The suite covers all four routes and refreshes, all five theme colors and
+persistence, theme keyboard navigation, the mobile menu, project images, the
+resume PDF, and contact actions. Browser exceptions, console errors, failed
+requests, and HTTP errors fail the tests. The mobile-menu-specific test is
+intentionally skipped in the desktop project.
+
+Use `npm run test:smoke:ui` for interactive debugging, or
+`npx playwright show-report` to open the latest HTML report. Failed tests retain
+screenshots and traces; generated reports and results are gitignored.
+Run `npm run build` separately when only build validation is needed.
 
 After updating dependencies, check the development server and production preview:
 

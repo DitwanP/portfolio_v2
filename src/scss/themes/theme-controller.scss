@@ -1,3 +1,5 @@
+@use "sass:map";
+@use "sass:color";
 @use "../colors.scss" as colors;
 @use "../fonts.scss" as fonts;
 @use "../displaySizes.scss" as sizes;
@@ -63,43 +65,47 @@ $color-list: (
 @mixin theme-controller($theme-name) {
   * {
     ::-webkit-scrollbar-thumb {
-      background-color: map-get($color-list, $theme-name + "-scrollbar-color");
+      background-color: map.get($color-list, $theme-name + "-scrollbar-color");
       transition: background-color 200ms linear;
     }
-    scrollbar-color: map-get($color-list, $theme-name + "-scrollbar-color")
-      map-get($color-list, $theme-name + "-bg-color");
+    scrollbar-color: map.get($color-list, $theme-name + "-scrollbar-color")
+      map.get($color-list, $theme-name + "-bg-color");
     transition: scrollbar-color 200ms linear;
   }
 
   .page-container {
-    background-color: map-get($color-list, $theme-name + "-bg-color");
+    background-color: map.get($color-list, $theme-name + "-bg-color");
     transition: background-color 200ms linear;
   }
 
   h1 {
-    color: map-get($color-list, $theme-name + "-primaryAccent");
+    color: map.get($color-list, $theme-name + "-primaryAccent");
     transition: color 200ms linear;
 
     span {
-      color: map-get($color-list, $theme-name + "-tertiaryAccent");
+      color: map.get($color-list, $theme-name + "-tertiaryAccent");
       transition: color 200ms linear;
     }
   }
 
   h2 {
-    color: map-get($color-list, $theme-name + "-secondaryAccent");
+    color: map.get($color-list, $theme-name + "-secondaryAccent");
     transition: color 200ms linear;
   }
 
   h3 {
-    color: map-get($color-list, $theme-name + "-textMain");
+    color: map.get($color-list, $theme-name + "-textMain");
     transition: color 200ms linear;
+  }
+
+  .route-status {
+    color: map.get($color-list, $theme-name + "-textMain");
   }
 
   .details {
     ul {
       span {
-        color: map-get($color-list, $theme-name + "-secondaryAccent");
+        color: map.get($color-list, $theme-name + "-secondaryAccent");
         transition: color 200ms linear;
       }
     }
@@ -107,23 +113,23 @@ $color-list: (
 
   .skill-list {
     .skill {
-      background-color: map-get($color-list, $theme-name + "-theme-list-bg");
+      background-color: map.get($color-list, $theme-name + "-theme-list-bg");
       transition: color 200ms linear;
     }
   }
 
   .project-details {
-    background-color: map-get($color-list, $theme-name + "-theme-list-bg");
+    background-color: map.get($color-list, $theme-name + "-theme-list-bg");
     transition: background-color 200ms linear;
 
     .title-container {
       .project-link {
         svg {
-          fill: map-get($color-list, $theme-name + "-textMain");
+          fill: map.get($color-list, $theme-name + "-textMain");
           transition: fill 200ms linear;
 
           &:hover {
-            fill: map-get($color-list, $theme-name + "-secondaryAccent");
+            fill: map.get($color-list, $theme-name + "-secondaryAccent");
             transition: fill 200ms linear;
           }
         }
@@ -131,18 +137,18 @@ $color-list: (
     }
 
     .project-description {
-      color: map-get($color-list, $theme-name + "-textMain");
+      color: map.get($color-list, $theme-name + "-textMain");
       transition: color 200ms linear;
     }
 
     .project-tools {
       .tool {
-        background-color: map-get(
+        background-color: map.get(
           $color-list,
           $theme-name + "-header-bg-color"
         );
         transition: color 200ms linear;
-        color: map-get($color-list, $theme-name + "-primaryAccent");
+        color: map.get($color-list, $theme-name + "-primaryAccent");
         transition: color 200ms linear;
       }
     }
@@ -151,33 +157,33 @@ $color-list: (
   .name-chars,
   .title {
     &:hover {
-      color: map-get($color-list, $theme-name + "-tertiaryAccent");
+      color: map.get($color-list, $theme-name + "-tertiaryAccent");
       transition: color 200ms linear;
     }
   }
 
   .navbar-container {
-    background-color: map-get($color-list, $theme-name + "-header-bg-color");
+    background-color: map.get($color-list, $theme-name + "-header-bg-color");
     transition: background-color 200ms linear;
 
     .logo-container {
       a {
-        color: map-get($color-list, $theme-name + "-tertiaryAccent");
+        color: map.get($color-list, $theme-name + "-tertiaryAccent");
         transition: color 200ms linear;
 
         &:hover {
-          color: map-get($color-list, $theme-name + "-secondaryAccent");
+          color: map.get($color-list, $theme-name + "-secondaryAccent");
         }
       }
     }
 
     .nav-list {
       a {
-        color: map-get($color-list, $theme-name + "-textMain");
+        color: map.get($color-list, $theme-name + "-textMain");
         transition: color 200ms linear;
 
         &:hover {
-          color: map-get(
+          color: map.get(
             $color-list,
             $theme-name + "-secondaryAccent"
           ) !important;
@@ -186,26 +192,26 @@ $color-list: (
 
       li {
         span {
-          color: map-get($color-list, $theme-name + "-secondaryAccent");
+          color: map.get($color-list, $theme-name + "-secondaryAccent");
           transition: color 200ms linear;
         }
       }
     }
 
     .nav-list-container-mobile {
-      background-color: map-get($color-list, $theme-name + "-theme-list-bg");
+      background-color: map.get($color-list, $theme-name + "-bg-color");
       transition: background-color 200ms linear;
     }
 
     .nav-list-mobile {
       li {
         a {
-          color: map-get($color-list, $theme-name + "-textMain") !important;
+          color: map.get($color-list, $theme-name + "-textMain") !important;
 
           span {
-            color: map-get(
+            color: map.get(
               $color-list,
-              $theme-name + "-primaryAccent"
+              $theme-name + "-tertiaryAccent"
             ) !important;
           }
         }
@@ -213,7 +219,7 @@ $color-list: (
     }
 
     .social-links {
-      fill: map-get($color-list, $theme-name + "-primaryAccent");
+      fill: map.get($color-list, $theme-name + "-primaryAccent");
       transition: fill 200ms linear;
     }
 
@@ -221,17 +227,17 @@ $color-list: (
       .toggle-button-container {
         .toggle-button {
           .hamburger {
-            background: map-get($color-list, $theme-name + "-secondaryAccent");
+            background: map.get($color-list, $theme-name + "-secondaryAccent");
 
             &::before {
-              background: map-get(
+              background: map.get(
                 $color-list,
                 $theme-name + "-secondaryAccent"
               );
             }
 
             &::after {
-              background: map-get(
+              background: map.get(
                 $color-list,
                 $theme-name + "-secondaryAccent"
               );
@@ -245,21 +251,29 @@ $color-list: (
   .theme-container {
     .theme-list-container {
       button {
-        color: map-get($color-list, $theme-name + "-textMain");
+        color: map.get($color-list, $theme-name + "-textMain");
         transition: color 200ms linear;
       }
 
       li {
         span {
-          color: map-get($color-list, $theme-name + "-primaryAccent");
+          color: map.get($color-list, $theme-name + "-tertiaryAccent");
           transition: color 200ms linear;
         }
       }
 
       .theme-list {
-        background-color: map-get($color-list, $theme-name + "-theme-list-bg");
-        transition: background-color 200ms linear;
-        backdrop-filter: blur(15px);
+        background-color: color.mix(
+          #fff,
+          map.get($color-list, $theme-name + "-bg-color"),
+          6%
+        );
+        border-color: color.mix(
+          map.get($color-list, $theme-name + "-primaryAccent"),
+          map.get($color-list, $theme-name + "-bg-color"),
+          30%
+        );
+        transition: background-color 200ms linear, border-color 200ms linear;
       }
     }
   }
@@ -267,11 +281,11 @@ $color-list: (
   .toggle-button-container {
     button {
       font-family: fonts.$MajorMono;
-      color: map-get($color-list, $theme-name + "-textMain");
+      color: map.get($color-list, $theme-name + "-textMain");
       transition: color 200ms linear;
 
       &::after {
-        background-color: map-get($color-list, $theme-name + "-tertiaryAccent");
+        background-color: map.get($color-list, $theme-name + "-tertiaryAccent");
         transition: background-color 200ms linear;
       }
     }
@@ -279,20 +293,20 @@ $color-list: (
 
   .contact-statement {
     p {
-      color: map-get($color-list, $theme-name + "-textMain");
+      color: map.get($color-list, $theme-name + "-textMain");
       transition: color 200ms linear;
     }
   }
 
   .email-button {
     svg {
-      fill: map-get($color-list, $theme-name + "-tertiaryAccent");
+      fill: map.get($color-list, $theme-name + "-tertiaryAccent");
       transition: fill 200ms linear;
     }
 
     a {
-      color: map-get($color-list, $theme-name + "-tertiaryAccent");
-      border-color: map-get(
+      color: map.get($color-list, $theme-name + "-tertiaryAccent");
+      border-color: map.get(
         $color-list,
         $theme-name + "-tertiaryAccent"
       ) !important;
@@ -301,27 +315,27 @@ $color-list: (
       transition: color 200ms linear;
 
       h3 {
-        color: map-get($color-list, $theme-name + "-tertiaryAccent");
+        color: map.get($color-list, $theme-name + "-tertiaryAccent");
         transition: color 200ms linear;
       }
 
       &:hover {
-        color: map-get($color-list, $theme-name + "-secondaryAccent");
-        border-color: map-get(
+        color: map.get($color-list, $theme-name + "-secondaryAccent");
+        border-color: map.get(
           $color-list,
           $theme-name + "-secondaryAccent"
         ) !important;
-        background-color: map-get($color-list, $theme-name + "-theme-list-bg");
+        background-color: map.get($color-list, $theme-name + "-theme-list-bg");
         transition: background-color 200ms linear;
         transition: border-color 200ms linear;
 
         h3 {
-          color: map-get($color-list, $theme-name + "-secondaryAccent");
+          color: map.get($color-list, $theme-name + "-secondaryAccent");
           transition: color 200ms linear;
         }
 
         svg {
-          fill: map-get($color-list, $theme-name + "-secondaryAccent");
+          fill: map.get($color-list, $theme-name + "-secondaryAccent");
           transition: fill 200ms linear;
         }
       }
@@ -330,43 +344,43 @@ $color-list: (
 
   .resume-button {
     svg {
-      fill: map-get($color-list, $theme-name + "-textMain");
+      fill: map.get($color-list, $theme-name + "-textMain");
       transition: fill 200ms linear;
     }
 
     a {
-      color: map-get($color-list, $theme-name + "-secondaryAccent");
-      border-color: map-get(
+      color: map.get($color-list, $theme-name + "-secondaryAccent");
+      border-color: map.get(
         $color-list,
         $theme-name + "-secondaryAccent"
       ) !important;
-      background-color: map-get($color-list, $theme-name + "-theme-list-bg");
+      background-color: map.get($color-list, $theme-name + "-theme-list-bg");
 
       transition: border-color 200ms linear;
       transition: color 200ms linear;
 
       h3 {
-        color: map-get($color-list, $theme-name + "-textMain");
+        color: map.get($color-list, $theme-name + "-textMain");
         transition: color 200ms linear;
       }
 
       &:hover {
-        color: map-get($color-list, $theme-name + "-tertiaryAccent");
-        border-color: map-get(
+        color: map.get($color-list, $theme-name + "-tertiaryAccent");
+        border-color: map.get(
           $color-list,
           $theme-name + "-tertiaryAccent"
         ) !important;
-        background-color: map-get($color-list, $theme-name + "-theme-list-bg");
+        background-color: map.get($color-list, $theme-name + "-theme-list-bg");
         transition: background-color 200ms linear;
         transition: border-color 200ms linear;
 
         h3 {
-          color: map-get($color-list, $theme-name + "-tertiaryAccent");
+          color: map.get($color-list, $theme-name + "-tertiaryAccent");
           transition: color 200ms linear;
         }
 
         svg {
-          fill: map-get($color-list, $theme-name + "-tertiaryAccent");
+          fill: map.get($color-list, $theme-name + "-tertiaryAccent");
           transition: fill 200ms linear;
         }
       }
@@ -376,16 +390,16 @@ $color-list: (
   .footer-container {
     .social-links {
       &::after {
-        background-color: map-get($color-list, $theme-name + "-tertiaryAccent");
+        background-color: map.get($color-list, $theme-name + "-tertiaryAccent");
         transition: color 200ms linear;
       }
 
       .link {
-        fill: map-get($color-list, $theme-name + "-textMain");
+        fill: map.get($color-list, $theme-name + "-textMain");
         transition: fill 200ms linear;
 
         &:hover {
-          fill: map-get($color-list, $theme-name + "-tertiaryAccent");
+          fill: map.get($color-list, $theme-name + "-tertiaryAccent");
           transition: fill 200ms linear;
         }
       }
@@ -394,28 +408,28 @@ $color-list: (
 
   .social-links {
     &::after {
-      background-color: map-get($color-list, $theme-name + "-tertiaryAccent");
+      background-color: map.get($color-list, $theme-name + "-tertiaryAccent");
       transition: color 200ms linear;
     }
 
     svg {
-      fill: map-get($color-list, $theme-name + "-textMain");
+      fill: map.get($color-list, $theme-name + "-textMain");
       transition: color 200ms linear;
 
       &:hover {
-        color: map-get($color-list, $theme-name + "-tertiaryAccent");
+        color: map.get($color-list, $theme-name + "-tertiaryAccent");
         transition: color 200ms linear;
       }
     }
 
     @media (max-width: sizes.$tablet) {
       h2 {
-        color: map-get($color-list, $theme-name + "-textMain");
+        color: map.get($color-list, $theme-name + "-textMain");
         transition: color 200ms linear;
       }
 
       svg {
-        fill: map-get($color-list, $theme-name + "-primaryAccent");
+        fill: map.get($color-list, $theme-name + "-primaryAccent");
         transition: color 200ms linear;
       }
     }

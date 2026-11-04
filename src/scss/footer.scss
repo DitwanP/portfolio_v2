@@ -4,10 +4,15 @@
   display: flex;
   justify-content: center;
   position: absolute;
+  z-index: 3;
   left: 0;
   bottom: 0;
   width: 100%;
   padding: 0rem 2.5rem;
+
+  @media (max-width: sizes.$tablet) {
+    padding: 0rem 1rem;
+  }
 }
 
 .footer-content {
@@ -53,6 +58,10 @@
     right: 2rem;
     width: 3rem;
     z-index: 2;
+
+    @media (max-width: sizes.$tablet) {
+      right: 0;
+    }
 
     button {
       background: none;

@@ -12,7 +12,7 @@
   align-items: center;
   gap: 5px;
   z-index: 1;
-  padding: 5rem;
+  padding: 10rem;
 
   @media (max-width: sizes.$tablet) {
     padding: 5rem 7rem;
@@ -45,6 +45,13 @@
           font-size: clamp(1.6rem, 2.4rem, 2.6rem);
         }
       }
+    }
+  }
+
+  @media (min-width: sizes.$tablet + 1px) {
+    .projects-container .title h1 {
+      font-size: 3.2rem;
+      line-height: 1.25;
     }
   }
 }

@@ -23,7 +23,7 @@
   }
 
   @media (orientation: landscape) {
-    padding: 5rem 10rem;
+    padding: 10rem;
   }
 
   @media (min-width: sizes.$desktop-lg) {
@@ -171,6 +171,35 @@
           font-size: clamp(12px, 1.2rem, 30px);
         }
       }
+    }
+  }
+
+  @media (min-width: sizes.$tablet + 1px) {
+    .work-container .title h1,
+    .skills-container .title h1 {
+      font-size: 3.2rem;
+      line-height: 1.25;
+    }
+
+    .work-container .work .job {
+      .label {
+        font-size: 1.6rem;
+        line-height: 1.6;
+      }
+
+      .info {
+        font-size: 1.8rem;
+        line-height: 1.6;
+      }
+
+      .details ul span {
+        font-size: 1.8rem;
+      }
+    }
+
+    .skills-container .skills .skill {
+      font-size: 1.6rem;
+      line-height: 1.5;
     }
   }
 }

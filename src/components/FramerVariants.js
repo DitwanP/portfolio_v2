@@ -1,27 +1,45 @@
+import { useReducedMotion } from "framer-motion"
+
+const instantTransition = {
+  duration: 0,
+  delay: 0,
+  delayChildren: 0,
+  staggerChildren: 0,
+}
+
 // PAGE
+const entranceEase = [0.25, 0.1, 0.25, 1]
+
 export const pageTransitions = {
-  type: "linear",
-  ease: "easeInOut",
+  type: "tween",
+  ease: entranceEase,
+  duration: 0.55,
 }
 
 export const pageVariants = {
-  initial: { y: "100%", opacity: 0 },
+  initial: { y: 20, opacity: 0 },
   enter: {
     y: 0,
     opacity: 1,
     transition: pageTransitions,
   },
   exit: {
-    y: "50%",
+    y: 12,
     opacity: 0,
-    transition: pageTransitions,
+    transition: { ...pageTransitions, duration: 0.35 },
   },
 }
 
 // TEXT
+export const textTransitions = {
+  type: "tween",
+  ease: entranceEase,
+  duration: 0.6,
+}
+
 export const textAnimateIn = {
   start: {
-    y: "50%",
+    y: 10,
     opacity: 0,
   },
   end: {
@@ -37,65 +55,60 @@ export const navContentVariants = {
     y: 0,
   },
   notIn: {
-    y: -200,
+    y: -20,
   },
 }
 
 export const navContentTransitions = {
-  type: "linear",
-  ease: "easeInOut",
-  duration: 1,
+  ...textTransitions,
 }
 
 export const navContainerVariants = {
   open: {
     x: 0,
     transition: {
-      type: "easeInOut",
+      type: "tween",
+      ease: entranceEase,
+      duration: 0.5,
     },
   },
   closed: {
-    x: 1500,
+    x: "100%",
     transition: {
-      type: "easeInOut",
+      type: "tween",
+      ease: "easeInOut",
+      duration: 0.4,
     },
   },
 }
 
 export const navListVariants = {
   open: {
-    transition: { staggerChildren: 0.07, delayChildren: 0.5 },
+    transition: { staggerChildren: 0.06, delayChildren: 0.05 },
   },
   closed: {
-    transition: { staggerChildren: 0.05, staggerDirection: -1 },
+    transition: { staggerChildren: 0.03, staggerDirection: -1 },
   },
 }
 
+const itemVisible = { y: 0, opacity: 1, transition: textTransitions }
+const itemHidden = { y: 10, opacity: 0, transition: { ...textTransitions, duration: 0.3 } }
+
 export const navListItemVariants = {
-  in: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      y: { stiffness: 1000, velocity: -100 },
-    },
-  },
-  notIn: {
-    y: 50,
-    opacity: 0,
-    transition: {
-      y: { stiffness: 1000 },
-    },
-  },
+  in: itemVisible,
+  notIn: itemHidden,
+  open: itemVisible,
+  closed: itemHidden,
 }
 
 export const listVariants = {
   open: {
-    transition: { staggerChildren: 0.07, delayChildren: 0.5 },
+    transition: { staggerChildren: 0.06, delayChildren: 0.05 },
   },
   closed: {
-    transition: { staggerChildren: 0.05, staggerDirection: -1 },
+    transition: { staggerChildren: 0.03, staggerDirection: -1 },
   },
-  hidden: { y: 500, opacity: 0 },
+  hidden: { y: 12, opacity: 0 },
   show: {
     y: 0,
     opacity: 1,
@@ -103,47 +116,41 @@ export const listVariants = {
 }
 
 export const listItemVariants = {
-  open: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      y: { stiffness: 1000, velocity: -100 },
-    },
-  },
-  closed: {
-    y: 50,
-    opacity: 0,
-    transition: {
-      y: { stiffness: 1000 },
-    },
-  },
-  hidden: {
-    y: 500,
-    opacity: 0,
-  },
-  show: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      y: { type: "linear", ease: "easeInOut", delay: 1 },
-    },
-  },
+  open: itemVisible,
+  closed: itemHidden,
+  hidden: itemHidden,
+  show: itemVisible,
 }
 
 // THEMES
+export const themesListVariants = {
+  open: { transition: { staggerChildren: 0.025 } },
+  closed: { transition: { staggerChildren: 0.02, staggerDirection: -1 } },
+}
+
+export const themesListItemVariants = {
+  open: { ...itemVisible, transition: { ...textTransitions, duration: 0.2 } },
+  closed: { ...itemHidden, transition: { ...textTransitions, duration: 0.15 } },
+}
+
 export const themesContainerVariants = {
   open: {
     y: 0,
+    opacity: 1,
     transition: {
-      type: "linear",
+      type: "tween",
+      ease: entranceEase,
+      duration: 0.25,
     },
     visibility: "visible",
   },
   closed: {
-    y: 700,
+    y: 16,
+    opacity: 1,
     transition: {
-      delay: 0.7,
-      type: "linear",
+      type: "tween",
+      ease: "easeInOut",
+      duration: 0.35,
     },
     transitionEnd: {
       visibility: "hidden",
@@ -159,16 +166,51 @@ export const footerAnimateIn = {
   },
   notIn: {
     opacity: 0,
-    y: 500,
+    y: 16,
   },
   outDown: {
     opacity: 0,
-    y: 500,
+    y: 16,
   },
 }
 
 export const footerTransitions = {
-  ease: "easeInOut",
-  duration: 0.5,
-  delay: 2,
+  ...textTransitions,
+  delay: 0.25,
+}
+
+const animationVariants = {
+  pageVariants,
+  textAnimateIn,
+  navContentVariants,
+  navContainerVariants,
+  navListVariants,
+  navListItemVariants,
+  listVariants,
+  listItemVariants,
+  themesContainerVariants,
+  themesListVariants,
+  themesListItemVariants,
+  footerAnimateIn,
+}
+
+const reducedVariants = Object.fromEntries(
+  Object.entries(animationVariants).map(([name, variants]) => [
+    name,
+    Object.fromEntries(
+      Object.entries(variants).map(([state, target]) => [
+        state,
+        { ...target, transition: instantTransition },
+      ]),
+    ),
+  ]),
+)
+
+export function useAnimationSettings() {
+  const reduceMotion = useReducedMotion()
+  return {
+    ...(reduceMotion ? reducedVariants : animationVariants),
+    transition: (settings) => reduceMotion ? instantTransition : settings,
+    interaction: (settings) => reduceMotion ? undefined : settings,
+  }
 }

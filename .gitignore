@@ -7,9 +7,12 @@
 
 # testing
 /coverage
+/playwright-report
+/test-results
 
 # production
 /build
+/dist
 
 # misc
 .DS_Store
@@ -18,6 +21,7 @@
 .env.development.local
 .env.test.local
 .env.production.local
+.playwright-mcp
 
 npm-debug.log*
 yarn-debug.log*

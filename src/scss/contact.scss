@@ -129,4 +129,21 @@
       }
     }
   }
+
+  @media (min-width: sizes.$tablet + 1px) {
+    .title h1 {
+      font-size: 3.2rem;
+      line-height: 1.25;
+    }
+
+    .contact-statement p {
+      font-size: 1.8rem;
+      line-height: 1.6;
+    }
+
+    .email-button a h3 {
+      font-size: 1.6rem;
+      line-height: 1.6;
+    }
+  }
 }

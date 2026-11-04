@@ -1,37 +1,54 @@
 @use "./colors.scss" as colors;
 @use "./fonts.scss" as fonts;
-@import "./themes/theme-controller.scss";
+@use "themes/theme-controller.scss";
 
 .app {
   width: 100%;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+
+  button:focus-visible,
+  a:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &,
+    *,
+    *::before,
+    *::after {
+      animation: none !important;
+      transition: none !important;
+      scroll-behavior: auto !important;
+    }
+  }
 }
 
 /*THEMES*/
 
 // Future funk
 .app[theme="future-funk"] {
-  @include theme-controller($theme-name: "ff");
+  @include theme-controller.theme-controller($theme-name: "ff");
 }
 
 // Dracula
 .app[theme="dracula"] {
-  @include theme-controller($theme-name: "dracula");
+  @include theme-controller.theme-controller($theme-name: "dracula");
 }
 
 // RyujinScales
 .app[theme="ryujin"] {
-  @include theme-controller($theme-name: "rs");
+  @include theme-controller.theme-controller($theme-name: "rs");
 }
 
 // Grape
 .app[theme="grape"] {
-  @include theme-controller($theme-name: "grape");
+  @include theme-controller.theme-controller($theme-name: "grape");
 }
 
 // DMG
 .app[theme="froyo-dark"] {
-  @include theme-controller($theme-name: "fd");
+  @include theme-controller.theme-controller($theme-name: "fd");
 }

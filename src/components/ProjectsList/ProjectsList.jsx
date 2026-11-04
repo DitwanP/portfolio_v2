@@ -1,37 +1,41 @@
 import React from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
-import { ReactComponent as GithubIcon } from "../assets/icons/github.svg"
-import { ReactComponent as LinkIcon } from "../assets/icons/link.svg"
+import GithubIcon from "../../assets/icons/github.svg?react"
+import LinkIcon from "../../assets/icons/link.svg?react"
 
-import { listVariants } from "./FramerVariants"
-import { projectsInfo } from "./data/ProjectsInfo"
+import { textTransitions, useAnimationSettings } from "../FramerVariants"
+import { projectsInfo } from "../data/ProjectsInfo"
+import { socialLinks } from "../data/SocialLinks.js"
+import { projectsListContent } from "./ProjectsList.content.js"
 
-import "../scss/projectsList.scss"
+import "../../scss/projectsList.scss"
 
-export const ProjectsList = () => {
+export const ProjectsList = ({ onAnimationComplete }) => {
+  const { listVariants, transition, interaction } = useAnimationSettings()
   return (
     <div className="projects-list-container">
       <motion.ul
         className="projects-list"
+        onAnimationComplete={onAnimationComplete}
         key={"projects-list"}
         variants={listVariants}
         initial="hidden"
         animate="show"
-        transition={{
-          staggerChildren: 1,
-          type: "linear",
-          ease: "easeInOut",
-          delay: 1.2,
-          duration: 0.6,
-        }}
+        transition={transition({
+          ...textTransitions,
+          delay: 0.1,
+        })}
       >
         <AnimatePresence>
           {projectsInfo.map((project, index) => (
             <motion.li key={index} className="project">
               <div className="project-image-container">
                 <div className="project-image">
-                  <img alt={`${project.title} project`} src={project.image} />
+                  <img
+                    alt={`${project.title} ${projectsListContent.projectImageAltSuffix}`}
+                    src={project.image}
+                  />
                 </div>
               </div>
               <div className="project-details">
@@ -45,10 +49,14 @@ export const ProjectsList = () => {
                         href={project.liveLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        whileHover={{ scale: 1.2 }}
-                        whileTap={{ scale: 0.95 }}
+                        whileHover={interaction({ scale: 1.2 })}
+                        whileTap={interaction({ scale: 0.95 })}
                       >
-                        <LinkIcon />
+                        <LinkIcon
+                          className="icon"
+                          role="img"
+                          aria-label={projectsListContent.liveLinkIconAlt}
+                        />
                       </motion.a>
                     )}
                     {project.githubLink && (
@@ -57,10 +65,14 @@ export const ProjectsList = () => {
                         href={project.githubLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        whileHover={{ scale: 1.2 }}
-                        whileTap={{ scale: 0.95 }}
+                        whileHover={interaction({ scale: 1.2 })}
+                        whileTap={interaction({ scale: 0.95 })}
                       >
-                        <GithubIcon />
+                        <GithubIcon
+                          className="icon"
+                          role="img"
+                          aria-label={socialLinks.github.iconAlt}
+                        />
                       </motion.a>
                     )}
                   </div>

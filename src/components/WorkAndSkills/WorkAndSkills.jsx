@@ -1,24 +1,27 @@
 import React from "react"
 import { motion } from "framer-motion"
 
-import { jobsInfo } from "./data/WorkInfo"
-import { skillsInfo } from "./data/SkillsInfo"
-import {
-  pageVariants,
-  textAnimateIn,
-  listVariants,
-  listItemVariants,
-} from "./FramerVariants"
+import { jobsInfo } from "../data/WorkInfo"
+import { skillsInfo } from "../data/SkillsInfo"
+import { workAndSkillsContent } from "./WorkAndSkills.content.js"
+import { textTransitions, useAnimationSettings } from "../FramerVariants"
+import { usePageEntrance } from "../use-page-entrance"
 
-import "../scss/work-and-skills.scss"
-import "../scss/app.scss"
-import "../scss/utility.scss"
+import "../../scss/work-and-skills.scss"
+import "../../scss/app.scss"
+import "../../scss/utility.scss"
 
 const WorkAndSkills = () => {
+  const { pageClassName, complete } = usePageEntrance([
+    "page", "title", "skills-title", "skills",
+    ...jobsInfo.flatMap((_, index) => [`job-${index}`, `details-${index}`]),
+  ])
+  const { pageVariants, textAnimateIn, listVariants, listItemVariants, transition } = useAnimationSettings()
   return (
-    <div className="page-container">
+    <div className={pageClassName}>
       <motion.div
         className="exp-content"
+        onAnimationComplete={() => complete("page")}
         variants={pageVariants}
         initial="initial"
         animate="enter"
@@ -27,66 +30,63 @@ const WorkAndSkills = () => {
         <div className="work-container">
           <motion.div
             className="title"
+            onAnimationComplete={() => complete("title")}
             initial="start"
             animate="end"
             variants={textAnimateIn}
-            transition={{
-              type: "linear",
-              ease: "easeInOut",
-              duration: 0.6,
-              delay: 0.2,
-            }}
+            transition={transition({
+              ...textTransitions,
+              delay: 0.05,
+            })}
           >
-            <h1 className="title">pRoFessionAl eXpeRience</h1>
+            <h1 className="title">{workAndSkillsContent.experienceTitle}</h1>
           </motion.div>
           <div className="work">
             {jobsInfo.map((job, index) => (
               <motion.div
                 className="job"
+                onAnimationComplete={() => complete(`job-${index}`)}
                 key={index}
                 initial="start"
                 animate="end"
                 variants={textAnimateIn}
-                transition={{
-                  type: "linear",
-                  ease: "easeInOut",
-                  duration: 0.6,
-                  delay: 0.6,
-                }}
+                transition={transition({
+                  ...textTransitions,
+                  delay: 0.1,
+                })}
               >
                 <div className="position-and-company">
                   <div className="company">
-                    <h2 className="label">Company:</h2>
+                    <h2 className="label">{workAndSkillsContent.labels.company}</h2>
                     <h3 className="info">
                       {job.company} - {job.location}
                     </h3>
                   </div>
                   <div className="position">
-                    <h2 className="label">Position:</h2>
+                    <h2 className="label">{workAndSkillsContent.labels.position}</h2>
                     <h3 className="info">{job.position}</h3>
                   </div>
                 </div>
                 <div className="dates">
                   <div className="start_date">
-                    <h2 className="label">Start-date:</h2>
+                    <h2 className="label">{workAndSkillsContent.labels.startDate}</h2>
                     <h3 className="info">{job.start_date}</h3>
                   </div>
                   <div className="end_date">
-                    <h2 className="label">End-date:</h2>
+                    <h2 className="label">{workAndSkillsContent.labels.endDate}</h2>
                     <h3 className="info">{job.end_date}</h3>
                   </div>
                 </div>
                 <div className="details">
                   <motion.ul
+                    onAnimationComplete={() => complete(`details-${index}`)}
                     initial="start"
                     animate="end"
                     variants={textAnimateIn}
-                    transition={{
-                      type: "linear",
-                      ease: "easeInOut",
-                      duration: 0.6,
-                      delay: 1,
-                    }}
+                    transition={transition({
+                      ...textTransitions,
+                      delay: 0.15,
+                    })}
                   >
                     {job.bullets.map((detail, index) => (
                       <motion.li key={index}>
@@ -106,29 +106,27 @@ const WorkAndSkills = () => {
         <motion.div className="skills-container">
           <motion.div
             className="title"
+            onAnimationComplete={() => complete("skills-title")}
             initial="start"
             animate="end"
             variants={textAnimateIn}
-            transition={{
-              type: "linear",
-              ease: "easeInOut",
-              duration: 0.6,
-              delay: 1.4,
-            }}
+            transition={transition({
+              ...textTransitions,
+              delay: 0.2,
+            })}
           >
-            <h1 className="title">sKills</h1>
+            <h1 className="title">{workAndSkillsContent.skillsTitle}</h1>
           </motion.div>
           <motion.div
             className="skills"
+            onAnimationComplete={() => complete("skills")}
             initial="start"
             animate="end"
             variants={textAnimateIn}
-            transition={{
-              type: "linear",
-              ease: "easeInOut",
-              duration: 0.6,
-              delay: 1.8,
-            }}
+            transition={transition({
+              ...textTransitions,
+              delay: 0.25,
+            })}
           >
             <motion.ul variants={listVariants} className="skill-list">
               {skillsInfo.map((skill, index) => (

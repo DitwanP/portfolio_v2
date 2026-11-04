@@ -55,7 +55,6 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  margin-left: -8px;
   cursor: default;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -63,13 +62,11 @@
   -ms-user-select: none;
   user-select: none;
 
-  @media (max-width: sizes.$phone) {
-    margin-left: -2px;
-  }
-
   .firstName,
   .lastName {
     h1 {
+      position: relative;
+      inset-inline-start: -0.1em;
       font-size: clamp(40px, 7.2rem, 90px);
       font-family: fonts.$MajorMono;
       font-weight: 400;
@@ -182,6 +179,31 @@
 
     &:hover {
       cursor: pointer;
+    }
+  }
+}
+
+@media (min-width: sizes.$tablet + 1px) {
+  .home-content {
+    .greeting h2,
+    .resume-button a h3 {
+      font-size: 1.6rem;
+      line-height: 1.6;
+    }
+
+    .name .firstName h1,
+    .name .lastName h1 {
+      font-size: 3.2rem;
+      line-height: 1.25;
+
+      span {
+        font-size: 1.8rem;
+      }
+    }
+
+    .about-me h3 {
+      font-size: 1.8rem;
+      line-height: 1.6;
     }
   }
 }

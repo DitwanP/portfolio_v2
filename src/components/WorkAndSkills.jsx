@@ -31,7 +31,7 @@ const WorkAndSkills = () => {
             animate="end"
             variants={textAnimateIn}
             transition={{
-              type: "linear",
+              type: "tween",
               ease: "easeInOut",
               duration: 0.6,
               delay: 0.2,
@@ -48,7 +48,7 @@ const WorkAndSkills = () => {
                 animate="end"
                 variants={textAnimateIn}
                 transition={{
-                  type: "linear",
+                  type: "tween",
                   ease: "easeInOut",
                   duration: 0.6,
                   delay: 0.6,
@@ -82,7 +82,7 @@ const WorkAndSkills = () => {
                     animate="end"
                     variants={textAnimateIn}
                     transition={{
-                      type: "linear",
+                      type: "tween",
                       ease: "easeInOut",
                       duration: 0.6,
                       delay: 1,
@@ -110,7 +110,7 @@ const WorkAndSkills = () => {
             animate="end"
             variants={textAnimateIn}
             transition={{
-              type: "linear",
+              type: "tween",
               ease: "easeInOut",
               duration: 0.6,
               delay: 1.4,
@@ -124,7 +124,7 @@ const WorkAndSkills = () => {
             animate="end"
             variants={textAnimateIn}
             transition={{
-              type: "linear",
+              type: "tween",
               ease: "easeInOut",
               duration: 0.6,
               delay: 1.8,

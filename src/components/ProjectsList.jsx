@@ -20,7 +20,7 @@ export const ProjectsList = () => {
         animate="show"
         transition={{
           staggerChildren: 1,
-          type: "linear",
+          type: "tween",
           ease: "easeInOut",
           delay: 1.2,
           duration: 0.6,

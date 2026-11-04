@@ -1,6 +1,6 @@
 // PAGE
 export const pageTransitions = {
-  type: "linear",
+  type: "tween",
   ease: "easeInOut",
 }
 
@@ -42,7 +42,7 @@ export const navContentVariants = {
 }
 
 export const navContentTransitions = {
-  type: "linear",
+  type: "tween",
   ease: "easeInOut",
   duration: 1,
 }
@@ -51,13 +51,15 @@ export const navContainerVariants = {
   open: {
     x: 0,
     transition: {
-      type: "easeInOut",
+      type: "tween",
+      ease: "easeInOut",
     },
   },
   closed: {
     x: 1500,
     transition: {
-      type: "easeInOut",
+      type: "tween",
+      ease: "easeInOut",
     },
   },
 }
@@ -125,7 +127,7 @@ export const listItemVariants = {
     y: 0,
     opacity: 1,
     transition: {
-      y: { type: "linear", ease: "easeInOut", delay: 1 },
+      y: { type: "tween", ease: "easeInOut", delay: 1 },
     },
   },
 }
@@ -135,7 +137,7 @@ export const themesContainerVariants = {
   open: {
     y: 0,
     transition: {
-      type: "linear",
+      type: "tween",
     },
     visibility: "visible",
   },
@@ -143,7 +145,7 @@ export const themesContainerVariants = {
     y: 700,
     transition: {
       delay: 0.7,
-      type: "linear",
+      type: "tween",
     },
     transitionEnd: {
       visibility: "hidden",

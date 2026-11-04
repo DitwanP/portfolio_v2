@@ -37,7 +37,7 @@ const Home = () => {
           animate="end"
           variants={textAnimateIn}
           transition={{
-            type: "linear",
+            type: "tween",
             ease: "easeInOut",
             duration: 0.6,
             delay: 0.2,
@@ -51,7 +51,7 @@ const Home = () => {
           initial="start"
           animate="end"
           transition={{
-            type: "linear",
+            type: "tween",
             ease: "easeInOut",
             duration: 0.6,
             delay: 0.6,
@@ -100,7 +100,7 @@ const Home = () => {
           initial="start"
           animate="end"
           transition={{
-            type: "linear",
+            type: "tween",
             ease: "easeInOut",
             duration: 0.6,
             delay: 1,
@@ -120,7 +120,7 @@ const Home = () => {
           initial="start"
           animate="end"
           transition={{
-            type: "linear",
+            type: "tween",
             ease: "easeInOut",
             duration: 0.6,
             delay: 1.4,

@@ -27,7 +27,7 @@ const Contact = () => {
           initial="start"
           animate="end"
           transition={{
-            type: "linear",
+            type: "tween",
             ease: "easeInOut",
             duration: 0.6,
             delay: 0.2,
@@ -41,7 +41,7 @@ const Contact = () => {
             initial="start"
             animate="end"
             transition={{
-              type: "linear",
+              type: "tween",
               ease: "easeInOut",
               duration: 0.6,
               delay: 0.6,
@@ -57,7 +57,7 @@ const Contact = () => {
             initial="start"
             animate="end"
             transition={{
-              type: "linear",
+              type: "tween",
               ease: "easeInOut",
               duration: 0.6,
               delay: 1,
@@ -74,7 +74,7 @@ const Contact = () => {
           initial="start"
           animate="end"
           transition={{
-            type: "linear",
+            type: "tween",
             ease: "easeInOut",
             duration: 0.6,
             delay: 1.4,

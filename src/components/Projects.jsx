@@ -27,7 +27,7 @@ const Projects = () => {
             initial="start"
             animate="end"
             transition={{
-              type: "linear",
+              type: "tween",
               ease: "easeInOut",
               duration: 0.6,
               delay: 0.6,

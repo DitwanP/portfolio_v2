@@ -12,16 +12,8 @@ import "../../scss/app.scss"
 import "../../scss/utility.scss"
 
 const Home = () => {
-  const [plainFirstName, togglePlainFirstName] = useState(false)
-  const [plainLastName, togglePlainLastName] = useState(false)
-
-  const toggleFirstName = () => {
-    togglePlainFirstName(!plainFirstName)
-  }
-
-  const toggleLastName = () => {
-    togglePlainLastName(!plainLastName)
-  }
+  const [plainFirstName, setPlainFirstName] = useState(true)
+  const [plainLastName, setPlainLastName] = useState(true)
 
   return (
     <motion.div id="home-container" className="page-container">
@@ -62,15 +54,15 @@ const Home = () => {
             className="firstName"
             aria-label={homeContent.firstName.accessibleLabel}
             whileHover={{ scale: 1.1 }}
+            onMouseEnter={() => setPlainFirstName(false)}
+            onMouseLeave={() => setPlainFirstName(true)}
           >
             <h1
-              onMouseEnter={toggleFirstName}
               className={plainFirstName ? "name-chars-hidden" : "name-chars"}
             >
               {homeContent.firstName.display}
             </h1>
             <h1
-              onMouseLeave={toggleFirstName}
               className={plainFirstName ? "name-chars" : "name-chars-hidden"}
             >
               {homeContent.firstName.alternate}
@@ -80,16 +72,16 @@ const Home = () => {
             className="lastName"
             aria-label={homeContent.lastName.accessibleLabel}
             whileHover={{ scale: 1.1 }}
+            onMouseEnter={() => setPlainLastName(false)}
+            onMouseLeave={() => setPlainLastName(true)}
           >
             <h1
-              onMouseEnter={toggleLastName}
               className={plainLastName ? "name-chars-hidden" : "name-chars"}
             >
               {homeContent.lastName.display}
               <span>{homeContent.lastName.punctuation}</span>
             </h1>
             <h1
-              onMouseLeave={toggleLastName}
               className={plainLastName ? "name-chars" : "name-chars-hidden"}
             >
               {homeContent.lastName.alternate}

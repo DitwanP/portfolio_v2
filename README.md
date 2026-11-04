@@ -33,18 +33,6 @@ descriptions, and accessible labels. Components retain markup, styling,
 animations, and interaction logic. Technical identifiers such as route paths,
 theme IDs, and CSS classes stay separate from display copy.
 
-Existing project, work, and skills content remains in `src/components/data/`.
-Shared social link labels, destinations, and icon descriptions live in
-`src/components/data/SocialLinks.js` to avoid duplicating them between components.
-Page metadata and the JavaScript-disabled message remain in `index.html`, and
-installable-app names remain in `public/manifest.json`, so they are available
-without running React.
-
-Theme IDs, picker ordering, and browser theme background colors are defined in
-`src/config/themes.js`. Its frozen configuration is shared by the app and picker;
-rendering does not sort or mutate it. Display labels remain in
-`ThemesModal.content.js`, and visual palettes remain in the SCSS theme styles.
-
 Import themed SVG icons with the `?react` suffix so `vite-plugin-svgr` renders
 inline SVGs. This lets the existing SCSS control icon size, fill, and hover
 colors. Keep their accessible labels in the component content modules.

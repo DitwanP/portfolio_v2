@@ -1,6 +1,6 @@
 import { BrowserRouter as Router } from "react-router-dom"
 import AnimatedRoutes from "./components/AnimatedRoutes/AnimatedRoutes.jsx"
-import { useRef, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 
 import { themes } from "./components/ThemesModal/ThemesModal.jsx"
 
@@ -21,26 +21,15 @@ function App() {
     }
   }, [])
 
-  const defaultTheme = themes.includes(localStorage.getItem("theme"))
-    ? localStorage.getItem("theme")
-    : themes[Math.floor(Math.random() * themes.length)]
-
-  const ref = useRef(null)
-  const [appElement, setAppElement] = useState(null)
-  const [currentTheme, setCurrentTheme] = useState(defaultTheme)
+  const [currentTheme, setCurrentTheme] = useState(() => {
+    const storedTheme = localStorage.getItem("theme")
+    return themes.includes(storedTheme)
+      ? storedTheme
+      : themes[Math.floor(Math.random() * themes.length)]
+  })
 
   const switchTheme = (theme) => {
-    if (
-      (appElement.hasAttribute("theme") &&
-        appElement.getAttribute("theme") !== theme) ||
-      !appElement.hasAttribute("theme")
-    ) {
-      appElement.setAttribute("theme", theme)
-      document.body.setAttribute("theme", currentTheme)
-      setCurrentTheme(theme)
-    } else {
-      return
-    }
+    setCurrentTheme(theme)
   }
 
   useEffect(() => {
@@ -52,7 +41,6 @@ function App() {
       "froyo-dark": "#1b180f",
     }
 
-    setAppElement(ref.current)
     document.body.setAttribute("theme", currentTheme)
     document
       .querySelector('meta[name="theme-color"]')
@@ -61,7 +49,7 @@ function App() {
   }, [currentTheme])
 
   return (
-    <div className="app" ref={ref} theme={currentTheme}>
+    <div className="app" theme={currentTheme}>
       <Router>
         <AnimatedRoutes switchTheme={switchTheme} />
       </Router>

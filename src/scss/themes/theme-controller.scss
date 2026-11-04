@@ -98,6 +98,10 @@ $color-list: (
     transition: color 200ms linear;
   }
 
+  .route-status {
+    color: map.get($color-list, $theme-name + "-textMain");
+  }
+
   .details {
     ul {
       span {

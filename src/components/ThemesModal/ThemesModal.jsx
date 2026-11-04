@@ -9,7 +9,7 @@ import { themes } from "../../config/themes.js"
 import { useAnimationSettings } from "../FramerVariants"
 
 const ThemesModal = (props) => {
-  const { themesContainerVariants, listVariants, listItemVariants, interaction } = useAnimationSettings()
+  const { themesContainerVariants, themesListVariants, themesListItemVariants, interaction } = useAnimationSettings()
   const showThemesModal = props.showThemesModal
   const panelRef = useRef(null)
 
@@ -40,6 +40,7 @@ const ThemesModal = (props) => {
         inert={showThemesModal ? undefined : ""}
         key="themesModal"
         variants={themesContainerVariants}
+        initial={false}
         animate={showThemesModal ? "open" : "closed"}
         onAnimationComplete={(definition) => {
           if (definition !== "open") return
@@ -57,14 +58,14 @@ const ThemesModal = (props) => {
         <motion.div className="theme-container-toggle">
           <motion.div className="theme-list-container">
             <motion.ul
-              variants={listVariants}
+              variants={themesListVariants}
               className="theme-list"
               onKeyDown={navigateThemes}
             >
               {themes.map((theme, index) => (
                 <motion.li
                   key={index}
-                  variants={listItemVariants}
+                  variants={themesListItemVariants}
                   whileHover={interaction({ scale: 1.1 })}
                   whileTap={interaction({ scale: 0.95 })}
                 >

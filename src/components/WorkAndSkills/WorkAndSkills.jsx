@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { jobsInfo } from "../data/WorkInfo"
 import { skillsInfo } from "../data/SkillsInfo"
 import { workAndSkillsContent } from "./WorkAndSkills.content.js"
-import { useAnimationSettings } from "../FramerVariants"
+import { textTransitions, useAnimationSettings } from "../FramerVariants"
 import { usePageEntrance } from "../use-page-entrance"
 
 import "../../scss/work-and-skills.scss"
@@ -35,10 +35,8 @@ const WorkAndSkills = () => {
             animate="end"
             variants={textAnimateIn}
             transition={transition({
-              type: "tween",
-              ease: "easeInOut",
-              duration: 0.6,
-              delay: 0.2,
+              ...textTransitions,
+              delay: 0.05,
             })}
           >
             <h1 className="title">{workAndSkillsContent.experienceTitle}</h1>
@@ -53,10 +51,8 @@ const WorkAndSkills = () => {
                 animate="end"
                 variants={textAnimateIn}
                 transition={transition({
-                  type: "tween",
-                  ease: "easeInOut",
-                  duration: 0.6,
-                  delay: 0.6,
+                  ...textTransitions,
+                  delay: 0.1,
                 })}
               >
                 <div className="position-and-company">
@@ -88,10 +84,8 @@ const WorkAndSkills = () => {
                     animate="end"
                     variants={textAnimateIn}
                     transition={transition({
-                      type: "tween",
-                      ease: "easeInOut",
-                      duration: 0.6,
-                      delay: 1,
+                      ...textTransitions,
+                      delay: 0.15,
                     })}
                   >
                     {job.bullets.map((detail, index) => (
@@ -117,10 +111,8 @@ const WorkAndSkills = () => {
             animate="end"
             variants={textAnimateIn}
             transition={transition({
-              type: "tween",
-              ease: "easeInOut",
-              duration: 0.6,
-              delay: 1.4,
+              ...textTransitions,
+              delay: 0.2,
             })}
           >
             <h1 className="title">{workAndSkillsContent.skillsTitle}</h1>
@@ -132,10 +124,8 @@ const WorkAndSkills = () => {
             animate="end"
             variants={textAnimateIn}
             transition={transition({
-              type: "tween",
-              ease: "easeInOut",
-              duration: 0.6,
-              delay: 1.8,
+              ...textTransitions,
+              delay: 0.25,
             })}
           >
             <motion.ul variants={listVariants} className="skill-list">

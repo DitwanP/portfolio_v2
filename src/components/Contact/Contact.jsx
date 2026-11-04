@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 
 import PaperPlaneIcon from "../../assets/icons/paper-plane-regular.svg?react"
 
-import { pageTransitions, useAnimationSettings } from "../FramerVariants"
+import { pageTransitions, textTransitions, useAnimationSettings } from "../FramerVariants"
 import { usePageEntrance } from "../use-page-entrance"
 import { contactContent } from "./Contact.content.js"
 
@@ -33,10 +33,8 @@ const Contact = () => {
           initial="start"
           animate="end"
           transition={transition({
-            type: "tween",
-            ease: "easeInOut",
-            duration: 0.6,
-            delay: 0.2,
+            ...textTransitions,
+            delay: 0.05,
           })}
         >
           <h1 className="title">{contactContent.title}</h1>
@@ -48,10 +46,8 @@ const Contact = () => {
             initial="start"
             animate="end"
             transition={transition({
-              type: "tween",
-              ease: "easeInOut",
-              duration: 0.6,
-              delay: 0.6,
+              ...textTransitions,
+              delay: 0.1,
             })}
           >
             {contactContent.introduction}
@@ -62,10 +58,8 @@ const Contact = () => {
             initial="start"
             animate="end"
             transition={transition({
-              type: "tween",
-              ease: "easeInOut",
-              duration: 0.6,
-              delay: 1,
+              ...textTransitions,
+              delay: 0.15,
             })}
           >
             {contactContent.invitation}
@@ -78,10 +72,8 @@ const Contact = () => {
           initial="start"
           animate="end"
           transition={transition({
-            type: "tween",
-            ease: "easeInOut",
-            duration: 0.6,
-            delay: 1.4,
+            ...textTransitions,
+            delay: 0.2,
           })}
         >
           <motion.a

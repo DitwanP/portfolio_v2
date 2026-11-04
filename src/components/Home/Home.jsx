@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 
 import PdfIcon from "../../assets/icons/file-pdf-solid.svg?react"
 
-import { useAnimationSettings } from "../FramerVariants"
+import { textTransitions, useAnimationSettings } from "../FramerVariants"
 import { usePageEntrance } from "../use-page-entrance"
 import { homeContent } from "./Home.content.js"
 import Resume from "../../assets/Ditwan_Price_Resume.pdf"
@@ -35,10 +35,8 @@ const Home = () => {
           animate="end"
           variants={textAnimateIn}
           transition={transition({
-            type: "tween",
-            ease: "easeInOut",
-            duration: 0.6,
-            delay: 0.2,
+            ...textTransitions,
+            delay: 0.05,
           })}
         >
           <h2>{homeContent.greeting}</h2>
@@ -50,10 +48,8 @@ const Home = () => {
           initial="start"
           animate="end"
           transition={transition({
-            type: "tween",
-            ease: "easeInOut",
-            duration: 0.6,
-            delay: 0.6,
+            ...textTransitions,
+            delay: 0.1,
           })}
         >
           <motion.div
@@ -102,10 +98,8 @@ const Home = () => {
           initial="start"
           animate="end"
           transition={transition({
-            type: "tween",
-            ease: "easeInOut",
-            duration: 0.6,
-            delay: 1,
+            ...textTransitions,
+            delay: 0.15,
           })}
         >
           <h3 aria-label={homeContent.introduction.accessibleLabel}>
@@ -119,10 +113,8 @@ const Home = () => {
           initial="start"
           animate="end"
           transition={transition({
-            type: "tween",
-            ease: "easeInOut",
-            duration: 0.6,
-            delay: 1.4,
+            ...textTransitions,
+            delay: 0.2,
           })}
         >
           <motion.a href={Resume} target="_blank" rel="noopener noreferrer">

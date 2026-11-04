@@ -1,6 +1,6 @@
 import React from "react"
 import { motion } from "framer-motion"
-import { pageTransitions, useAnimationSettings } from "../FramerVariants"
+import { pageTransitions, textTransitions, useAnimationSettings } from "../FramerVariants"
 import { usePageEntrance } from "../use-page-entrance"
 
 import { ProjectsList } from "../ProjectsList/ProjectsList.jsx"
@@ -33,10 +33,8 @@ const Projects = () => {
             initial="start"
             animate="end"
             transition={transition({
-              type: "tween",
-              ease: "easeInOut",
-              duration: 0.6,
-              delay: 0.6,
+              ...textTransitions,
+              delay: 0.05,
             })}
           >
             <h1 className="title">{projectsContent.title}</h1>

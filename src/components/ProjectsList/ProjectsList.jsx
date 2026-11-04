@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import GithubIcon from "../../assets/icons/github.svg?react"
 import LinkIcon from "../../assets/icons/link.svg?react"
 
-import { useAnimationSettings } from "../FramerVariants"
+import { textTransitions, useAnimationSettings } from "../FramerVariants"
 import { projectsInfo } from "../data/ProjectsInfo"
 import { socialLinks } from "../data/SocialLinks.js"
 import { projectsListContent } from "./ProjectsList.content.js"
@@ -23,11 +23,8 @@ export const ProjectsList = ({ onAnimationComplete }) => {
         initial="hidden"
         animate="show"
         transition={transition({
-          staggerChildren: 1,
-          type: "tween",
-          ease: "easeInOut",
-          delay: 1.2,
-          duration: 0.6,
+          ...textTransitions,
+          delay: 0.1,
         })}
       >
         <AnimatePresence>
